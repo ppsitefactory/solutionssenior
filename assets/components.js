@@ -8,7 +8,8 @@ async function loadComponent(id, file) {
   const el = document.getElementById(id);
   if (!el) return;
   try {
-    const res = await fetch('/components/' + file);
+    const base = window.location.origin;
+    const res = await fetch(base + '/components/' + file);
     const html = await res.text();
     el.innerHTML = html;
   } catch(e) {

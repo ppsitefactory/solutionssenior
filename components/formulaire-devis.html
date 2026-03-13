@@ -1,0 +1,68 @@
+<div class="modal-overlay" id="modalOverlay" onclick="closeModalOutside(event)">
+  <div class="modal-box">
+    <button class="modal-close" onclick="closeModal()">✕</button>
+    <div class="form-title">Votre devis gratuit</div>
+    <div class="form-subtitle">Remplissez ce formulaire en 2 minutes et recevez des devis de professionnels près de chez vous.</div>
+    <div class="step-indicators" id="modalIndicators">
+      <div class="step-dot active" id="mdot0"></div>
+      <div class="step-dot" id="mdot1"></div>
+      <div class="step-dot" id="mdot2"></div>
+    </div>
+    <div class="step active" id="mstep0">
+      <div class="step-label">Étape 1 / 3</div>
+      <div class="step-question">Quel service recherchez-vous ?</div>
+      <div class="service-grid">
+        <div class="service-option" onclick="selectService(this,'modal')"><span class="icon">🛁</span> Douche senior</div>
+        <div class="service-option" onclick="selectService(this,'modal')"><span class="icon">🪜</span> Monte-escalier</div>
+        <div class="service-option" onclick="selectService(this,'modal')"><span class="icon">🤝</span> Aide à domicile</div>
+        <div class="service-option" onclick="selectService(this,'modal')"><span class="icon">💊</span> Mutuelle senior</div>
+        <div class="service-option" onclick="selectService(this,'modal')"><span class="icon">📡</span> Téléassistance</div>
+        <div class="service-option" onclick="selectService(this,'modal')"><span class="icon">🏘️</span> Résidence / EHPAD</div>
+      </div>
+      <button class="btn-next" onclick="nextStep('modal',0)">Continuer →</button>
+    </div>
+    <div class="step" id="mstep1">
+      <button class="btn-back" onclick="prevStep('modal',1)">← Retour</button>
+      <div class="step-label">Étape 2 / 3</div>
+      <div class="step-question">Votre situation</div>
+      <div class="form-field"><label>Code postal</label><input type="text" placeholder="Ex. 75001" maxlength="5"></div>
+      <div class="form-field"><label>Ce service est pour...</label>
+        <select>
+          <option>Moi-même</option>
+          <option>Mon parent</option>
+          <option>Mon conjoint</option>
+          <option>Un autre proche</option>
+        </select>
+      </div>
+      <div class="form-field"><label>Budget estimé</label>
+        <select>
+          <option>Je ne sais pas encore</option>
+          <option>Moins de 1 000 €</option>
+          <option>Entre 1 000 € et 5 000 €</option>
+          <option>Plus de 5 000 €</option>
+        </select>
+      </div>
+      <button class="btn-next" onclick="nextStep('modal',1)">Continuer →</button>
+    </div>
+    <div class="step" id="mstep2">
+      <button class="btn-back" onclick="prevStep('modal',2)">← Retour</button>
+      <div class="step-label">Étape 3 / 3</div>
+      <div class="step-question">Vos coordonnées</div>
+      <div class="form-row">
+        <div class="form-field"><label>Prénom *</label><input type="text" placeholder="Marie"></div>
+        <div class="form-field"><label>Nom *</label><input type="text" placeholder="Dupont"></div>
+      </div>
+      <div class="form-field"><label>Email *</label><input type="email" placeholder="marie@exemple.fr"></div>
+      <div class="form-field"><label>Téléphone *</label><input type="tel" placeholder="06 00 00 00 00"></div>
+      <button class="btn-submit" onclick="submitForm('modal')">✓ Recevoir mes devis gratuits</button>
+      <div class="form-legal">En soumettant ce formulaire, vous acceptez d'être contacté par SeniorConfort et ses partenaires. Service gratuit et sans engagement.</div>
+    </div>
+    <div class="step" id="msuccess">
+      <div class="success-step">
+        <div class="success-icon">✅</div>
+        <h3>Votre demande est enregistrée !</h3>
+        <p>Nos partenaires vous contacteront dans les <strong>24 heures</strong>. Vous pouvez aussi nous appeler au <strong>0 800 000 000</strong> (gratuit).</p>
+      </div>
+    </div>
+  </div>
+</div>

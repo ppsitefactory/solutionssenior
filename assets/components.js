@@ -7,11 +7,8 @@
 async function loadComponent(id, file) {
   const el = document.getElementById(id);
   if (!el) return;
-  // Calcule le chemin relatif selon la profondeur de la page
-  const depth = (window.location.pathname.match(/\//g) || []).length - 1;
-  const prefix = depth <= 1 ? '' : '../'.repeat(depth - 1);
   try {
-    const res = await fetch(prefix + 'components/' + file);
+    const res = await fetch('/components/' + file);
     const html = await res.text();
     el.innerHTML = html;
   } catch(e) {

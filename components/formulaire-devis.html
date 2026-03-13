@@ -8,10 +8,14 @@
       <div class="step-dot" id="mdot1"></div>
       <div class="step-dot" id="mdot2"></div>
     </div>
+
+    <!-- ÉTAPE 1 : choix du service -->
     <div class="step active" id="mstep0">
       <div class="step-label">Étape 1 / 3</div>
       <div class="step-question">Quel service recherchez-vous ?</div>
-      <div class="service-grid">
+
+      <!-- Grille complète (home + pages génériques) -->
+      <div class="service-grid" id="service-grid-full">
         <div class="service-option" onclick="selectService(this,'modal')"><span class="icon">🛁</span> Douche senior</div>
         <div class="service-option" onclick="selectService(this,'modal')"><span class="icon">🪜</span> Monte-escalier</div>
         <div class="service-option" onclick="selectService(this,'modal')"><span class="icon">🤝</span> Aide à domicile</div>
@@ -19,8 +23,16 @@
         <div class="service-option" onclick="selectService(this,'modal')"><span class="icon">📡</span> Téléassistance</div>
         <div class="service-option" onclick="selectService(this,'modal')"><span class="icon">🏘️</span> Résidence / EHPAD</div>
       </div>
+
+      <!-- Service unique (pages catégorie) — affiché à la place si data-service est défini -->
+      <div class="service-grid" id="service-grid-single" style="display:none;">
+        <div class="service-option selected" id="service-unique" style="grid-column: 1 / -1; justify-content:center;"></div>
+      </div>
+
       <button class="btn-next" onclick="nextStep('modal',0)">Continuer →</button>
     </div>
+
+    <!-- ÉTAPE 2 : situation -->
     <div class="step" id="mstep1">
       <button class="btn-back" onclick="prevStep('modal',1)">← Retour</button>
       <div class="step-label">Étape 2 / 3</div>
@@ -44,6 +56,8 @@
       </div>
       <button class="btn-next" onclick="nextStep('modal',1)">Continuer →</button>
     </div>
+
+    <!-- ÉTAPE 3 : coordonnées -->
     <div class="step" id="mstep2">
       <button class="btn-back" onclick="prevStep('modal',2)">← Retour</button>
       <div class="step-label">Étape 3 / 3</div>
@@ -57,6 +71,8 @@
       <button class="btn-submit" onclick="submitForm('modal')">✓ Recevoir mes devis gratuits</button>
       <div class="form-legal">En soumettant ce formulaire, vous acceptez d'être contacté par SeniorConfort et ses partenaires. Service gratuit et sans engagement.</div>
     </div>
+
+    <!-- SUCCÈS -->
     <div class="step" id="msuccess">
       <div class="success-step">
         <div class="success-icon">✅</div>

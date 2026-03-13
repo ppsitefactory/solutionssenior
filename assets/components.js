@@ -26,6 +26,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     loadComponent('formulaire-modal', 'formulaire-devis.html'),
   ]);
   initForms();
+  initServiceForm();
   initTocMobile();
   initTocScroll();
 });
@@ -105,4 +106,32 @@ function initTocScroll() {
     });
   }, { rootMargin: '-20% 0px -70% 0px' });
   headings.forEach(h => observer.observe(h));
+}
+
+// ── ADAPTATION FORMULAIRE SELON LE SERVICE DE LA PAGE ──
+function initServiceForm() {
+  const service = document.body.getAttribute('data-service');
+  if (!service) return;
+
+  const services = {
+    'monte-escaliers': { icon: '🪜', label: 'Monte-escalier' },
+    'douche-senior':   { icon: '🛁', label: 'Douche senior' },
+    'aide-domicile':   { icon: '🤝', label: 'Aide à domicile' },
+    'mutuelle':        { icon: '💊', label: 'Mutuelle senior' },
+    'teleassistance':  { icon: '📡', label: 'Téléassistance' },
+    'residence':       { icon: '🏘️', label: 'Résidence / EHPAD' },
+  };
+
+  const s = services[service];
+  if (!s) return;
+
+  const gridFull   = document.getElementById('service-grid-full');
+  const gridSingle = document.getElementById('service-grid-single');
+  const serviceEl  = document.getElementById('service-unique');
+
+  if (gridFull && gridSingle && serviceEl) {
+    gridFull.style.display   = 'none';
+    gridSingle.style.display = 'grid';
+    serviceEl.innerHTML = '<span class="icon">' + s.icon + '</span> ' + s.label;
+  }
 }

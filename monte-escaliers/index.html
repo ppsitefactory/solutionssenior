@@ -141,8 +141,17 @@
 
     .hero-cta-group {
       display: flex;
+      flex-direction: row;
       gap: 12px;
-      flex-wrap: wrap;
+      max-width: 720px;
+    }
+
+    .hero-cta-group .btn-primary,
+    .hero-cta-group .btn-secondary {
+      flex: 1;
+      justify-content: center;
+      font-size: 19px;
+      padding: 18px 28px;
     }
 
     .btn-primary {
@@ -937,7 +946,7 @@
 
         <div class="hero-cta-group">
           <a href="#devis" class="btn-primary">Obtenir un devis gratuit →</a>
-          <a href="#types" class="btn-secondary">Découvrir les types</a>
+          <a href="#devis" class="btn-secondary">📞 Être rappelé gratuitement</a>
         </div>
       </div>
     </div>

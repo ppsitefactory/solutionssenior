@@ -284,7 +284,7 @@
     .types-zigzag {
       display: flex;
       flex-direction: column;
-      gap: 0;
+      gap: 20px;
       margin: 32px 0;
     }
 
@@ -293,10 +293,14 @@
       grid-template-columns: 1fr 1fr;
       gap: 48px;
       align-items: center;
-      padding: 48px 0;
-      border-bottom: 1px solid var(--border);
+      padding: 40px;
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow-sm);
+      transition: box-shadow .2s;
     }
-    .type-row:last-child { border-bottom: none; }
+    .type-row:hover { box-shadow: var(--shadow-md); }
 
     .type-row-reverse { direction: rtl; }
     .type-row-reverse > * { direction: ltr; }
@@ -313,25 +317,22 @@
       height: 100%;
       object-fit: cover;
       display: block;
-      transition: transform .4s ease;
     }
-    .type-img:hover img { transform: scale(1.03); }
 
-    .type-num {
-      font-family: 'Playfair Display', serif;
-      font-size: 48px;
-      font-weight: 700;
-      color: var(--sage-pale);
-      display: block;
-      line-height: 1;
-      margin-bottom: 8px;
-    }
+    .type-num { display: none; }
 
     .type-content h3 {
       font-size: 22px;
       font-weight: 700;
       margin: 0 0 14px;
     }
+
+    .type-content h3 a {
+      color: var(--text);
+      text-decoration: none;
+      transition: color .15s;
+    }
+    .type-content h3 a:hover { color: var(--sage); }
 
     .type-content p {
       font-size: 15px;
@@ -342,7 +343,7 @@
       .type-row {
         grid-template-columns: 1fr;
         gap: 24px;
-        padding: 32px 0;
+        padding: 24px;
       }
       .type-row-reverse { direction: ltr; }
       .type-row-reverse .type-img { order: -1; }
@@ -900,7 +901,7 @@
                 </div>
                 <div class="type-content">
                   <span class="type-num">01</span>
-                  <h3>Monte-escalier droit</h3>
+                  <h3><a href="/monte-escaliers/prix/">Monte-escalier droit</a></h3>
                   <p>Le plus courant et le moins coûteux. Il s'installe sur un escalier rectiligne sans virage. Son rail en aluminium linéaire est simple à produire et à poser. Un siège pivotant peut être ajouté en option pour libérer le passage aux autres membres du foyer.</p>
                   <span class="price-tag">💶 3 000 – 5 000 €</span>
                 </div>
@@ -913,7 +914,7 @@
                 </div>
                 <div class="type-content">
                   <span class="type-num">02</span>
-                  <h3>Monte-escalier tournant</h3>
+                  <h3><a href="/monte-escaliers/prix/">Monte-escalier tournant</a></h3>
                   <p>Conçu pour les escaliers avec un ou plusieurs quarts-tournants, ou en colimaçon. Le rail est fabriqué sur-mesure pour épouser exactement la configuration de votre escalier. Plus complexe à produire, il est aussi plus onéreux — mais indispensable dès qu'il y a un virage.</p>
                   <span class="price-tag">💶 6 000 – 9 000 €</span>
                 </div>
@@ -926,7 +927,7 @@
                 </div>
                 <div class="type-content">
                   <span class="type-num">03</span>
-                  <h3>Monte-escalier extérieur</h3>
+                  <h3><a href="/monte-escaliers/prix/">Monte-escalier extérieur</a></h3>
                   <p>Il s'installe sur les marches donnant accès à un jardin, une terrasse ou un perron. Traité contre l'humidité et conçu pour résister aux intempéries, il est proposé principalement en version droite.</p>
                   <span class="price-tag">💶 4 000 – 8 000 €</span>
                 </div>
@@ -939,7 +940,7 @@
                 </div>
                 <div class="type-content">
                   <span class="type-num">04</span>
-                  <h3>Monte-escalier debout</h3>
+                  <h3><a href="/monte-escaliers/prix/">Monte-escalier debout</a></h3>
                   <p>Idéal pour les escaliers très étroits ou les personnes qui ont du mal à fléchir les genoux. L'utilisateur monte en position semi-debout, appuyé sur une plateforme. Disponible en version droite et tournante.</p>
                   <span class="price-tag">💶 3 500 – 7 000 €</span>
                 </div>

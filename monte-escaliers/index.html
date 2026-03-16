@@ -81,18 +81,22 @@
 
     .hero-inner {
       position: absolute;
+      top: 0;
       bottom: 0;
       left: 0;
       right: 0;
       z-index: 2;
       max-width: 1200px;
       margin: 0 auto;
-      padding: 0 24px 48px;
+      padding: 40px 24px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
     }
 
     @media (max-width: 700px) {
-      .hero-banner-img { height: 320px; }
-      .hero-inner { padding: 0 16px 32px; }
+      .hero-banner-img { height: 420px; }
+      .hero-inner { padding: 24px 16px; }
     }
 
     .breadcrumb {
@@ -112,7 +116,7 @@
       font-size: clamp(28px, 4vw, 44px);
       font-weight: 700;
       line-height: 1.2;
-      margin-bottom: 16px;
+      margin-bottom: 80px;
     }
 
     .hero-desc {

@@ -72,25 +72,12 @@ footer { background: var(--text); color: rgba(255,255,255,0.6); padding: 60px 5%
 /* ============================================
    BANDEAU RÉASSURANCE
    ============================================ */
-.bandeau-rea { background: var(--warm); padding: 40px 5%; }
-.bandeau-rea-inner { max-width: var(--max-width); margin: 0 auto; display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
-.rea-item {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-  gap: 10px;
-  background: var(--white);
-  border: 1.5px solid #dde8e0;
-  border-radius: 16px;
-  padding: 28px 20px;
-  box-shadow: 0 2px 12px rgba(74,124,89,.08);
-  transition: transform 0.2s, box-shadow 0.2s;
-}
-.rea-item:hover { transform: translateY(-4px); box-shadow: 0 8px 24px rgba(74,124,89,.15); }
-.rea-icon { font-size: 2.2rem; }
-.rea-title { font-weight: 700; font-size: 1rem; color: var(--text); }
-.rea-desc { font-size: 0.85rem; color: var(--text-light); line-height: 1.5; }
+.bandeau-rea { background: var(--warm); padding: 32px 5%; }
+.bandeau-rea-inner { max-width: var(--max-width); margin: 0 auto; display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; text-align: center; }
+.rea-item { display: flex; flex-direction: column; align-items: center; gap: 8px; }
+.rea-icon { font-size: 1.8rem; }
+.rea-title { font-weight: 700; font-size: 0.95rem; color: var(--text); }
+.rea-desc { font-size: 0.82rem; color: var(--text-light); line-height: 1.4; }
 
 /* ============================================
    FORMULAIRE DEVIS (modal)

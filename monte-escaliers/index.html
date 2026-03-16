@@ -62,7 +62,7 @@
     .hero {
       background: linear-gradient(135deg, #2d5a3d 0%, #4a7c59 60%, #5d9470 100%);
       color: #fff;
-      padding: 72px 0 56px;
+      padding: 0 0 56px;
       position: relative;
       overflow: hidden;
     }
@@ -74,20 +74,22 @@
       background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.04'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
     }
 
-    .hero-inner {
+    .hero-banner-img {
+      width: 100%;
+      max-height: 380px;
+      object-fit: cover;
+      object-position: center;
+      display: block;
       position: relative;
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 0 24px;
-      display: grid;
-      grid-template-columns: 1fr auto;
-      gap: 40px;
-      align-items: center;
+      z-index: 1;
     }
 
-    @media (max-width: 700px) {
-      .hero-inner { grid-template-columns: 1fr; }
-      .hero-badge { display: none; }
+    .hero-inner {
+      position: relative;
+      z-index: 1;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 40px 24px 0;
     }
 
     .breadcrumb {
@@ -169,28 +171,6 @@
       transition: background .18s;
     }
     .btn-secondary:hover { background: rgba(255,255,255,.22); }
-
-    .hero-badge {
-      background: rgba(255,255,255,.12);
-      border: 1px solid rgba(255,255,255,.2);
-      border-radius: var(--radius-lg);
-      padding: 28px 24px;
-      text-align: center;
-      min-width: 200px;
-      backdrop-filter: blur(8px);
-    }
-    .hero-badge .badge-num {
-      font-family: 'Playfair Display', serif;
-      font-size: 42px;
-      font-weight: 700;
-      color: var(--gold);
-      display: block;
-    }
-    .hero-badge .badge-label {
-      font-size: 13px;
-      color: rgba(255,255,255,.75);
-      margin-top: 4px;
-    }
 
     /* ─── Quick-nav (pictos) ─────────────────────────────────── */
     .quick-nav {
@@ -793,6 +773,11 @@
 
   <!-- ─── HERO ──────────────────────────────────────────────── -->
   <section class="hero">
+    <img
+      src="/assets/images/monte-escalier-hero.png"
+      alt="Monte-escalier électrique installé dans un escalier droit"
+      class="hero-banner-img"
+    >
     <div class="hero-inner">
       <div>
         <div class="breadcrumb">
@@ -817,11 +802,6 @@
           <a href="#devis" class="btn-primary">Obtenir un devis gratuit →</a>
           <a href="#types" class="btn-secondary">Découvrir les types</a>
         </div>
-      </div>
-
-      <div class="hero-badge">
-        <span class="badge-num">3 000 €</span>
-        <div class="badge-label">Prix d'entrée<br>monte-escalier droit</div>
       </div>
     </div>
   </section>

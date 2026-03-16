@@ -280,49 +280,73 @@
       color: var(--text);
     }
 
-    /* ─── Types de monte-escaliers (cards) ───────────────────── */
-    .types-grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 20px;
+    /* ─── Types zigzag ───────────────────────────────────────── */
+    .types-zigzag {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
       margin: 32px 0;
     }
 
-    @media (max-width: 640px) { .types-grid { grid-template-columns: 1fr; } }
-
-    .type-card {
-      background: var(--white);
-      border: 1px solid var(--border);
-      border-radius: var(--radius-md);
-      padding: 28px 24px;
-      transition: box-shadow .2s, transform .2s;
-      position: relative;
-      overflow: hidden;
-    }
-    .type-card::before {
-      content: '';
-      position: absolute;
-      top: 0; left: 0; right: 0;
-      height: 3px;
-      background: var(--sage);
-    }
-    .type-card:hover { box-shadow: var(--shadow-md); transform: translateY(-2px); }
-
-    .type-card-icon {
-      width: 48px;
-      height: 48px;
-      background: var(--sage-pale);
-      border-radius: 10px;
-      display: flex;
+    .type-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 48px;
       align-items: center;
-      justify-content: center;
-      font-size: 22px;
-      margin-bottom: 16px;
+      padding: 48px 0;
+      border-bottom: 1px solid var(--border);
+    }
+    .type-row:last-child { border-bottom: none; }
+
+    .type-row-reverse { direction: rtl; }
+    .type-row-reverse > * { direction: ltr; }
+
+    .type-img {
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      aspect-ratio: 4/3;
+      background: var(--sage-pale);
     }
 
-    .type-card h3 { margin: 0 0 10px; font-size: 17px; }
+    .type-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform .4s ease;
+    }
+    .type-img:hover img { transform: scale(1.03); }
 
-    .type-card p { font-size: 14px; margin-bottom: 14px; }
+    .type-num {
+      font-family: 'Playfair Display', serif;
+      font-size: 48px;
+      font-weight: 700;
+      color: var(--sage-pale);
+      display: block;
+      line-height: 1;
+      margin-bottom: 8px;
+    }
+
+    .type-content h3 {
+      font-size: 22px;
+      font-weight: 700;
+      margin: 0 0 14px;
+    }
+
+    .type-content p {
+      font-size: 15px;
+      margin-bottom: 20px;
+    }
+
+    @media (max-width: 700px) {
+      .type-row {
+        grid-template-columns: 1fr;
+        gap: 24px;
+        padding: 32px 0;
+      }
+      .type-row-reverse { direction: ltr; }
+      .type-row-reverse .type-img { order: -1; }
+    }
 
     .price-tag {
       display: inline-flex;
@@ -867,34 +891,58 @@
             <h2>Quels sont les différents types de monte-escaliers ?</h2>
             <p>Il existe quatre grandes configurations de monte-escalier, chacune adaptée à un type d'escalier et à des besoins spécifiques.</p>
 
-            <div class="types-grid">
+            <div class="types-zigzag">
 
-              <div class="type-card">
-                <div class="type-card-icon">🏠</div>
-                <h3>Monte-escalier droit</h3>
-                <p>Le plus courant et le moins coûteux. Il s'installe sur un escalier rectiligne sans virage. Son rail en aluminium linéaire est simple à produire et à poser. Un siège pivotant peut être ajouté pour libérer le passage.</p>
-                <span class="price-tag">💶 3 000 – 5 000 €</span>
+              <!-- DROIT — image gauche, texte droite -->
+              <div class="type-row">
+                <div class="type-img">
+                  <img src="/assets/images/monte-escalier-droit.png" alt="Monte-escalier droit installé sur un escalier rectiligne">
+                </div>
+                <div class="type-content">
+                  <span class="type-num">01</span>
+                  <h3>Monte-escalier droit</h3>
+                  <p>Le plus courant et le moins coûteux. Il s'installe sur un escalier rectiligne sans virage. Son rail en aluminium linéaire est simple à produire et à poser. Un siège pivotant peut être ajouté en option pour libérer le passage aux autres membres du foyer.</p>
+                  <span class="price-tag">💶 3 000 – 5 000 €</span>
+                </div>
               </div>
 
-              <div class="type-card">
-                <div class="type-card-icon">↩️</div>
-                <h3>Monte-escalier tournant</h3>
-                <p>Conçu pour les escaliers avec un ou plusieurs quarts-tournants, ou en colimaçon. Le rail est fabriqué sur-mesure pour épouser exactement la configuration. Plus complexe, donc plus onéreux.</p>
-                <span class="price-tag">💶 6 000 – 9 000 €</span>
+              <!-- TOURNANT — texte gauche, image droite -->
+              <div class="type-row type-row-reverse">
+                <div class="type-img">
+                  <img src="/assets/images/monte-escalier-tournant.png" alt="Monte-escalier tournant sur un escalier avec virage">
+                </div>
+                <div class="type-content">
+                  <span class="type-num">02</span>
+                  <h3>Monte-escalier tournant</h3>
+                  <p>Conçu pour les escaliers avec un ou plusieurs quarts-tournants, ou en colimaçon. Le rail est fabriqué sur-mesure pour épouser exactement la configuration de votre escalier. Plus complexe à produire, il est aussi plus onéreux — mais indispensable dès qu'il y a un virage.</p>
+                  <span class="price-tag">💶 6 000 – 9 000 €</span>
+                </div>
               </div>
 
-              <div class="type-card">
-                <div class="type-card-icon">🌿</div>
-                <h3>Monte-escalier extérieur</h3>
-                <p>Il s'installe sur les marches donnant accès à un jardin, une terrasse ou un perron. Traité contre l'humidité et les intempéries, il est proposé principalement en version droite.</p>
-                <span class="price-tag">💶 4 000 – 8 000 €</span>
+              <!-- EXTÉRIEUR — image gauche, texte droite -->
+              <div class="type-row">
+                <div class="type-img">
+                  <img src="/assets/images/monte-escalier-extérieur.png" alt="Monte-escalier extérieur installé sur des marches de jardin">
+                </div>
+                <div class="type-content">
+                  <span class="type-num">03</span>
+                  <h3>Monte-escalier extérieur</h3>
+                  <p>Il s'installe sur les marches donnant accès à un jardin, une terrasse ou un perron. Traité contre l'humidité et conçu pour résister aux intempéries, il est proposé principalement en version droite.</p>
+                  <span class="price-tag">💶 4 000 – 8 000 €</span>
+                </div>
               </div>
 
-              <div class="type-card">
-                <div class="type-card-icon">🧍</div>
-                <h3>Monte-escalier debout</h3>
-                <p>Idéal pour les escaliers très étroits ou les personnes qui ont du mal à fléchir les genoux. L'utilisateur monte en position semi-debout, appuyé sur une plateforme. Disponible en droit et tournant.</p>
-                <span class="price-tag">💶 3 500 – 7 000 €</span>
+              <!-- DEBOUT — texte gauche, image droite -->
+              <div class="type-row type-row-reverse">
+                <div class="type-img">
+                  <img src="/assets/images/monte-escalier-debout.png" alt="Monte-escalier debout pour escalier étroit">
+                </div>
+                <div class="type-content">
+                  <span class="type-num">04</span>
+                  <h3>Monte-escalier debout</h3>
+                  <p>Idéal pour les escaliers très étroits ou les personnes qui ont du mal à fléchir les genoux. L'utilisateur monte en position semi-debout, appuyé sur une plateforme. Disponible en version droite et tournante.</p>
+                  <span class="price-tag">💶 3 500 – 7 000 €</span>
+                </div>
               </div>
 
             </div>

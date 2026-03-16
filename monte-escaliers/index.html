@@ -180,6 +180,102 @@
     }
     .btn-secondary:hover { background: rgba(255,255,255,.22); }
 
+    /* ─── Fil d'ariane ───────────────────────────────────────── */
+    .page-breadcrumb {
+      background: var(--white);
+      border-bottom: 1px solid var(--border);
+      padding: 12px 0;
+    }
+    .page-breadcrumb-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 24px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 15px;
+      color: var(--text-light);
+      flex-wrap: wrap;
+    }
+    .page-breadcrumb a {
+      color: var(--sage);
+      text-decoration: none;
+      font-weight: 500;
+    }
+    .page-breadcrumb a:hover { text-decoration: underline; }
+    .page-breadcrumb .sep { color: var(--border); }
+    .page-breadcrumb .current { color: var(--text); font-weight: 500; }
+
+    /* ─── Sommaire déroulant ─────────────────────────────────── */
+    .sommaire-wrap {
+      background: var(--sage-pale);
+      border-bottom: 1px solid var(--border);
+    }
+    .sommaire-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+    .sommaire-toggle {
+      width: 100%;
+      background: none;
+      border: none;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 14px 0;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 16px;
+      font-weight: 600;
+      color: var(--sage);
+      gap: 12px;
+    }
+    .sommaire-toggle:hover { color: var(--text); }
+    .sommaire-toggle-left { display: flex; align-items: center; gap: 10px; }
+    .sommaire-chevron {
+      font-size: 12px;
+      transition: transform .25s;
+      color: var(--sage);
+    }
+    .sommaire-wrap.open .sommaire-chevron { transform: rotate(180deg); }
+    .sommaire-body {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height .3s ease;
+    }
+    .sommaire-wrap.open .sommaire-body { max-height: 400px; }
+    .sommaire-list {
+      list-style: none;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 4px 24px;
+      padding: 4px 0 16px;
+    }
+    @media (max-width: 600px) { .sommaire-list { grid-template-columns: 1fr; } }
+    .sommaire-list a {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 9px 12px;
+      font-size: 16px;
+      color: var(--text);
+      text-decoration: none;
+      border-radius: var(--radius-sm);
+      transition: background .15s, color .15s;
+    }
+    .sommaire-list a:hover {
+      background: var(--white);
+      color: var(--sage);
+    }
+    .sommaire-list a::before {
+      content: '↓';
+      font-size: 13px;
+      color: var(--sage);
+      font-weight: 700;
+      min-width: 16px;
+    }
+
     /* ─── Quick-nav (pictos) ─────────────────────────────────── */
     .quick-nav {
       background: var(--white);
@@ -205,20 +301,27 @@
       display: flex;
       align-items: center;
       gap: 8px;
-      padding: 16px 20px;
-      font-size: 13px;
+      padding: 18px 22px;
+      font-size: 16px;
       font-weight: 500;
       color: var(--text-light);
       text-decoration: none;
       white-space: nowrap;
-      border-bottom: 2px solid transparent;
-      transition: color .15s, border-color .15s;
+      border-bottom: 3px solid transparent;
+      transition: color .15s, border-color .15s, background .15s;
+      border-radius: 4px 4px 0 0;
     }
-    .qnav-item:hover, .qnav-item.active {
+    .qnav-item:hover {
       color: var(--sage);
       border-bottom-color: var(--sage);
+      background: var(--sage-pale);
     }
-    .qnav-icon { font-size: 16px; }
+    .qnav-item.active {
+      color: var(--sage);
+      border-bottom-color: var(--sage);
+      background: var(--sage-pale);
+    }
+    .qnav-icon { font-size: 18px; }
 
     /* ─── Bandeau réassurance ────────────────────────────────── */
     #bandeau-rea {}
@@ -840,6 +943,37 @@
     </div>
   </section>
 
+  <!-- ─── FIL D'ARIANE ─────────────────────────────────────── -->
+  <div class="page-breadcrumb">
+    <div class="page-breadcrumb-inner">
+      <a href="/">Accueil</a>
+      <span class="sep">›</span>
+      <span class="current">Monte-escalier</span>
+    </div>
+  </div>
+
+  <!-- ─── SOMMAIRE DÉROULANT ────────────────────────────────── -->
+  <div class="sommaire-wrap" id="sommaire-wrap">
+    <div class="sommaire-inner">
+      <button class="sommaire-toggle" id="sommaire-toggle" aria-expanded="false">
+        <span class="sommaire-toggle-left">📋 Sommaire de la page</span>
+        <span class="sommaire-chevron">▼</span>
+      </button>
+      <div class="sommaire-body" id="sommaire-body">
+        <ul class="sommaire-list">
+          <li><a href="#definition">Qu'est-ce qu'un monte-escalier ?</a></li>
+          <li><a href="#types">Les types de monte-escaliers</a></li>
+          <li><a href="#prix">Les prix en 2026</a></li>
+          <li><a href="#aides">Les aides financières</a></li>
+          <li><a href="#marques">Comparatif des marques</a></li>
+          <li><a href="#choisir">Comment bien choisir ?</a></li>
+          <li><a href="#installation">Installation & entretien</a></li>
+          <li><a href="#faq">Questions fréquentes</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
   <!-- ─── QUICK NAV ─────────────────────────────────────────── -->
   <nav class="quick-nav" aria-label="Navigation rapide">
     <div class="quick-nav-inner">
@@ -1424,6 +1558,18 @@
   <div id="formulaire-modal"></div>
 
   <script>
+    // Sommaire déroulant
+    const sommaireToggle = document.getElementById('sommaire-toggle');
+    const sommaireWrap = document.getElementById('sommaire-wrap');
+    sommaireToggle.addEventListener('click', () => {
+      const isOpen = sommaireWrap.classList.toggle('open');
+      sommaireToggle.setAttribute('aria-expanded', isOpen);
+    });
+    // Fermer le sommaire au clic sur un lien
+    document.querySelectorAll('.sommaire-list a').forEach(link => {
+      link.addEventListener('click', () => sommaireWrap.classList.remove('open'));
+    });
+
     // FAQ accordion
     document.querySelectorAll('.faq-question').forEach(btn => {
       btn.addEventListener('click', () => {

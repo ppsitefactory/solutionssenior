@@ -1,0 +1,143 @@
+<style>
+  .sticky-bar {
+    position: fixed;
+    bottom: -100px;
+    left: 0;
+    right: 0;
+    z-index: 999;
+    padding: 0 24px 16px;
+    transition: bottom .35s cubic-bezier(.4,0,.2,1);
+    pointer-events: none;
+  }
+
+  .sticky-bar.visible {
+    bottom: 0;
+    pointer-events: all;
+  }
+
+  .sticky-bar-inner {
+    max-width: 1000px;
+    margin: 0 auto;
+    background: var(--white, #fff);
+    border: 2px solid var(--sage, #4a7c59);
+    border-radius: 16px;
+    padding: 20px 28px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+    box-shadow: 0 8px 40px rgba(0,0,0,.18);
+  }
+
+  .sticky-bar-text h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--text, #1e2a22);
+    margin: 0 0 4px;
+  }
+
+  .sticky-bar-text p {
+    font-size: 14px;
+    color: var(--text-light, #5a6b60);
+    margin: 0;
+  }
+
+  .sticky-bar-actions {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+    flex-shrink: 0;
+  }
+
+  .sticky-bar-cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: var(--sage, #4a7c59);
+    color: #fff;
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 700;
+    font-size: 15px;
+    padding: 14px 24px;
+    border-radius: 50px;
+    text-decoration: none;
+    white-space: nowrap;
+    transition: background .18s, transform .18s;
+  }
+  .sticky-bar-cta:hover { background: var(--sage-light, #6a9e78); transform: translateY(-1px); }
+
+  .sticky-bar-close {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 20px;
+    color: var(--text-light, #5a6b60);
+    padding: 4px 8px;
+    line-height: 1;
+    transition: color .15s;
+    flex-shrink: 0;
+  }
+  .sticky-bar-close:hover { color: var(--text, #1e2a22); }
+
+  @media (max-width: 640px) {
+    .sticky-bar-inner {
+      flex-direction: column;
+      align-items: flex-start;
+      padding: 16px 20px;
+      gap: 14px;
+    }
+    .sticky-bar-cta { width: 100%; justify-content: center; }
+  }
+</style>
+
+<div class="sticky-bar" id="sticky-bar" role="complementary" aria-label="Demande de devis">
+  <div class="sticky-bar-inner">
+    <div class="sticky-bar-text">
+      <h3>Obtenez votre devis monte-escalier gratuit</h3>
+      <p>1 minute pour décrire votre besoin. Réponse sous 24h.</p>
+    </div>
+    <div class="sticky-bar-actions">
+      <a href="#devis" class="sticky-bar-cta" id="sticky-bar-btn">
+        Faire une demande gratuite →
+      </a>
+      <button class="sticky-bar-close" id="sticky-bar-close" aria-label="Fermer">✕</button>
+    </div>
+  </div>
+</div>
+
+<script>
+(function() {
+  const bar = document.getElementById('sticky-bar');
+  const closeBtn = document.getElementById('sticky-bar-close');
+  const ctaBtn = document.getElementById('sticky-bar-btn');
+  let closed = false;
+  let shown = false;
+
+  window.addEventListener('scroll', function() {
+    if (closed) return;
+    const scrolled = window.scrollY > 400;
+    if (scrolled && !shown) {
+      bar.classList.add('visible');
+      shown = true;
+    } else if (!scrolled && shown) {
+      bar.classList.remove('visible');
+      shown = false;
+    }
+  });
+
+  closeBtn.addEventListener('click', function() {
+    bar.classList.remove('visible');
+    closed = true;
+  });
+
+  // Ouvre le formulaire modal si disponible
+  ctaBtn.addEventListener('click', function(e) {
+    const modal = document.getElementById('formulaire-modal');
+    if (modal && modal.querySelector('[data-open-modal]')) {
+      e.preventDefault();
+      modal.querySelector('[data-open-modal]').click();
+    }
+  });
+})();
+</script>

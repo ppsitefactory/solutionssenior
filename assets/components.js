@@ -24,6 +24,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     loadComponent('site-cta', 'cta-devis.html'),
     loadComponent('bandeau-rea', 'bandeau-rea.html'),
     loadComponent('formulaire-modal', 'formulaire-devis.html'),
+    loadComponent('bandeau-sticky', 'bandeau-sticky.html'),
   ]);
   initForms();
   initServiceForm();

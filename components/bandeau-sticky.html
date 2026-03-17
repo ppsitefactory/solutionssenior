@@ -1,45 +1,46 @@
 <style>
-  .sticky-bar {
+  #bandeau-sticky {
     position: fixed;
-    bottom: -100px;
+    bottom: 0;
     left: 0;
     right: 0;
-    z-index: 999;
+    z-index: 9999;
     padding: 0 24px 16px;
-    transition: bottom .35s cubic-bezier(.4,0,.2,1);
+    transform: translateY(120%);
+    transition: transform .35s cubic-bezier(.4,0,.2,1);
     pointer-events: none;
   }
 
-  .sticky-bar.visible {
-    bottom: 0;
+  #bandeau-sticky.visible {
+    transform: translateY(0);
     pointer-events: all;
   }
 
   .sticky-bar-inner {
     max-width: 1000px;
     margin: 0 auto;
-    background: var(--white, #fff);
-    border: 2px solid var(--sage, #4a7c59);
+    background: #ffffff;
+    border: 2px solid #4a7c59;
     border-radius: 16px;
     padding: 20px 28px;
     display: flex;
     align-items: center;
     justify-content: space-between;
     gap: 24px;
-    box-shadow: 0 8px 40px rgba(0,0,0,.18);
+    box-shadow: 0 -4px 40px rgba(0,0,0,.15);
   }
 
   .sticky-bar-text h3 {
     font-family: 'Playfair Display', serif;
     font-size: 18px;
     font-weight: 700;
-    color: var(--text, #1e2a22);
+    color: #1e2a22;
     margin: 0 0 4px;
   }
 
   .sticky-bar-text p {
     font-size: 14px;
-    color: var(--text-light, #5a6b60);
+    color: #5a6b60;
     margin: 0;
   }
 
@@ -54,7 +55,7 @@
     display: inline-flex;
     align-items: center;
     gap: 8px;
-    background: var(--sage, #4a7c59);
+    background: #4a7c59;
     color: #fff;
     font-family: 'DM Sans', sans-serif;
     font-weight: 700;
@@ -64,23 +65,26 @@
     text-decoration: none;
     white-space: nowrap;
     transition: background .18s, transform .18s;
+    cursor: pointer;
+    border: none;
   }
-  .sticky-bar-cta:hover { background: var(--sage-light, #6a9e78); transform: translateY(-1px); }
+  .sticky-bar-cta:hover { background: #6a9e78; transform: translateY(-1px); }
 
   .sticky-bar-close {
     background: none;
     border: none;
     cursor: pointer;
     font-size: 20px;
-    color: var(--text-light, #5a6b60);
+    color: #5a6b60;
     padding: 4px 8px;
     line-height: 1;
     transition: color .15s;
     flex-shrink: 0;
   }
-  .sticky-bar-close:hover { color: var(--text, #1e2a22); }
+  .sticky-bar-close:hover { color: #1e2a22; }
 
   @media (max-width: 640px) {
+    #bandeau-sticky { padding: 0 12px 12px; }
     .sticky-bar-inner {
       flex-direction: column;
       align-items: flex-start;
@@ -91,52 +95,45 @@
   }
 </style>
 
-<div class="sticky-bar" id="sticky-bar" role="complementary" aria-label="Demande de devis">
-  <div class="sticky-bar-inner">
-    <div class="sticky-bar-text">
-      <h3>Obtenez votre devis monte-escalier gratuit</h3>
-      <p>1 minute pour décrire votre besoin. Réponse sous 24h.</p>
-    </div>
-    <div class="sticky-bar-actions">
-      <a href="#devis" class="sticky-bar-cta" id="sticky-bar-btn">
-        Faire une demande gratuite →
-      </a>
-      <button class="sticky-bar-close" id="sticky-bar-close" aria-label="Fermer">✕</button>
-    </div>
+<div class="sticky-bar-inner">
+  <div class="sticky-bar-text">
+    <h3>Obtenez votre devis monte-escalier gratuit</h3>
+    <p>1 minute pour décrire votre besoin. Réponse sous 24h.</p>
+  </div>
+  <div class="sticky-bar-actions">
+    <button class="sticky-bar-cta" id="sticky-bar-btn">
+      Faire une demande gratuite →
+    </button>
+    <button class="sticky-bar-close" id="sticky-bar-close" aria-label="Fermer">✕</button>
   </div>
 </div>
 
 <script>
 (function() {
-  const bar = document.getElementById('sticky-bar');
-  const closeBtn = document.getElementById('sticky-bar-close');
-  const ctaBtn = document.getElementById('sticky-bar-btn');
-  let closed = false;
-  let shown = false;
+  var stickyEl = document.getElementById('bandeau-sticky');
+  var closeBtn = document.getElementById('sticky-bar-close');
+  var ctaBtn   = document.getElementById('sticky-bar-btn');
+  var closed   = false;
+
+  if (!stickyEl || !closeBtn || !ctaBtn) return;
 
   window.addEventListener('scroll', function() {
     if (closed) return;
-    const scrolled = window.scrollY > 400;
-    if (scrolled && !shown) {
-      bar.classList.add('visible');
-      shown = true;
-    } else if (!scrolled && shown) {
-      bar.classList.remove('visible');
-      shown = false;
+    if (window.scrollY > 400) {
+      stickyEl.classList.add('visible');
+    } else {
+      stickyEl.classList.remove('visible');
     }
-  });
+  }, { passive: true });
 
   closeBtn.addEventListener('click', function() {
-    bar.classList.remove('visible');
+    stickyEl.classList.remove('visible');
     closed = true;
   });
 
-  // Ouvre le formulaire modal si disponible
-  ctaBtn.addEventListener('click', function(e) {
-    const modal = document.getElementById('formulaire-modal');
-    if (modal && modal.querySelector('[data-open-modal]')) {
-      e.preventDefault();
-      modal.querySelector('[data-open-modal]').click();
+  ctaBtn.addEventListener('click', function() {
+    if (typeof openModal === 'function') {
+      openModal();
     }
   });
 })();

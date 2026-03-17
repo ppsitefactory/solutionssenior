@@ -1,4 +1,21 @@
 <style>
+  #bandeau-sticky {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 9999;
+    padding: 0 24px 16px;
+    transform: translateY(120%);
+    transition: transform .4s ease;
+    pointer-events: none;
+  }
+
+  #bandeau-sticky.visible {
+    transform: translateY(0);
+    pointer-events: all;
+  }
+
   .sticky-bar-inner {
     max-width: 1000px;
     margin: 0 auto;
@@ -10,7 +27,7 @@
     align-items: center;
     justify-content: space-between;
     gap: 24px;
-    box-shadow: 0 -4px 40px rgba(0,0,0,.15);
+    box-shadow: 0 -4px 32px rgba(0,0,0,.15);
   }
 
   .sticky-bar-text h3 {
@@ -35,52 +52,41 @@
   }
 
   .sticky-bar-cta {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
     background: #4a7c59;
     color: #fff;
+    border: none;
+    cursor: pointer;
     font-family: 'DM Sans', sans-serif;
     font-weight: 700;
     font-size: 15px;
     padding: 14px 24px;
     border-radius: 50px;
-    text-decoration: none;
     white-space: nowrap;
-    transition: background .18s, transform .18s;
-    cursor: pointer;
-    border: none;
+    transition: background .18s;
   }
-  .sticky-bar-cta:hover { background: #6a9e78; transform: translateY(-1px); }
+  .sticky-bar-cta:hover { background: #6a9e78; }
 
   .sticky-bar-close {
     background: none;
     border: none;
     cursor: pointer;
-    font-size: 20px;
+    font-size: 22px;
     color: #5a6b60;
     padding: 4px 8px;
     line-height: 1;
-    transition: color .15s;
-    flex-shrink: 0;
   }
   .sticky-bar-close:hover { color: #1e2a22; }
 
   @media (max-width: 640px) {
     #bandeau-sticky { padding: 0 12px 12px; }
-    .sticky-bar-inner {
-      flex-direction: column;
-      align-items: flex-start;
-      padding: 16px 20px;
-      gap: 14px;
-    }
-    .sticky-bar-cta { width: 100%; justify-content: center; }
+    .sticky-bar-inner { flex-direction: column; align-items: flex-start; padding: 16px 20px; gap: 14px; }
+    .sticky-bar-cta { width: 100%; text-align: center; }
   }
 </style>
 
 <div class="sticky-bar-inner">
   <div class="sticky-bar-text">
-    <h3>Obtenez votre devis monte-escalier gratuit</h3>
+    <h3 id="sticky-titre">Obtenez votre devis gratuit</h3>
     <p>1 minute pour décrire votre besoin. Réponse sous 24h.</p>
   </div>
   <div class="sticky-bar-actions">
@@ -90,34 +96,3 @@
     <button class="sticky-bar-close" id="sticky-bar-close" aria-label="Fermer">✕</button>
   </div>
 </div>
-
-<script>
-(function() {
-  var stickyEl = document.getElementById('bandeau-sticky');
-  var closeBtn = document.getElementById('sticky-bar-close');
-  var ctaBtn   = document.getElementById('sticky-bar-btn');
-  var closed   = false;
-
-  if (!stickyEl || !closeBtn || !ctaBtn) return;
-
-  window.addEventListener('scroll', function() {
-    if (closed) return;
-    if (window.scrollY > 400) {
-      stickyEl.classList.add('visible');
-    } else {
-      stickyEl.classList.remove('visible');
-    }
-  }, { passive: true });
-
-  closeBtn.addEventListener('click', function() {
-    stickyEl.classList.remove('visible');
-    closed = true;
-  });
-
-  ctaBtn.addEventListener('click', function() {
-    if (typeof openModal === 'function') {
-      openModal();
-    }
-  });
-})();
-</script>

@@ -30,6 +30,7 @@ document.addEventListener('DOMContentLoaded', async () => {
   initServiceForm();
   initTocMobile();
   initTocScroll();
+  initStickyBar();
 });
 
 // ── FORMULAIRE MULTI-ÉTAPES ────────────────────
@@ -109,7 +110,45 @@ function initTocScroll() {
   headings.forEach(h => observer.observe(h));
 }
 
-// ── ADAPTATION FORMULAIRE SELON LE SERVICE DE LA PAGE ──
+// ── BANDEAU STICKY ────────────────────────────
+function initStickyBar() {
+  const bar = document.getElementById('bandeau-sticky');
+  if (!bar) return;
+
+  // Personnalisation du titre selon la page (data-titre sur le div)
+  const titre = bar.getAttribute('data-titre');
+  const titreEl = document.getElementById('sticky-titre');
+  if (titre && titreEl) titreEl.textContent = titre;
+
+  const closeBtn = document.getElementById('sticky-bar-close');
+  const ctaBtn   = document.getElementById('sticky-bar-btn');
+  let closed = false;
+
+  // Scroll : afficher après 400px
+  window.addEventListener('scroll', function() {
+    if (closed) return;
+    if (window.scrollY > 400) {
+      bar.classList.add('visible');
+    } else {
+      bar.classList.remove('visible');
+    }
+  }, { passive: true });
+
+  // Fermer
+  if (closeBtn) {
+    closeBtn.addEventListener('click', function() {
+      bar.classList.remove('visible');
+      closed = true;
+    });
+  }
+
+  // CTA → ouvre le formulaire modal
+  if (ctaBtn) {
+    ctaBtn.addEventListener('click', function() {
+      if (typeof openModal === 'function') openModal();
+    });
+  }
+}
 function initServiceForm() {
   const service = document.body.getAttribute('data-service');
   if (!service) return;

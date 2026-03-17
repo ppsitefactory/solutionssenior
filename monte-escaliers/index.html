@@ -807,6 +807,30 @@
     }
     .btn-devis:hover { opacity: .9; }
 
+    /* ─── Bloc l'essentiel ───────────────────────────────────── */
+    .essentiel-bloc {
+      background: var(--sage-pale);
+      border-left: 5px solid var(--sage);
+      border-radius: 0 var(--radius-lg) var(--radius-lg) 0;
+      padding: 32px 36px;
+      margin-bottom: 0;
+    }
+
+    .essentiel-titre {
+      font-family: 'Playfair Display', serif;
+      font-size: 22px;
+      color: var(--sage);
+      margin-bottom: 16px;
+    }
+
+    .essentiel-bloc p {
+      font-size: 17px;
+      color: var(--text);
+      margin-bottom: 12px;
+      line-height: 1.75;
+    }
+    .essentiel-bloc p:last-child { margin-bottom: 0; }
+
     /* ─── Section divider ────────────────────────────────────── */
     .section-divider {
       border: none;
@@ -990,6 +1014,16 @@
 
         <!-- COLONNE CONTENU -->
         <main>
+
+          <!-- L'ESSENTIEL -->
+          <div class="essentiel-bloc">
+            <h2 class="essentiel-titre">Monte-escalier : l'essentiel</h2>
+            <p>Le <strong>monte-escalier</strong> est un fauteuil motorisé fixé sur un rail le long de l'escalier. Il permet aux seniors et aux personnes à mobilité réduite de monter et descendre les étages en toute sécurité, sans effort.</p>
+            <p>Il existe quatre types principaux : <strong>droit</strong> (le moins cher, dès 3 000 €), <strong>tournant</strong> (pour les escaliers avec virages, entre 6 000 et 9 000 €), <strong>extérieur</strong> et <strong>debout</strong>. L'installation ne nécessite aucun gros œuvre et prend une demi-journée.</p>
+            <p>Plusieurs aides permettent de financer l'achat : <strong>MaPrimeAdapt'</strong> (jusqu'à 70 %), l'<strong>APA</strong>, le crédit d'impôt de 25 % et les aides des caisses de retraite. Le reste à charge peut descendre à moins de 2 000 €.</p>
+          </div>
+
+          <hr class="section-divider">
 
           <!-- DÉFINITION -->
           <div id="definition">

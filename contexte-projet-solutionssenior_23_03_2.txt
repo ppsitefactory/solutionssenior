@@ -1,0 +1,358 @@
+================================================================
+DOCUMENT DE CONTEXTE PROJET — solutionssenior.fr
+Sessions du 16 au 24 mars 2026
+================================================================
+
+
+================================================================
+1. IDENTITÉ DU PROJET
+================================================================
+
+Nom du site         : solutionssenior.fr
+Ancien nom          : nuancestheory.fr
+Propriétaire        : Pierre-Paul
+Dépôt GitHub        : https://github.com/ppsitefactory/solutionssenior.git
+Dossier local       : /Users/pierre-paul/sitegit/solutionssenior/
+IP serveur          : 92.113.28.59
+Hébergeur           : Hostinger
+DNS                 : OVH — enregistrement A → 92.113.28.59
+Webhook déploiement : https://webhooks.hostinger.com/deploy/0686f86adceb1a0724a1ddeb111a7617
+
+Commande deploy :
+  cd /Users/pierre-paul/sitegit/solutionssenior && git add . && git commit -m "..." && git push
+
+
+================================================================
+2. STACK TECHNIQUE
+================================================================
+
+- HTML / CSS / JS vanilla — pas de framework
+- Architecture composants partagés via fetch() depuis /components/
+- Déploiement automatique : commit GitHub → webhook → Hostinger (30-60s)
+- Fonts : Playfair Display (titres) + DM Sans (corps) — Google Fonts
+- Font-size body : 18px — Line-height : 1.85 (optimisé seniors)
+
+
+================================================================
+3. DESIGN SYSTEM — VARIABLES CSS
+================================================================
+
+--sage         #4a7c59   Couleur principale (vert)
+--sage-light   #6a9e78   Vert clair
+--sage-pale    #e8f0eb   Fond vert pâle
+--cream        #faf8f4   Fond général
+--warm         #f5ede0   Fond chaud
+--gold         #c9a84c   Accent doré (CTAs)
+--text         #1e2a22   Texte principal
+--text-light   #5a6b60   Texte secondaire
+--border       #dde6df   Bordures
+--white        #ffffff   Blanc
+
+
+================================================================
+4. ARCHITECTURE DE FICHIERS
+================================================================
+
+--- Composants partagés — /components/ ---
+
+header.html          En-tête navigation — logo "Solutions Senior"
+footer.html          Pied de page — copyright "SolutionsSenior"
+cta-devis.html       Bloc CTA devis central
+bandeau-rea.html     Bandeau réassurance (stats)
+formulaire-devis.html  Modal formulaire devis
+bandeau-sticky.html  Bandeau sticky bas de page (HTML+CSS uniquement)
+
+--- Assets ---
+
+/assets/style.css         Styles globaux partagés
+/assets/components.js     Chargement composants via fetch() + initStickyBar()
+/assets/images/           Images du site
+/assets/images/marques/   Logos marques 500×500px PNG (slug.png)
+
+--- Notes techniques ---
+
+- innerHTML n'exécute pas les <script> → JS bandeau sticky dans components.js via initStickyBar()
+- Style masquage #bandeau-sticky dans le <head> de chaque page pour éviter le flash
+- Images sans accents dans les noms de fichiers (ex: monte-escalier-exterieur.png)
+- Chaque page doit avoir data-service="[service]" sur le <body>
+
+
+================================================================
+5. COMPOSANTS PARTAGÉS — INTÉGRATION DANS CHAQUE PAGE
+================================================================
+
+Chaque page doit contenir ces divs et le script :
+
+  <div id="site-header"></div>
+  <div id="site-cta"></div>
+  <div id="site-footer"></div>
+  <div id="formulaire-modal"></div>
+  <div id="bandeau-rea"></div>
+  <div id="bandeau-sticky" data-titre="Titre du CTA sticky"></div>
+  <script src="/assets/components.js"></script>
+
+Le titre du bandeau sticky est défini par l'attribut data-titre :
+  <div id="bandeau-sticky" data-titre="Devis monte-escalier gratuit"></div>
+
+
+================================================================
+6. PAGES CRÉÉES ET DÉPLOYÉES (17 pages)
+================================================================
+
+URL                                                          Statut
+---                                                          ------
+solutionssenior.fr/                                          ✅ Live
+solutionssenior.fr/monte-escaliers/                          ✅ Live
+solutionssenior.fr/monte-escaliers/comparatif/               ✅ Live
+solutionssenior.fr/monte-escaliers/comparatif/stannah/       ✅ Live
+solutionssenior.fr/monte-escaliers/comparatif/acorn/         ✅ Live
+solutionssenior.fr/monte-escaliers/comparatif/handicare/     ✅ Live
+solutionssenior.fr/monte-escaliers/comparatif/independance-royale/        ✅ Live
+solutionssenior.fr/monte-escaliers/comparatif/lehner-lifttechnik/         ✅ Live
+solutionssenior.fr/monte-escaliers/comparatif/mobilae/       ✅ Live
+solutionssenior.fr/monte-escaliers/comparatif/otolift/       ✅ Live
+solutionssenior.fr/monte-escaliers/comparatif/platinum-stairlifts/        ✅ Live
+solutionssenior.fr/monte-escaliers/comparatif/thyssenkrupp-home-solutions/ ✅ Live
+solutionssenior.fr/monte-escaliers/prix/                     ✅ Live
+solutionssenior.fr/monte-escaliers/prix/location/            ✅ Live
+solutionssenior.fr/monte-escaliers/occasion/                 ✅ Live
+solutionssenior.fr/monte-escaliers/debarrasser/              ✅ Live
+solutionssenior.fr/sitemap.xml                               ✅ Live
+
+
+================================================================
+7. PAGE MÈRE MONTE-ESCALIERS
+================================================================
+
+Fichier : monte-escaliers/index.html
+Inspirée de bonjoursenior.fr/monte-escalier
+
+Contenu :
+- Hero avec image /assets/images/monte-escalier-hero.png (overlay vert)
+- CTAs côte à côte pleine largeur : devis + rappel
+- Fil d'ariane + sommaire déroulant + quick-nav sticky 8 ancres
+- Bloc "Monte-escalier : l'essentiel" (~150 mots SEO)
+- Sections : définition, types zigzag, tableau prix, aides, marques,
+  checklist, installation steps, FAQ accordion
+- Bandeau sticky : data-titre="Devis monte-escalier gratuit"
+- data-service="monte-escaliers" sur body
+
+
+================================================================
+8. TEMPLATE SINGLE-BRAND (pages marques)
+================================================================
+
+Fichier de référence : template-single-brand.html
+Structure : monte-escaliers/comparatif/[slug]/index.html
+
+Sections de chaque page marque :
+- Hero avec logo HD 500×500 depuis /assets/images/marques/[slug].png
+- Barre quick-info (pays, fondation, SAV, site, note Trustpilot)
+- 31 critères en 7 catégories :
+  1. Identité & présence
+  2. Gamme de produits
+  3. Caractéristiques techniques
+  4. Confort & options
+  5. Prix & financement
+  6. SAV & garantie
+  7. Réputation & avis
+- Badges : ✓ Oui (vert) / ✗ Non (rouge) / ◐ Option (orange) / N/D (gris)
+- Bloc avis Trustpilot avec synthèse + lien
+- FAQ accordion 3 questions spécifiques à la marque
+- Grille "autres marques" avec mini-logos
+- Sidebar sticky : devis, sommaire, infos clés
+
+
+================================================================
+9. DONNÉES MARQUES MONTE-ESCALIER
+================================================================
+
+Marque                    | Note TP        | Nb avis | Origine            | Fondé | SAV France
+--------------------------|----------------|---------|---------------------|-------|------------------
+TK Home Solutions (TK)    | 4,8/5          | ~1 303  | Allemagne          | 1950s | 0800 800 010
+Stannah                   | 4,6/5          | ~1 600  | Royaume-Uni        | 1867  | 0800 30 40 50
+Indépendance Royale       | 4,4/5          | ~2 068  | France (Limoges)   | 2003  | 05 55 87 44 00
+Mobilae                   | 4,1/5          | ~1 385  | Pays-Bas           | 1992  | 09 70 44 23 00
+Otolift                   | 3,9/5          | ~542    | Pays-Bas           | 1968  | 01 86 65 47 12
+Acorn                     | 3,7/5 FR       | ~43 FR  | Royaume-Uni        | 1992  | 01 70 70 96 25
+Handicare                 | N/D FR         | —       | Pays-Bas           | 1886  | 01 60 79 99 20
+Platinum Stairlifts       | N/D FR         | —       | Royaume-Uni (Yorks)| 1996  | Via installateur
+Lehner Lifttechnik        | N/D FR         | —       | Autriche           | 1991  | +43 7278 3514-18
+
+--- Spécificités par marque ---
+
+STANNAH
+- 750 000+ installations, 50+ pays
+- Garantie : 3 ans batterie / 5 ans moteur / pièces 15 ans minimum
+- Gamme : droit (Siena), tournant (Solus/Starla), extérieur, plateforme
+
+TK HOME SOLUTIONS (ex-Thyssenkrupp)
+- Leader mondial, division monte-escalier depuis les années 1950
+- Technologie ASL brevetée : siège pivote automatiquement 90° dans les virages
+- HoloLinc : réalité mixte Microsoft pour visualiser le monte-escalier en 3D
+- Garantie à vie depuis 2018 (conditionné à entretien annuel ~299 €)
+- Location dès ~80 €/mois
+- Modèles : S100 (droit), S200 (tournant ASL), Homeglide (extérieur)
+- Siège France : Rueil-Malmaison (92)
+
+INDÉPENDANCE ROYALE
+- Seule grande marque française — Limoges, Haute-Vienne
+- 200 conseillers agréés, 100 000+ clients, photogrammétrie 3D
+- Gamme : SimplyRoyal / MonoRoyal / BiRoyal / TOPRO Step (manuel)
+- Garantie : 2 ans appareil + rails et moteurs garantis à vie
+- Location disponible
+- Certifications : CE, NF, Pleine Vie 2026
+
+OTOLIFT
+- Famille Ooms, 5e génération, usine Bergambacht 15 000 m², 0 sous-traitance
+- Rail mono-tube breveté 57 mm — le plus fin du marché
+- Red Dot Design Award 2011 (modèle ONE)
+- Garantie à vie moteur + rail / 5 ans autres pièces / 2 ans batterie
+- Showroom Bezons (Val-d'Oise) + app réalité augmentée
+- Financement 0 % 36 mois — livraison dès 15 jours
+- Modèles : LINE (droit), Modul-Air (tournant mono), TWO (tournant double rail)
+
+HANDICARE
+- Premier monte-escalier européen fabriqué en 1962
+- Groupe Savaria (Canada) depuis 2021
+- PhotoSurvey : mesures par photo, précision 100 %
+- Rail 1100 : 8 cm de largeur (le plus fin du marché pour un droit)
+- Garantie : 6 mois batterie / 2 ans moteur
+- ~50 partenaires agréés en France
+
+ACORN
+- FastTrack® : rail modulaire, installation possible J+1
+- Production : usines Yorkshire et Écosse — 70 000 appareils/an
+- Siège France : Saint-Quentin-Fallavier (Isère)
+- Gamme : Acorn 130 (droit), Acorn 180 (tournant), extérieur, debout (Perche)
+- Charge max : 130 kg
+
+MOBILAE
+- Ex PractiComfort — distributeur multimarque (pas fabricant)
+- 22 modèles de 6 fabricants : TK, Handicare, Acorn, Platinum, Bespoke, Extrema
+- Financement via Francefinance — location disponible
+- SAV accepté sur équipements achetés ailleurs
+- Prix droit : 2 900–5 500 € / tournant : 6 900–9 950 €
+
+PLATINUM STAIRLIFTS
+- Yorkshire 1996 — chaque unité testée et livrée avec certificat qualité signé
+- Modèles : Straight (droit), Curve (tournant double rail), Ultimate (escaliers < 70 cm)
+- Rail fixé sur marches uniquement — jamais au mur
+- Garantie : 2 ans siège / 10 ans rails
+- Distribution via installateurs partenaires agréés en France
+
+LEHNER LIFTTECHNIK
+- Autriche, Neukirchen am Walde — fondé en 1991 par Max Lehner
+- 2e génération : Christian et Hannes Lehner
+- 40 000+ appareils, 65 pays, 350 distributeurs agréés — certifié TÜV
+- Gamme : Alpha (tournant), Essential/Omega (droit), Stratos/Delta (plateformes fauteuil),
+  Sigma (vertical), Neo 2026 (ultra-mince, Interlift 2025)
+- StairScan Pro : application iOS LiDAR pour scanner escalier en quelques secondes
+
+
+================================================================
+10. SEO ET DÉPLOIEMENT
+================================================================
+
+--- Sitemap ---
+Fichier    : sitemap.xml (racine du site)
+URL        : https://solutionssenior.fr/sitemap.xml
+Contenu    : 15 URLs
+Statut     : Soumise à Google Search Console (mars 2026)
+Soumission : URL complète https://solutionssenior.fr/sitemap.xml
+
+--- Google Analytics ---
+ID de mesure   : G-QWFMHNSKW1
+ID de flux     : 14215462908
+Compte         : Solutions Senior
+Installé via   : script Python inject-analytics.py
+Fichiers GA    : snippet injecté dans les 16 index.html du site
+Statut         : Déployé le 24 mars 2026 — en attente de première collecte
+
+--- Home page — liens internes ---
+Modifications apportées à index.html (racine) :
+- Card "Monte-escalier" → pointe vers /monte-escaliers/
+- Footer colonne "Monte-escalier" : Comparer les marques, Prix, Location,
+  Occasion, Débarrasser
+- Footer colonne "Marques" : Stannah, Thyssenkrupp, Indépendance Royale,
+  Otolift, + toutes les marques
+
+--- Commande de déploiement ---
+  cd /Users/pierre-paul/sitegit/solutionssenior && git add . && git commit -m "Message" && git push
+Webhook Hostinger se déclenche automatiquement. Délai : 30–60 secondes.
+
+
+================================================================
+11. GOOGLE SEARCH CONSOLE
+================================================================
+
+Propriété vérifiée : solutionssenior.fr
+Sitemap soumis     : https://solutionssenior.fr/sitemap.xml
+Statut indexation  : En cours (délai 1–2 semaines)
+
+Actions de suivi :
+- Search Console → Couverture : voir les pages indexées
+- Search Console → Résultats de recherche : premières positions
+
+
+================================================================
+12. SCRIPTS UTILITAIRES
+================================================================
+
+--- generate-brands.sh ---
+Emplacement : racine du projet
+Usage       : bash generate-brands.sh
+Rôle        : Copie le template Stannah pour chaque marque et remplace
+              automatiquement slug/logo, titre, note, pays, fondation,
+              SAV, site, Trustpilot, accroche.
+Note        : Génère une base — contenus présentation, FAQ et critères
+              doivent être personnalisés manuellement par marque.
+
+--- inject-analytics.py ---
+Emplacement : racine du projet
+Usage       : python3 inject-analytics.py
+Rôle        : Injecte le snippet Google Analytics (G-QWFMHNSKW1) dans
+              le <head> de tous les index.html du projet.
+              Ignore les fichiers où GA est déjà présent.
+
+
+================================================================
+13. PROCHAINES ÉTAPES SUGGÉRÉES
+================================================================
+
+--- Logos marques ---
+Déposer les logos PNG 500×500 dans /assets/images/marques/ :
+  stannah.png
+  acorn.png
+  handicare.png
+  independance-royale.png
+  lehner-lifttechnik.png
+  mobilae.png
+  otolift.png
+  platinum-stairlifts.png
+  thyssenkrupp-home-solutions.png
+
+--- Pages à créer ---
+  monte-escaliers/types/             Page sur les types de monte-escaliers
+  monte-escaliers/aides-financieres/ Page MaPrimeAdapt', APA, crédit d'impôt
+  monte-escaliers/exterieur/         Page dédiée au monte-escalier extérieur
+  monte-escaliers/tournant/          Page dédiée au monte-escalier tournant
+
+--- SEO ---
+- Surveiller Search Console → Couverture (pages indexées)
+- Surveiller Search Console → Résultats de recherche (positions)
+- Surveiller Analytics → Temps réel (trafic)
+
+--- Home page à corriger ---
+- Numéro de téléphone : 0800000000 → à remplacer par le vrai numéro
+- Nom de marque header : "SeniorConfort" → aligner avec "Solutions Senior"
+- Cards services : autres services pointent encore vers le modal devis
+
+--- Google Analytics ---
+- Vérifier dans Analytics → Temps réel qu'une visite est détectée
+- Le message "collecte non active" disparaît sous 24-48h
+
+
+================================================================
+Document généré le 24 mars 2026 — solutionssenior.fr
+================================================================

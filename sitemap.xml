@@ -78,6 +78,12 @@
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
+  <url>
+    <loc>https://solutionssenior.fr/monte-escaliers/declaration-impot/</loc>
+    <lastmod>2026-03-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
 
   <!-- ─── OCCASION & DÉBARRAS ──────────────────────────────────── -->
   <url>
@@ -87,6 +93,64 @@
   </url>
   <url>
     <loc>https://solutionssenior.fr/monte-escaliers/debarrasser/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <!-- ─── TYPES DE MONTE-ESCALIERS ─────────────────────────────── -->
+  <url>
+    <loc>https://solutionssenior.fr/monte-escaliers/mobile/</loc>
+    <lastmod>2026-03-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://solutionssenior.fr/monte-escaliers/debout/</loc>
+    <lastmod>2026-03-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://solutionssenior.fr/monte-escaliers/tournant/</loc>
+    <lastmod>2026-03-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://solutionssenior.fr/monte-escaliers/exterieur/</loc>
+    <lastmod>2026-03-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://solutionssenior.fr/monte-escaliers/droit/</loc>
+    <lastmod>2026-03-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://solutionssenior.fr/monte-escaliers/monte-charge/</loc>
+    <lastmod>2026-03-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- ─── GUIDES PRATIQUES ─────────────────────────────────────── -->
+  <url>
+    <loc>https://solutionssenior.fr/monte-escaliers/guide-pmr-escalier/</loc>
+    <lastmod>2026-03-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://solutionssenior.fr/monte-escaliers/installation/</loc>
+    <lastmod>2026-03-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://solutionssenior.fr/monte-escaliers/largeur-minimum-escalier/</loc>
+    <lastmod>2026-03-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>

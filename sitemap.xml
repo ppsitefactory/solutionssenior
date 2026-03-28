@@ -135,6 +135,38 @@
     <priority>0.7</priority>
   </url>
 
+  <!-- ─── SAV, ENTRETIEN & DÉPANNAGE ──────────────────────────── -->
+  <url>
+    <loc>https://solutionssenior.fr/monte-escaliers/sav/</loc>
+    <lastmod>2026-03-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://solutionssenior.fr/monte-escaliers/sav/depannage/</loc>
+    <lastmod>2026-03-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://solutionssenior.fr/monte-escaliers/sav/monte-escalier-bloque/</loc>
+    <lastmod>2026-03-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://solutionssenior.fr/monte-escaliers/sav/entretien/</loc>
+    <lastmod>2026-03-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://solutionssenior.fr/monte-escaliers/sav/reparateur-technicien/</loc>
+    <lastmod>2026-03-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
   <!-- ─── GUIDES PRATIQUES ─────────────────────────────────────── -->
   <url>
     <loc>https://solutionssenior.fr/monte-escaliers/guide-pmr-escalier/</loc>

@@ -530,11 +530,27 @@
     }
 
     .type-content h3 a {
-      color: var(--text);
+      color: var(--sage);
       text-decoration: none;
       transition: color .15s;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
     }
-    .type-content h3 a:hover { color: var(--sage); }
+    .type-content h3 a::after {
+      content: '→';
+      font-size: 18px;
+      font-weight: 400;
+      transition: transform .15s;
+    }
+    .type-content h3 a:hover {
+      color: var(--sage-light);
+      text-decoration: underline;
+      text-underline-offset: 4px;
+    }
+    .type-content h3 a:hover::after {
+      transform: translateX(4px);
+    }
 
     .type-content p {
       font-size: 17px;

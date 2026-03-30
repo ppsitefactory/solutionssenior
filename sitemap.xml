@@ -111,13 +111,6 @@
     <priority>0.8</priority>
   </url>
 
-  <!-- ─── AIDES FINANCIÈRES ───────────────────────────────────── -->
-  <url>
-    <loc>https://solutionssenior.fr/monte-escaliers/declaration-impot/</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-
   <!-- ─── PRIX & FINANCEMENT ───────────────────────────────────── -->
   <url>
     <loc>https://solutionssenior.fr/monte-escaliers/prix/</loc>

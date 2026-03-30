@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Contact | Solutions Senior</title>
+  <meta name="description" content="Contactez Solutions Senior pour être mis en relation avec un installateur de monte-escalier agréé près de chez vous. Réponse sous 24h.">
+
+  <meta property="og:title" content="Contact | Solutions Senior">
+  <meta property="og:description" content="Contactez Solutions Senior pour être mis en relation avec un installateur de monte-escalier agréé près de chez vous.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://solutionssenior.fr/contact/">
+  <meta property="og:site_name" content="Solutions Senior">
+
+  <link rel="canonical" href="https://solutionssenior.fr/contact/">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Solutions Senior",
+    "url": "https://solutionssenior.fr",
+    "email": "contact@solutionssenior.fr",
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "email": "contact@solutionssenior.fr",
+      "contactType": "customer service",
+      "availableLanguage": "French",
+      "areaServed": "FR"
+    }
+  }
+  </script>
+
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/assets/style.css">
+
+  <style>
+    .contact-layout {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 56px 5%;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 64px;
+      align-items: start;
+    }
+    @media (max-width: 768px) {
+      .contact-layout { grid-template-columns: 1fr; gap: 40px; }
+    }
+    .contact-intro h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(26px, 3vw, 38px);
+      font-weight: 700;
+      color: var(--text, #1e2a22);
+      margin-bottom: 20px;
+      line-height: 1.25;
+    }
+    .contact-intro p {
+      font-size: 1rem;
+      color: var(--text-light, #5a6b60);
+      line-height: 1.75;
+      margin-bottom: 16px;
+    }
+    .contact-methods {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      margin-top: 32px;
+    }
+    .contact-method {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      background: var(--sage-pale, #e8f0eb);
+      border-radius: 10px;
+      padding: 16px 20px;
+      text-decoration: none;
+      transition: background 0.2s;
+    }
+    .contact-method:hover { background: #d4e5d8; }
+    .contact-method-icon {
+      font-size: 1.4rem;
+      min-width: 36px;
+      text-align: center;
+    }
+    .contact-method-text strong {
+      display: block;
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: var(--text, #1e2a22);
+      margin-bottom: 2px;
+    }
+    .contact-method-text span {
+      font-size: 0.85rem;
+      color: var(--text-light, #5a6b60);
+    }
+    .contact-reassurance {
+      margin-top: 32px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    .reassurance-item {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 0.88rem;
+      color: var(--text-light, #5a6b60);
+    }
+    .reassurance-item::before {
+      content: '✓';
+      color: var(--sage, #4a7c59);
+      font-weight: 700;
+      font-size: 1rem;
+      min-width: 16px;
+    }
+    .contact-form-card {
+      background: var(--white, #fff);
+      border: 1px solid var(--border, #dde6df);
+      border-radius: 16px;
+      padding: 32px 36px;
+      box-shadow: 0 4px 24px rgba(30,42,34,.08);
+    }
+    .contact-form-card h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: var(--text, #1e2a22);
+      margin-bottom: 24px;
+    }
+    .form-group { margin-bottom: 18px; }
+    .form-group label {
+      display: block;
+      font-size: 0.88rem;
+      font-weight: 600;
+      color: var(--text, #1e2a22);
+      margin-bottom: 6px;
+    }
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      width: 100%;
+      padding: 11px 14px;
+      border: 1px solid var(--border, #dde6df);
+      border-radius: 7px;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.93rem;
+      color: var(--text, #1e2a22);
+      background: var(--cream, #faf8f4);
+      transition: border-color 0.2s;
+      box-sizing: border-box;
+    }
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus {
+      outline: none;
+      border-color: var(--sage, #4a7c59);
+      background: #fff;
+    }
+    .form-group textarea { resize: vertical; min-height: 100px; }
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+    }
+    @media (max-width: 500px) { .form-row { grid-template-columns: 1fr; } }
+    .btn-submit {
+      width: 100%;
+      background: var(--sage, #4a7c59);
+      color: #fff;
+      font-family: 'DM Sans', sans-serif;
+      font-weight: 600;
+      font-size: 1rem;
+      padding: 14px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background 0.2s;
+      margin-top: 8px;
+    }
+    .btn-submit:hover { background: var(--sage-light, #6a9e78); }
+    .form-note {
+      font-size: 0.78rem;
+      color: var(--text-light, #5a6b60);
+      text-align: center;
+      margin-top: 12px;
+    }
+  </style>
+</head>
+
+<body data-service="monte-escaliers">
+
+<div id="site-header"></div>
+
+<div class="contact-layout">
+
+  <!-- COLONNE GAUCHE -->
+  <div class="contact-intro">
+    <div class="breadcrumb" style="font-size:13px; color:var(--text-light); margin-bottom:20px;">
+      <a href="/" style="color:var(--sage); text-decoration:none;">Accueil</a> › Contact
+    </div>
+
+    <h1>Nous contacter</h1>
+
+    <p>Solutions Senior vous met en relation avec des installateurs de monte-escaliers agréés, partout en France. Décrivez votre projet et recevez une réponse sous 24h.</p>
+
+    <p>Vous pouvez aussi nous écrire directement — nous répondons à vos questions et vous orientons vers la solution adaptée à votre escalier et votre budget.</p>
+
+    <div class="contact-methods">
+      <a href="mailto:contact@solutionssenior.fr" class="contact-method">
+        <span class="contact-method-icon">✉️</span>
+        <div class="contact-method-text">
+          <strong>contact@solutionssenior.fr</strong>
+          <span>Réponse sous 24h</span>
+        </div>
+      </a>
+    </div>
+
+    <div class="contact-reassurance">
+      <div class="reassurance-item">Mise en relation gratuite et sans engagement</div>
+      <div class="reassurance-item">Installateurs agréés et assurés</div>
+      <div class="reassurance-item">Couverture nationale — toute la France</div>
+      <div class="reassurance-item">Accompagnement sur les aides financières</div>
+    </div>
+  </div>
+
+  <!-- COLONNE DROITE — FORMULAIRE -->
+  <div class="contact-form-card">
+    <h2>Décrivez votre projet</h2>
+
+    <form action="#" method="POST">
+      <div class="form-row">
+        <div class="form-group">
+          <label for="prenom">Prénom *</label>
+          <input type="text" id="prenom" name="prenom" placeholder="Jean" required>
+        </div>
+        <div class="form-group">
+          <label for="nom">Nom *</label>
+          <input type="text" id="nom" name="nom" placeholder="Dupont" required>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="email">Email *</label>
+        <input type="email" id="email" name="email" placeholder="jean.dupont@email.com" required>
+      </div>
+
+      <div class="form-group">
+        <label for="telephone">Téléphone</label>
+        <input type="tel" id="telephone" name="telephone" placeholder="06 00 00 00 00">
+      </div>
+
+      <div class="form-group">
+        <label for="code-postal">Code postal *</label>
+        <input type="text" id="code-postal" name="code_postal" placeholder="75001" maxlength="5" required>
+      </div>
+
+      <div class="form-group">
+        <label for="message">Votre message</label>
+        <textarea id="message" name="message" placeholder="Décrivez votre projet, vos contraintes, vos questions…"></textarea>
+      </div>
+
+      <button type="submit" class="btn-submit">Envoyer ma demande →</button>
+      <p class="form-note">Vos données sont utilisées uniquement pour vous mettre en relation avec un installateur. Aucun démarchage commercial.</p>
+    </form>
+  </div>
+
+</div>
+
+<div id="site-cta"></div>
+<div id="site-footer"></div>
+<div id="bandeau-sticky" data-titre="Contactez-nous gratuitement"></div>
+<script src="/assets/components.js"></script>
+</body>
+</html>

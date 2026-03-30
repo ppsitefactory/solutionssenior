@@ -1,0 +1,9 @@
+User-agent: *
+Allow: /
+
+# Bloquer les ressources techniques
+Disallow: /assets/
+Disallow: /components/
+
+# Sitemap
+Sitemap: https://solutionssenior.fr/sitemap.xml

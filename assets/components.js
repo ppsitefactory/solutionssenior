@@ -80,6 +80,14 @@ function initForms() {
   window.closeModalOutside = function(e) {
     if(e.target===document.getElementById('modalOverlay')) closeModal();
   };
+
+  // Connecter tous les boutons .open-formulaire au modal
+  document.addEventListener('click', function(e) {
+    if(e.target.closest('.open-formulaire')) {
+      e.preventDefault();
+      if(typeof openModal === 'function') openModal();
+    }
+  });
 }
 
 // ── SOMMAIRE MOBILE (ACCORDÉON) ───────────────

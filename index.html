@@ -780,7 +780,7 @@
     }
     @media (max-width: 960px) {
       .hamburger { display: flex; }
-    }
+      .hero-inner { grid-template-columns: 1fr; }
       .hero-form-card { display: none; }
       .services-grid { grid-template-columns: 1fr 1fr; }
       .stats-inner { grid-template-columns: 1fr 1fr; }
@@ -790,10 +790,6 @@
       .guides-grid { grid-template-columns: 1fr 1fr; }
       .footer-grid { grid-template-columns: 1fr 1fr; }
       nav { display: none; }
-      /* Section engagement — passe en colonne */
-      .section-inner > div[style*="grid-template-columns:1fr 1fr"] {
-        grid-template-columns: 1fr !important;
-      }
     }
     @media (max-width: 600px) {
       body { font-size: 16px; }
@@ -821,10 +817,6 @@
       .sticky-cta { bottom: 16px; right: 16px; padding: 14px 20px; font-size: 0.95rem; }
       .footer-bottom { flex-direction: column; text-align: center; }
       .footer-links { justify-content: center; }
-      /* Section engagement — passe en colonne sur mobile */
-      .section-inner > div[style*="grid-template-columns:1fr 1fr"] {
-        grid-template-columns: 1fr !important;
-      }
     }
   </style>
 </head>

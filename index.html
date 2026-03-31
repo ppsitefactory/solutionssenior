@@ -1346,6 +1346,26 @@
   }
   function submitForm(form) {
     const p = form === 'hero' ? 'h' : 'm';
+
+    // Collecter les données
+    const data = {};
+    const steps = document.querySelectorAll(`#${p}step0, #${p}step1, #${p}step2`);
+    steps.forEach(step => {
+      step.querySelectorAll('input, select').forEach(field => {
+        if (field.value) data[field.type || field.tagName] = field.value;
+      });
+      const selected = step.querySelector('.service-option.selected');
+      if (selected) data['service'] = selected.textContent.trim();
+    });
+
+    // Envoyer à Formspree
+    fetch('https://formspree.io/f/mbdpyayv', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(data)
+    });
+
+    // Afficher l'écran de succès
     for(let i=0;i<3;i++){const el=document.getElementById(p+'step'+i);if(el)el.classList.remove('active');}
     const ind = document.getElementById(form==='hero'?'heroIndicators':'modalIndicators');
     if(ind) ind.style.display='none';

@@ -229,7 +229,7 @@
   <div class="contact-form-card">
     <h2>Décrivez votre projet</h2>
 
-    <form action="#" method="POST">
+    <form id="contact-form">
       <div class="form-row">
         <div class="form-group">
           <label for="prenom">Prénom *</label>
@@ -261,9 +261,41 @@
         <textarea id="message" name="message" placeholder="Décrivez votre projet, vos contraintes, vos questions…"></textarea>
       </div>
 
-      <button type="submit" class="btn-submit">Envoyer ma demande →</button>
+      <button type="submit" class="btn-submit" id="submit-btn">Envoyer ma demande →</button>
       <p class="form-note">Vos données sont utilisées uniquement pour vous mettre en relation avec un installateur. Aucun démarchage commercial.</p>
+      <p id="form-success" style="display:none; color:var(--sage); font-weight:600; text-align:center; margin-top:12px;">✅ Demande envoyée ! Nous vous répondrons sous 24h.</p>
+      <p id="form-error" style="display:none; color:#dc2626; font-weight:600; text-align:center; margin-top:12px;">Une erreur est survenue. Merci de réessayer ou d'écrire à contact@solutionssenior.fr</p>
     </form>
+
+    <script>
+      document.getElementById('contact-form').addEventListener('submit', async function(e) {
+        e.preventDefault();
+        const btn = document.getElementById('submit-btn');
+        btn.textContent = 'Envoi en cours…';
+        btn.disabled = true;
+
+        const data = new FormData(this);
+        try {
+          const res = await fetch('https://formspree.io/f/mbdpyayv', {
+            method: 'POST',
+            body: data,
+            headers: { 'Accept': 'application/json' }
+          });
+          if (res.ok) {
+            document.getElementById('form-success').style.display = 'block';
+            document.getElementById('form-error').style.display = 'none';
+            this.reset();
+            btn.textContent = 'Demande envoyée ✓';
+          } else {
+            throw new Error();
+          }
+        } catch {
+          document.getElementById('form-error').style.display = 'block';
+          btn.textContent = 'Envoyer ma demande →';
+          btn.disabled = false;
+        }
+      });
+    </script>
   </div>
 
 </div>

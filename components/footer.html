@@ -1,46 +1,126 @@
-<footer>
+<style>
+  .site-footer {
+    background: #1e2a22;
+    color: rgba(255,255,255,0.6);
+    padding: 64px 5% 32px;
+    font-family: 'DM Sans', sans-serif;
+  }
+  .site-footer .footer-inner { max-width: 1200px; margin: 0 auto; }
+  .site-footer .footer-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr;
+    gap: 48px;
+    padding-bottom: 48px;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+    margin-bottom: 32px;
+  }
+  .site-footer .footer-logo {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.4rem;
+    color: white;
+    margin-bottom: 14px;
+    display: block;
+    text-decoration: none;
+  }
+  .site-footer .footer-about {
+    font-size: 0.95rem;
+    line-height: 1.75;
+    margin-bottom: 20px;
+  }
+  .site-footer .footer-email {
+    color: #c9a84c;
+    font-size: 1rem;
+    font-weight: 600;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .site-footer .footer-col h4 {
+    color: white;
+    font-size: 1rem;
+    font-weight: 700;
+    margin-bottom: 18px;
+  }
+  .site-footer .footer-col ul { list-style: none; padding: 0; margin: 0; }
+  .site-footer .footer-col ul li { margin-bottom: 12px; }
+  .site-footer .footer-col ul li a {
+    color: rgba(255,255,255,0.5);
+    text-decoration: none;
+    font-size: 0.95rem;
+    transition: color 0.2s;
+  }
+  .site-footer .footer-col ul li a:hover { color: white; }
+  .site-footer .footer-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.85rem;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+  .site-footer .footer-links { display: flex; gap: 20px; }
+  .site-footer .footer-links a {
+    color: rgba(255,255,255,0.4);
+    text-decoration: none;
+    font-size: 0.85rem;
+  }
+  .site-footer .footer-links a:hover { color: white; }
+
+  @media (max-width: 960px) {
+    .site-footer .footer-grid { grid-template-columns: 1fr 1fr; }
+  }
+  @media (max-width: 600px) {
+    .site-footer .footer-grid { grid-template-columns: 1fr; }
+    .site-footer .footer-bottom { flex-direction: column; text-align: center; }
+    .site-footer .footer-links { justify-content: center; }
+  }
+</style>
+
+<footer class="site-footer">
   <div class="footer-inner">
     <div class="footer-grid">
       <div>
-        <span class="footer-logo">Solutions<span>Senior</span></span>
-        <div class="footer-about">Le premier site de comparaison dédié aux seniors et à leurs aidants. Service 100% gratuit et sans engagement.</div>
-        <a href="tel:0800000000" class="footer-tel">📞 0 800 000 000</a>
+        <a href="/" class="footer-logo">Solutions Senior</a>
+        <div class="footer-about">Le site de référence pour adapter son logement et bien vieillir chez soi. Guides fiables, professionnels agréés, service 100 % gratuit.</div>
+        <a href="mailto:contact@solutionssenior.fr" class="footer-email">✉️ contact@solutionssenior.fr</a>
       </div>
       <div class="footer-col">
-        <h4>Services</h4>
+        <h4>Nos services</h4>
         <ul>
           <li><a href="/monte-escaliers/">Monte-escalier</a></li>
-          <li><a href="#">Douche senior</a></li>
-          <li><a href="#">Aide à domicile</a></li>
-          <li><a href="#">Téléassistance</a></li>
-          <li><a href="#">Mutuelle senior</a></li>
+          <li><a href="/monte-escaliers/aides/">Aides financières</a></li>
+          <li><a href="/monte-escaliers/prix/">Prix et tarifs</a></li>
+          <li><a href="/monte-escaliers/comparatif/">Comparatif marques</a></li>
         </ul>
       </div>
       <div class="footer-col">
-        <h4>Ressources</h4>
+        <h4>Monte-escalier</h4>
         <ul>
-          <li><a href="#">Guides pratiques</a></li>
-          <li><a href="#">Actualités</a></li>
-          <li><a href="#">Aides financières</a></li>
-          <li><a href="#">FAQ</a></li>
+          <li><a href="/monte-escaliers/droit/">Modèle droit</a></li>
+          <li><a href="/monte-escaliers/tournant/">Modèle tournant</a></li>
+          <li><a href="/monte-escaliers/exterieur/">Modèle extérieur</a></li>
+          <li><a href="/monte-escaliers/prix/location/">Location</a></li>
+          <li><a href="/monte-escaliers/occasion/">Occasion</a></li>
+          <li><a href="/monte-escaliers/sav/">SAV & entretien</a></li>
         </ul>
       </div>
       <div class="footer-col">
-        <h4>À propos</h4>
+        <h4>Solutions Senior</h4>
         <ul>
-          <li><a href="#">Qui sommes-nous ?</a></li>
-          <li><a href="#">Nos partenaires</a></li>
-          <li><a href="#">Contact</a></li>
-          <li><a href="#">Devenir partenaire</a></li>
+          <li><a href="/qui-sommes-nous/">Qui sommes-nous</a></li>
+          <li><a href="/contact/">Contact</a></li>
+          <li><a href="/cgu/">CGU</a></li>
+          <li><a href="/politique-confidentialite/">Confidentialité</a></li>
         </ul>
       </div>
     </div>
     <div class="footer-bottom">
-      <div>© 2026 SolutionsSenior – Tous droits réservés</div>
+      <div>© 2026 Solutions Senior — EURL Solutions Senior — Tous droits réservés</div>
       <div class="footer-links">
-        <a href="#">Mentions légales</a>
-        <a href="#">Confidentialité</a>
-        <a href="#">CGU</a>
+        <a href="/cgu/">CGU</a>
+        <a href="/politique-confidentialite/">Confidentialité</a>
+        <a href="/contact/">Contact</a>
       </div>
     </div>
   </div>

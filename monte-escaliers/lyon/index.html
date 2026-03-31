@@ -68,69 +68,6 @@
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/assets/style.css">
 
-  <style>
-    /* CTA inline */
-    .cta-inline {
-      background: var(--sage-pale, #e8f0eb);
-      border-left: 4px solid var(--sage, #4a7c59);
-      border-radius: 0 10px 10px 0;
-      padding: 20px 26px;
-      margin: 32px 0;
-      display: flex;
-      align-items: center;
-      gap: 22px;
-      flex-wrap: wrap;
-    }
-    .cta-inline-text { flex: 1; min-width: 200px; }
-    .cta-inline-text strong { display: block; font-family: 'Playfair Display', serif; font-size: 1.05rem; color: var(--text, #1e2a22); margin-bottom: 4px; }
-    .cta-inline-text span { font-size: 0.9rem; color: var(--text-light, #5a6b60); }
-    .btn-cta { display: inline-block; background: var(--sage, #4a7c59); color: #fff; font-family: 'DM Sans', sans-serif; font-weight: 600; font-size: 0.9rem; padding: 12px 22px; border-radius: 6px; text-decoration: none; white-space: nowrap; transition: background 0.2s; cursor: pointer; border: none; }
-    .btn-cta:hover { background: var(--sage-light, #6a9e78); }
-
-    /* CTA banner */
-    .cta-banner { background: linear-gradient(135deg, var(--sage, #4a7c59) 0%, #3a6248 100%); border-radius: 12px; padding: 30px 34px; margin: 44px 0; text-align: center; color: #fff; }
-    .cta-banner-title { font-family: 'Playfair Display', serif; font-size: 1.35rem; font-weight: 700; margin: 0 0 8px; }
-    .cta-banner-sub { font-size: 0.93rem; opacity: 0.88; margin: 0 0 18px; }
-    .cta-banner-badges { display: flex; justify-content: center; gap: 14px; flex-wrap: wrap; margin-bottom: 20px; }
-    .cta-banner-badges .badge { background: rgba(255,255,255,0.18); border: 1px solid rgba(255,255,255,0.35); border-radius: 20px; padding: 4px 13px; font-size: 0.82rem; font-weight: 500; }
-    .btn-cta-white { display: inline-block; background: #fff; color: var(--sage, #4a7c59); font-family: 'DM Sans', sans-serif; font-weight: 700; font-size: 0.95rem; padding: 13px 28px; border-radius: 6px; text-decoration: none; transition: opacity 0.2s; cursor: pointer; border: none; }
-    .btn-cta-white:hover { opacity: 0.92; }
-
-    /* Cartes reste à charge */
-    .rac-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin: 24px 0; }
-    @media (max-width: 700px) { .rac-grid { grid-template-columns: 1fr; } }
-    .rac-card { background: var(--white, #fff); border: 1px solid #e0e8e2; border-radius: 10px; padding: 20px; text-align: center; }
-    .rac-profil { font-size: 0.78rem; font-weight: 700; color: var(--text-light, #5a6b60); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 8px; }
-    .rac-prix { font-family: 'Playfair Display', serif; font-size: 1.6rem; font-weight: 700; color: var(--sage, #4a7c59); margin-bottom: 4px; }
-    .rac-detail { font-size: 0.82rem; color: var(--text-light, #5a6b60); line-height: 1.5; }
-
-    /* Étapes locales */
-    .etapes-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin: 28px 0; }
-    @media (max-width: 700px) { .etapes-grid { grid-template-columns: 1fr; } }
-    .etape-item { text-align: center; padding: 24px 16px; background: var(--sage-pale, #e8f0eb); border-radius: 12px; }
-    .etape-num { width: 48px; height: 48px; background: var(--sage, #4a7c59); color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-family: 'Playfair Display', serif; font-size: 1.3rem; font-weight: 700; margin: 0 auto 14px; }
-    .etape-titre { font-weight: 700; font-size: 0.95rem; color: var(--text, #1e2a22); margin-bottom: 8px; }
-    .etape-desc { font-size: 0.88rem; color: var(--text-light, #5a6b60); line-height: 1.5; }
-
-    /* Visuel placeholder */
-    .visuel-local {
-      background: var(--sage-pale, #e8f0eb);
-      border: 2px dashed #b0ccb8;
-      border-radius: 12px;
-      height: 360px;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      padding: 24px;
-      margin: 24px 0;
-      color: var(--sage, #4a7c59);
-      gap: 10px;
-    }
-    .visuel-local .v-icon { font-size: 2rem; opacity: 0.5; }
-    .visuel-local .v-label { font-size: 0.82rem; font-weight: 600; opacity: 0.75; line-height: 1.5; }
-  </style>
 </head>
 
 <body data-service="monte-escaliers">
@@ -195,7 +132,7 @@
 
       <div class="highlight-green">
         <div class="highlight-label">💡 En résumé</div>
-        <p>Prix à Lyon : <strong>3 000 € à 9 000 €</strong> selon le type. Avec les aides cumulées (MaPrimeAdapt', CARSAT, TVA 5,5 %), le reste à charge peut descendre à <strong>moins de 1 500 €</strong> pour un ménage modeste. Mise en relation gratuite — un installateur agréé du Rhône vous rappelle sous 24h.</p>
+        <p>Prix à Lyon : <strong>3 000 € à 9 000 €</strong> selon le type. Plusieurs aides peuvent réduire significativement le reste à charge selon votre situation. Mise en relation gratuite — un installateur agréé du Rhône vous rappelle sous 24h.</p>
       </div>
 
       <!-- ══ CONTEXTE LOCAL ══ -->
@@ -225,26 +162,26 @@
 
       <p>Tous les types de monte-escaliers sont disponibles et installables à Lyon. Le choix dépend avant tout de la configuration de votre escalier :</p>
 
-      <div style="display:grid; grid-template-columns:repeat(3,1fr); gap:20px; margin:28px 0;">
-        <a href="/monte-escaliers/droit/" style="text-decoration:none; color:inherit; border:1px solid #e0e8e2; border-radius:12px; overflow:hidden; display:block;" onmouseover="this.style.boxShadow='0 8px 24px rgba(74,124,89,0.12)'" onmouseout="this.style.boxShadow='none'">
-          <img src="/assets/images/monte-escalier-droit.png" alt="Monte-escalier droit installé à Lyon" style="width:100%; height:200px; object-fit:contain; background:#f0f7f2; padding:12px; display:block;">
-          <div style="padding:16px;">
-            <div style="font-weight:700; font-size:1rem; color:#1e2a22; margin-bottom:6px;">Monte-escalier droit</div>
-            <div style="font-size:0.88rem; color:#5a6b60; line-height:1.5;">Escalier sans virage — installation en ½ journée</div>
+      <div class="types-grid">
+        <a href="/monte-escaliers/droit/" class="type-card">
+          <img src="/assets/images/monte-escalier-droit.png" alt="Monte-escalier droit installé à Lyon">
+          <div class="type-card-body">
+            <div class="type-card-title">Monte-escalier droit</div>
+            <div class="type-card-desc">Escalier sans virage — installation en ½ journée</div>
           </div>
         </a>
-        <a href="/monte-escaliers/tournant/" style="text-decoration:none; color:inherit; border:1px solid #e0e8e2; border-radius:12px; overflow:hidden; display:block;" onmouseover="this.style.boxShadow='0 8px 24px rgba(74,124,89,0.12)'" onmouseout="this.style.boxShadow='none'">
-          <img src="/assets/images/monte-escalier-tournant.png" alt="Monte-escalier tournant installé à Lyon" style="width:100%; height:200px; object-fit:contain; background:#f0f7f2; padding:12px; display:block;">
-          <div style="padding:16px;">
-            <div style="font-weight:700; font-size:1rem; color:#1e2a22; margin-bottom:6px;">Monte-escalier tournant</div>
-            <div style="font-size:0.88rem; color:#5a6b60; line-height:1.5;">Escalier avec virage(s) — fabriqué sur mesure</div>
+        <a href="/monte-escaliers/tournant/" class="type-card">
+          <img src="/assets/images/monte-escalier-tournant.png" alt="Monte-escalier tournant installé à Lyon">
+          <div class="type-card-body">
+            <div class="type-card-title">Monte-escalier tournant</div>
+            <div class="type-card-desc">Escalier avec virage(s) — fabriqué sur mesure</div>
           </div>
         </a>
-        <a href="/monte-escaliers/exterieur/" style="text-decoration:none; color:inherit; border:1px solid #e0e8e2; border-radius:12px; overflow:hidden; display:block;" onmouseover="this.style.boxShadow='0 8px 24px rgba(74,124,89,0.12)'" onmouseout="this.style.boxShadow='none'">
-          <img src="/assets/images/monte-escalier-exterieur.png" alt="Monte-escalier extérieur installé à Lyon" style="width:100%; height:200px; object-fit:contain; background:#f0f7f2; padding:12px; display:block;">
-          <div style="padding:16px;">
-            <div style="font-weight:700; font-size:1rem; color:#1e2a22; margin-bottom:6px;">Monte-escalier extérieur</div>
-            <div style="font-size:0.88rem; color:#5a6b60; line-height:1.5;">Accès extérieur, terrasse, jardin en pente</div>
+        <a href="/monte-escaliers/exterieur/" class="type-card">
+          <img src="/assets/images/monte-escalier-exterieur.png" alt="Monte-escalier extérieur installé à Lyon">
+          <div class="type-card-body">
+            <div class="type-card-title">Monte-escalier extérieur</div>
+            <div class="type-card-desc">Accès extérieur, terrasse, jardin en pente</div>
           </div>
         </a>
       </div>
@@ -340,18 +277,6 @@
 
       <!-- ══ FAQ ACCORDÉONS ══ -->
       <h2 id="faq">Questions fréquentes — Monte-escalier à Lyon</h2>
-
-      <style>
-        .faq-item { border: 1px solid #e0e8e2; border-radius: 10px; margin-bottom: 12px; overflow: hidden; }
-        .faq-question { width: 100%; background: white; border: none; padding: 20px 24px; display: flex; justify-content: space-between; align-items: center; cursor: pointer; font-family: 'DM Sans', sans-serif; font-size: 1rem; font-weight: 600; color: var(--text, #1e2a22); text-align: left; gap: 16px; }
-        .faq-question:hover { background: var(--sage-pale, #e8f0eb); }
-        .faq-arrow { font-size: 0.8rem; color: var(--sage, #4a7c59); transition: transform 0.25s; flex-shrink: 0; }
-        .faq-answer { display: none; padding: 0 24px 20px; font-size: 0.97rem; color: var(--text-light, #5a6b60); line-height: 1.75; }
-        .faq-answer a { color: var(--sage, #4a7c59); }
-        .faq-item.open .faq-answer { display: block; }
-        .faq-item.open .faq-arrow { transform: rotate(180deg); }
-        .faq-item.open .faq-question { background: var(--sage-pale, #e8f0eb); }
-      </style>
 
       <div class="faq-item">
         <button class="faq-question" onclick="this.closest('.faq-item').classList.toggle('open')">

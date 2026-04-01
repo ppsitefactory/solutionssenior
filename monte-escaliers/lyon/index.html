@@ -44,7 +44,7 @@
           {
             "@type": "Question",
             "name": "Quelles aides pour un monte-escalier à Lyon ?",
-            "acceptedAnswer": { "@type": "Answer", "text": "Les résidents de Lyon peuvent bénéficier de MaPrimeAdapt' (jusqu'à 70 % des travaux HT, plafonnée à 22 000 € HT), de l'APA, de la CARSAT (jusqu'à 3 500 €) et de la TVA réduite à 5,5 %. Note : le guichet MaPrimeAdapt' est temporairement suspendu en 2026, mais le dispositif reste prévu — renseignez-vous auprès d'un AMO agréé." }
+            "acceptedAnswer": { "@type": "Answer", "text": "Les résidents de Lyon peuvent bénéficier de MaPrimeAdapt' (jusqu'à 70 % des travaux HT, plafonnée à 22 000 € HT), de l'APA, de la CARSAT (jusqu'à 3 500 €) et de la TVA réduite à 5,5 %. Note : le guichet MaPrimeAdapt' est temporairement suspendu en 2026, mais le dispositif reste prévu." }
           },
           {
             "@type": "Question",
@@ -68,39 +68,274 @@
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/assets/style.css">
 
+  <style>
+    /* ── HERO LOCAL (2 colonnes avec formulaire inline) ── */
+    .hero-local {
+      background: linear-gradient(135deg, var(--sage) 0%, #2d5c3e 100%);
+      color: white;
+      padding: 56px 5% 72px;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero-local::before {
+      content: '';
+      position: absolute;
+      top: -100px; right: -100px;
+      width: 400px; height: 400px;
+      background: rgba(255,255,255,0.05);
+      border-radius: 50%;
+    }
+    .hero-local-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 56px;
+      align-items: center;
+      position: relative;
+      z-index: 1;
+    }
+    .hero-local-content .breadcrumb { margin-bottom: 20px; }
+    .hero-local-content h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1.8rem, 3.2vw, 2.6rem);
+      line-height: 1.2;
+      margin-bottom: 16px;
+    }
+    .hero-local-content .article-meta {
+      display: flex;
+      gap: 16px;
+      font-size: 0.83rem;
+      opacity: 0.75;
+      flex-wrap: wrap;
+      margin-bottom: 28px;
+    }
+    .hero-reassurances {
+      display: flex;
+      gap: 18px;
+      flex-wrap: wrap;
+    }
+    .hero-reassurance {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 0.9rem;
+      opacity: 0.85;
+    }
+    .hero-reassurance::before { content: '✓'; color: #f0d890; font-weight: 700; }
+
+    /* Carte formulaire */
+    .hero-form-card {
+      background: white;
+      border-radius: 24px;
+      padding: 36px 32px;
+      box-shadow: 0 24px 80px rgba(0,0,0,0.2);
+      color: var(--text);
+    }
+    .form-card-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.4rem;
+      color: var(--sage);
+      margin-bottom: 6px;
+    }
+    .form-card-subtitle {
+      font-size: 0.9rem;
+      color: var(--text-light);
+      margin-bottom: 24px;
+      line-height: 1.5;
+    }
+    .lform-indicators { display: flex; gap: 8px; margin-bottom: 24px; }
+    .lform-dot { height: 4px; flex: 1; background: #e0e8e2; border-radius: 2px; transition: background 0.3s; }
+    .lform-dot.active { background: var(--sage); }
+    .lform-dot.done { background: var(--sage-light); }
+    .lform-step { display: none; }
+    .lform-step.active { display: block; }
+    .lform-label { font-size: 0.78rem; font-weight: 700; color: var(--text-light); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 12px; }
+    .lform-question { font-size: 1rem; font-weight: 600; color: var(--text); margin-bottom: 16px; line-height: 1.4; }
+    .lform-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 16px; }
+    .lform-option {
+      border: 2px solid #e0e8e2;
+      border-radius: 12px;
+      padding: 14px 12px;
+      cursor: pointer;
+      transition: all 0.2s;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 0.92rem;
+      font-weight: 500;
+      color: var(--text);
+    }
+    .lform-option:hover { border-color: var(--sage-light); background: var(--sage-pale); }
+    .lform-option.selected { border-color: var(--sage); background: var(--sage-pale); }
+    .lform-option .icon { font-size: 1.4rem; }
+    .lform-field { margin-bottom: 14px; }
+    .lform-field label { display: block; font-size: 0.85rem; font-weight: 600; color: var(--text-light); margin-bottom: 5px; }
+    .lform-field input, .lform-field select {
+      width: 100%;
+      padding: 12px 14px;
+      border: 2px solid #e0e8e2;
+      border-radius: 10px;
+      font-size: 0.95rem;
+      font-family: 'DM Sans', sans-serif;
+      color: var(--text);
+      background: white;
+      transition: border-color 0.2s;
+      outline: none;
+    }
+    .lform-field input:focus, .lform-field select:focus { border-color: var(--sage); }
+    .lform-row { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+    .lform-btn-next, .lform-btn-submit {
+      width: 100%;
+      background: var(--sage);
+      color: white;
+      border: none;
+      padding: 14px;
+      border-radius: 12px;
+      font-size: 1rem;
+      font-weight: 700;
+      cursor: pointer;
+      transition: background 0.2s, transform 0.2s;
+      font-family: 'DM Sans', sans-serif;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      margin-top: 4px;
+    }
+    .lform-btn-next:hover, .lform-btn-submit:hover { background: var(--sage-light); transform: translateY(-1px); }
+    .lform-btn-back {
+      background: none;
+      border: none;
+      color: var(--text-light);
+      font-size: 0.85rem;
+      cursor: pointer;
+      padding: 6px 0;
+      font-family: 'DM Sans', sans-serif;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      margin-bottom: 14px;
+    }
+    .lform-btn-back:hover { color: var(--sage); }
+    .lform-legal { font-size: 0.75rem; color: #aaa; text-align: center; margin-top: 10px; line-height: 1.5; }
+    .lform-success { text-align: center; padding: 16px 0; }
+    .lform-success-icon { width: 64px; height: 64px; background: var(--sage-pale); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 2rem; margin: 0 auto 16px; }
+    .lform-success h3 { font-family: 'Playfair Display', serif; font-size: 1.4rem; color: var(--sage); margin-bottom: 10px; }
+    .lform-success p { color: var(--text-light); font-size: 0.95rem; line-height: 1.6; }
+
+    @media (max-width: 960px) {
+      .hero-local-inner { grid-template-columns: 1fr; gap: 36px; }
+      .hero-form-card { max-width: 520px; }
+    }
+    @media (max-width: 600px) {
+      .lform-row { grid-template-columns: 1fr; }
+      .lform-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+
 </head>
 
 <body data-service="monte-escaliers">
 
 <div id="site-header"></div>
 
-<!-- HERO LOCAL -->
-<section class="article-hero">
-  <div style="max-width:1200px; margin:0 auto; padding:0 5%;">
-    <div class="breadcrumb">
-      <a href="/">Accueil</a> ›
-      <a href="/monte-escaliers/">Monte-escalier</a> ›
-      Lyon
-    </div>
-    <h1>Monte-escalier à Lyon&nbsp;: devis gratuit, installateurs agréés dans le Rhône</h1>
-    <div class="article-meta">
-      <span>📅 Mis à jour le 1 avril 2026</span>
-      <span>📍 Lyon, Rhône (69)</span>
-      <span>✍️ Par l'équipe Solutions Senior</span>
-    </div>
+<!-- HERO LOCAL avec formulaire inline -->
+<section class="hero-local">
+  <div class="hero-local-inner">
 
-    <!-- CTA HERO -->
-    <div class="hero-cta-block">
-      <button class="btn-hero-cta open-formulaire">
-        🪜 Obtenir un devis gratuit à Lyon
-      </button>
-      <div class="hero-cta-reassurance">
-        <span>✓ Gratuit</span>
-        <span>✓ Installateur agréé du Rhône</span>
-        <span>✓ Réponse sous 24h</span>
+    <!-- Gauche : texte -->
+    <div class="hero-local-content">
+      <div class="breadcrumb">
+        <a href="/">Accueil</a> ›
+        <a href="/monte-escaliers/">Monte-escalier</a> ›
+        Lyon
+      </div>
+      <h1>Monte-escalier à Lyon&nbsp;: devis gratuit, installateurs agréés dans le Rhône</h1>
+      <div class="article-meta">
+        <span>📅 Mis à jour le 1 avril 2026</span>
+        <span>📍 Lyon, Rhône (69)</span>
+        <span>✍️ Par l'équipe Solutions Senior</span>
+      </div>
+      <div class="hero-reassurances">
+        <div class="hero-reassurance">Gratuit</div>
+        <div class="hero-reassurance">Installateur agréé du Rhône</div>
+        <div class="hero-reassurance">Réponse sous 24h</div>
+        <div class="hero-reassurance">Données sécurisées</div>
       </div>
     </div>
 
+    <!-- Droite : formulaire tunnel -->
+    <div class="hero-form-card">
+      <div class="form-card-title">Votre devis gratuit à Lyon</div>
+      <div class="form-card-subtitle">2 minutes suffisent. Un installateur agréé du Rhône vous rappelle sous 24h.</div>
+
+      <div class="lform-indicators">
+        <div class="lform-dot active" id="ldot0"></div>
+        <div class="lform-dot" id="ldot1"></div>
+        <div class="lform-dot" id="ldot2"></div>
+      </div>
+
+      <!-- ÉTAPE 1 : question qualifiante -->
+      <div class="lform-step active" id="lstep0">
+        <div class="lform-label">Étape 1 sur 3</div>
+        <div class="lform-question">Où se trouve votre escalier ?</div>
+        <div class="lform-grid">
+          <div class="lform-option" onclick="lSelectOption(this); lNextStep(0)">
+            <span class="icon">🏠</span> À l'intérieur
+          </div>
+          <div class="lform-option" onclick="lSelectOption(this); lNextStep(0)">
+            <span class="icon">🌿</span> À l'extérieur
+          </div>
+        </div>
+      </div>
+
+      <!-- ÉTAPE 2 : situation -->
+      <div class="lform-step" id="lstep1">
+        <button class="lform-btn-back" onclick="lPrevStep(1)">← Retour</button>
+        <div class="lform-label">Étape 2 sur 3</div>
+        <div class="lform-question">Votre situation</div>
+        <div class="lform-field">
+          <label>Code postal</label>
+          <input type="text" id="lcp" placeholder="Ex. 69001" maxlength="5">
+        </div>
+        <div class="lform-field">
+          <label>Ce monte-escalier est pour...</label>
+          <select id="lpour">
+            <option>Moi-même</option>
+            <option>Mon parent</option>
+            <option>Mon conjoint</option>
+            <option>Un autre proche</option>
+          </select>
+        </div>
+        <button class="lform-btn-next" onclick="lNextStep(1)">Continuer →</button>
+      </div>
+
+      <!-- ÉTAPE 3 : coordonnées -->
+      <div class="lform-step" id="lstep2">
+        <button class="lform-btn-back" onclick="lPrevStep(2)">← Retour</button>
+        <div class="lform-label">Étape 3 sur 3</div>
+        <div class="lform-question">Vos coordonnées</div>
+        <div class="lform-row">
+          <div class="lform-field"><label>Prénom *</label><input type="text" id="lprenom" placeholder="Marie"></div>
+          <div class="lform-field"><label>Nom *</label><input type="text" id="lnom" placeholder="Dupont"></div>
+        </div>
+        <div class="lform-field"><label>Téléphone *</label><input type="tel" id="ltel" placeholder="06 00 00 00 00"></div>
+        <div class="lform-field"><label>Email *</label><input type="email" id="lemail" placeholder="marie@exemple.fr"></div>
+        <button class="lform-btn-submit" onclick="lSubmit()">✓ Je veux être rappelé gratuitement</button>
+        <div class="lform-legal">Service gratuit. Vos données sont protégées. <a href="/politique-confidentialite/" style="color:#bbb;">Politique de confidentialité</a></div>
+      </div>
+
+      <!-- SUCCÈS -->
+      <div class="lform-step" id="lsuccess">
+        <div class="lform-success">
+          <div class="lform-success-icon">✅</div>
+          <h3>Demande envoyée !</h3>
+          <p>Un installateur agréé du Rhône vous contactera dans les <strong>24 heures</strong>. Merci de votre confiance.</p>
+        </div>
+      </div>
+
+    </div>
   </div>
 </section>
 
@@ -140,7 +375,6 @@
 
     <div class="article-content">
 
-      <!-- INTRO -->
       <p>Vous habitez à <strong>Lyon</strong> et souhaitez installer un monte-escalier pour rester chez vous en toute autonomie ? Solutions Senior vous met en relation gratuitement avec des installateurs agréés intervenant à Lyon et dans tout le <strong>Rhône (69)</strong>.</p>
 
       <div class="highlight-green">
@@ -148,7 +382,6 @@
         <p>Prix à Lyon : <strong>3 000 € à 9 000 €</strong> selon le type. Plusieurs aides peuvent réduire significativement le reste à charge selon votre situation. Mise en relation gratuite — un installateur agréé du Rhône vous rappelle sous 24h.</p>
       </div>
 
-      <!-- ══ CONTEXTE LOCAL ══ -->
       <h2 id="contexte">Monte-escalier à Lyon&nbsp;: le contexte local</h2>
 
       <div class="visuel-local">
@@ -170,7 +403,6 @@
         <button class="btn-cta open-formulaire">Je veux être rappelé →</button>
       </div>
 
-      <!-- ══ TYPES ══ -->
       <h2 id="types">Types de monte-escaliers disponibles à Lyon</h2>
 
       <p>Tous les types de monte-escaliers sont disponibles et installables à Lyon. Le choix dépend avant tout de la configuration de votre escalier :</p>
@@ -201,36 +433,22 @@
 
       <p>Dans les maisons de la Croix-Rousse et du Vieux-Lyon, les escaliers sont souvent <strong>droits mais très raides</strong> — le modèle droit est généralement suffisant. Dans les maisons individuelles avec escalier en L ou en U, un modèle tournant sera nécessaire.</p>
 
-      <!-- ══ PRIX ══ -->
       <h2 id="prix">Prix d'un monte-escalier à Lyon</h2>
 
       <p>Les prix à Lyon sont alignés sur les tarifs nationaux. L'installation elle-même ne génère pas de surcoût lié à la localisation.</p>
 
       <table>
         <thead>
-          <tr>
-            <th>Type</th>
-            <th>Prix tout compris (fourniture + pose)</th>
-          </tr>
+          <tr><th>Type</th><th>Prix tout compris (fourniture + pose)</th></tr>
         </thead>
         <tbody>
-          <tr>
-            <td><a href="/monte-escaliers/droit/">Monte-escalier droit</a></td>
-            <td>3 000 € – 5 000 €</td>
-          </tr>
-          <tr>
-            <td><a href="/monte-escaliers/tournant/">Monte-escalier tournant</a></td>
-            <td>5 000 € – 9 000 €</td>
-          </tr>
-          <tr>
-            <td><a href="/monte-escaliers/exterieur/">Monte-escalier extérieur</a></td>
-            <td>4 000 € – 8 000 €</td>
-          </tr>
+          <tr><td><a href="/monte-escaliers/droit/">Monte-escalier droit</a></td><td>3 000 € – 5 000 €</td></tr>
+          <tr><td><a href="/monte-escaliers/tournant/">Monte-escalier tournant</a></td><td>5 000 € – 9 000 €</td></tr>
+          <tr><td><a href="/monte-escaliers/exterieur/">Monte-escalier extérieur</a></td><td>4 000 € – 8 000 €</td></tr>
         </tbody>
       </table>
       <p style="font-size:0.82rem; color:var(--text-light);">Prix indicatifs fourniture + installation. <a href="/monte-escaliers/prix/">Voir le guide complet des prix →</a></p>
 
-      <!-- ══ AIDES FINANCIÈRES ══ -->
       <h2 id="aides">Aides financières pour un monte-escalier à Lyon</h2>
 
       <p>Les habitants de Lyon peuvent cumuler plusieurs aides pour financer leur monte-escalier. Le montant dépend de votre situation — revenus, type de logement, aides cumulables.</p>
@@ -254,7 +472,6 @@
         <button class="btn-cta-white open-formulaire">Je veux être rappelé gratuitement →</button>
       </div>
 
-      <!-- ══ COMMENT ÇA MARCHE ══ -->
       <h2 id="comment">Comment obtenir un devis à Lyon ?</h2>
 
       <p>Le processus est simple, rapide et entièrement gratuit. Aucune obligation à aucune étape.</p>
@@ -288,7 +505,6 @@
         <button class="btn-cta-white open-formulaire">Je veux être rappelé gratuitement →</button>
       </div>
 
-      <!-- ══ FAQ ACCORDÉONS ══ -->
       <h2 id="faq">Questions fréquentes — Monte-escalier à Lyon</h2>
 
       <div class="faq-item">
@@ -350,5 +566,68 @@
 <div id="formulaire-modal"></div>
 <div id="bandeau-sticky" data-titre="Devis gratuit à Lyon"></div>
 <script src="/assets/components.js"></script>
+
+<script>
+// ── FORMULAIRE HERO LYON (auto-suffisant, indépendant de components.js) ──
+
+var lData = { service: 'Monte-escalier', ville: 'Lyon', departement: '69' };
+
+function lSelectOption(el) {
+  el.closest('.lform-grid').querySelectorAll('.lform-option').forEach(function(o) {
+    o.classList.remove('selected');
+  });
+  el.classList.add('selected');
+  lData.localisation = el.textContent.trim();
+}
+
+function lUpdateDots(active) {
+  for (var i = 0; i < 3; i++) {
+    var d = document.getElementById('ldot' + i);
+    if (!d) continue;
+    d.className = 'lform-dot';
+    if (i < active) d.classList.add('done');
+    else if (i === active) d.classList.add('active');
+  }
+}
+
+function lNextStep(current) {
+  document.getElementById('lstep' + current).classList.remove('active');
+  var next = current + 1;
+  document.getElementById('lstep' + next).classList.add('active');
+  lUpdateDots(next);
+}
+
+function lPrevStep(current) {
+  document.getElementById('lstep' + current).classList.remove('active');
+  var prev = current - 1;
+  document.getElementById('lstep' + prev).classList.add('active');
+  lUpdateDots(prev);
+}
+
+function lSubmit() {
+  lData.codePostal = document.getElementById('lcp').value;
+  lData.pour       = document.getElementById('lpour').value;
+  lData.prenom     = document.getElementById('lprenom').value;
+  lData.nom        = document.getElementById('lnom').value;
+  lData.telephone  = document.getElementById('ltel').value;
+  lData.email      = document.getElementById('lemail').value;
+
+  if (!lData.prenom || !lData.telephone || !lData.email) {
+    alert('Merci de renseigner prénom, téléphone et email.');
+    return;
+  }
+
+  fetch('https://formspree.io/f/mbdpyayv', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(lData)
+  });
+
+  document.getElementById('lstep2').classList.remove('active');
+  document.querySelector('.lform-indicators').style.display = 'none';
+  document.getElementById('lsuccess').classList.add('active');
+}
+</script>
+
 </body>
 </html>

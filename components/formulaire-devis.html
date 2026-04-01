@@ -36,13 +36,11 @@
       <div class="step-label" id="step1-label">Étape 2 / 4</div>
       <div class="step-question" id="step1-question">Où se trouve votre escalier ?</div>
 
-      <!-- Options monte-escalier -->
       <div id="qualif-monte" class="service-grid" style="grid-template-columns:1fr 1fr;">
         <div class="service-option" onclick="selectService(this,'modal');nextStep('modal',1)"><span class="icon">🏠</span> À l'intérieur</div>
         <div class="service-option" onclick="selectService(this,'modal');nextStep('modal',1)"><span class="icon">🌿</span> À l'extérieur</div>
       </div>
 
-      <!-- Pour les autres services : passe directement -->
       <button class="btn-next" id="btn-continuer-step1" style="display:none;" onclick="nextStep('modal',1)">Continuer →</button>
     </div>
 
@@ -90,80 +88,66 @@
 </div>
 
 <script>
-// ─── CONFIG MONTE-ESCALIER ──────────────────────────────────────────────────
-// Appelée à chaque ouverture du modal pour override le reset de components.js
+// ─── CONFIG MONTE-ESCALIER ─────────────────────────────────────────────────
 function applyMonteConfig() {
-  const service = document.body.getAttribute('data-service');
-  if (service !== 'monte-escaliers') return;
-
-  // Masquer toutes les étapes, puis afficher seulement mstep1
+  // Masquer toutes les étapes
   document.querySelectorAll('#modalOverlay .step').forEach(function(s) {
     s.classList.remove('active');
   });
 
-  // Étape 0 : afficher uniquement la grille "monte-escalier unique"
+  // Étape 0 : grille unique monte-escalier (présélectionnée, non affichée)
   document.getElementById('service-grid-full').style.display = 'none';
   document.getElementById('service-grid-single').style.display = 'grid';
   document.getElementById('service-unique').innerHTML = '<span class="icon">🪜</span> Monte-escalier';
 
-  // Masquer le point d'indicateur 0 (étape skippée)
+  // Masquer le dot 0 (étape skippée)
   document.getElementById('mdot0').style.display = 'none';
 
-  // Afficher mstep1 (question qualifiante intérieur/extérieur)
+  // Afficher directement mstep1 (intérieur / extérieur)
   document.getElementById('mstep1').classList.add('active');
   document.getElementById('qualif-monte').style.display = 'grid';
   document.getElementById('btn-continuer-step1').style.display = 'none';
   document.getElementById('step1-label').textContent = 'Étape 1 / 3';
   document.getElementById('step1-question').textContent = 'Où se trouve votre escalier ?';
 
-  // Mettre à jour les indicateurs (actif = dot index 1)
   updateModalDots('modal', 1);
 }
 
-// Config pour les pages génériques (non monte-escalier)
 function applyGenericConfig() {
   document.getElementById('qualif-monte').style.display = 'none';
   document.getElementById('btn-continuer-step1').style.display = 'block';
   document.getElementById('step1-question').textContent = 'Pour qui est ce service ?';
 }
 
-// ─── INIT AU CHARGEMENT ─────────────────────────────────────────────────────
+// ─── INIT ──────────────────────────────────────────────────────────────────
 document.addEventListener('DOMContentLoaded', function() {
-  const service = document.body.getAttribute('data-service');
-  if (service === 'monte-escaliers') {
+  var isMonte = document.body.getAttribute('data-service') === 'monte-escaliers';
+
+  if (isMonte) {
     applyMonteConfig();
   } else {
     applyGenericConfig();
   }
 
-  // ─── OBSERVER : re-applique la config à chaque ouverture du modal ─────────
-  // Nécessaire car components.js remet mstep0 actif à chaque ouverture
-  const overlay = document.getElementById('modalOverlay');
-  if (!overlay) return;
+  // Observer : re-applique la config à chaque ouverture du modal
+  // components.js remet mstep0 actif à chaque ouverture — on corrige juste après
+  // Le CSS utilise la classe .open sur .modal-overlay
+  var overlay = document.getElementById('modalOverlay');
+  if (!overlay || !isMonte) return;
 
-  const observer = new MutationObserver(function(mutations) {
+  var observer = new MutationObserver(function(mutations) {
     mutations.forEach(function(mutation) {
-      if (mutation.type !== 'attributes') return;
-
-      const isVisible = overlay.classList.contains('active')
-        || overlay.style.display === 'flex'
-        || overlay.style.display === 'block';
-
-      if (isVisible) {
-        // Léger délai pour laisser components.js finir son propre reset
-        setTimeout(function() {
-          if (document.body.getAttribute('data-service') === 'monte-escaliers') {
-            applyMonteConfig();
-          }
-        }, 0);
+      if (mutation.attributeName === 'class' && overlay.classList.contains('open')) {
+        // setTimeout(0) : laisse components.js finir son reset avant d'appliquer le nôtre
+        setTimeout(applyMonteConfig, 0);
       }
     });
   });
 
-  observer.observe(overlay, { attributes: true, attributeFilter: ['class', 'style'] });
+  observer.observe(overlay, { attributes: true, attributeFilter: ['class'] });
 });
 
-// ─── GESTION DES DOTS ───────────────────────────────────────────────────────
+// ─── DOTS ──────────────────────────────────────────────────────────────────
 window.updateDots = function(form, active) {
   if (form !== 'modal') return;
   updateModalDots(form, active);

@@ -1,5 +1,5 @@
 /* ============================================
-   SENIORCONFORT – STYLES GLOBAUX PARTAGÉS
+   SOLUTIONS SENIOR – STYLES GLOBAUX PARTAGÉS
    Modifier ce fichier = s'applique partout
    ============================================ */
 
@@ -275,9 +275,44 @@ footer { background: var(--text); color: rgba(255,255,255,0.6); padding: 60px 5%
 .visuel-local .v-icon { font-size: 2rem; opacity: 0.5; }
 .visuel-local .v-label { font-size: 0.82rem; font-weight: 600; opacity: 0.75; line-height: 1.5; }
 
+/* CTA hero local (bouton dans le hero de la page ville) */
+.hero-cta-block {
+  margin-top: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.75rem;
+}
+.btn-hero-cta {
+  background: #fff;
+  color: var(--sage);
+  font-family: 'DM Sans', sans-serif;
+  font-size: 1.05rem;
+  font-weight: 700;
+  padding: 0.9rem 2rem;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.2);
+}
+.btn-hero-cta:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.25);
+}
+.hero-cta-reassurance {
+  display: flex;
+  gap: 1.25rem;
+  font-size: 0.85rem;
+  color: rgba(255,255,255,0.85);
+  font-family: 'DM Sans', sans-serif;
+}
+
 @media (max-width: 700px) {
   .types-grid { grid-template-columns: 1fr; }
   .etapes-grid { grid-template-columns: 1fr; }
+  .btn-hero-cta { font-size: 1rem; padding: 0.85rem 1.5rem; width: 100%; text-align: center; }
+  .hero-cta-reassurance { flex-wrap: wrap; gap: 0.5rem; }
 }
 
 /* ============================================

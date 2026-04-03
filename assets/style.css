@@ -450,7 +450,7 @@ footer { background: var(--text); color: rgba(255,255,255,0.6); padding: 60px 5%
 .lform-legal a { color: #bbb; }
 
 /* Succès */
-.lform-success { text-align: center; padding: 8px 0; }
+.lform-success { text-align: center; margin: auto 0; padding: 16px 0; }
 .lform-success-icon {
   width: 56px; height: 56px; background: var(--sage-pale); border-radius: 50%;
   display: flex; align-items: center; justify-content: center;

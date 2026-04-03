@@ -135,11 +135,11 @@
     .lform-progress-bar.active { background: var(--sage); }
     .lform-progress-bar.done { background: var(--sage-light); }
 
-    /* Conteneur : hauteur animée dynamiquement par JS */
+    /* Conteneur hauteur fixe = étape la plus grande */
     .lform-steps-wrapper {
       position: relative;
+      height: 400px;
       overflow: hidden;
-      transition: height 0.28s ease;
     }
 
     /* Chaque étape en absolu, transition smooth */
@@ -199,6 +199,42 @@
     .lform-option:hover { border-color: var(--sage-light); background: var(--sage-pale); }
     .lform-option.selected { border-color: var(--sage); background: var(--sage-pale); }
     .lform-option .icon { font-size: 1.4rem; }
+
+    /* Options grandes (étape 1) */
+    .lform-grid-large { gap: 12px; margin-bottom: 20px; }
+    .lform-option-large {
+      border: 2px solid #e0e8e2;
+      border-radius: 14px;
+      padding: 22px 16px;
+      cursor: pointer;
+      transition: all 0.2s;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      gap: 8px;
+    }
+    .lform-option-large:hover { border-color: var(--sage-light); background: var(--sage-pale); }
+    .lform-option-large.selected { border-color: var(--sage); background: var(--sage-pale); }
+    .lform-option-icon { font-size: 2rem; }
+    .lform-option-text { font-size: 0.97rem; font-weight: 700; color: var(--text); }
+    .lform-option-hint { font-size: 0.78rem; color: var(--text-light); line-height: 1.3; }
+
+    /* Champs grands (étape 2) */
+    .lform-field-lg input, .lform-field-lg select { padding: 14px 14px; font-size: 1rem; }
+    .lform-field-lg { margin-bottom: 16px; }
+
+    /* Ligne de réassurance */
+    .lform-reassurance {
+      font-size: 0.8rem;
+      color: var(--text-light);
+      text-align: center;
+      margin: 12px 0 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+    }
 
     /* Champs */
     .lform-field { margin-bottom: 10px; }
@@ -285,7 +321,7 @@
     @media (max-width: 960px) {
       .hero-local-inner { grid-template-columns: 1fr; gap: 32px; }
       .hero-form-card { max-width: 520px; }
-      .lform-steps-wrapper { overflow: visible; transition: none; }
+      .lform-steps-wrapper { height: auto; overflow: visible; }
       .lform-step { position: relative; inset: auto; transform: none; }
       .lform-step:not(.active) { display: none; opacity: 1; transform: none; }
       .lform-step.active { display: block; opacity: 1; transform: none; }
@@ -345,14 +381,19 @@
         <div class="lform-step active" id="lstep0">
           <div class="lform-label">Étape 1 sur 3</div>
           <div class="lform-question">Où se trouve votre escalier ?</div>
-          <div class="lform-grid">
-            <div class="lform-option" onclick="lSelectOption(this)">
-              <span class="icon">🏠</span> À l'intérieur
+          <div class="lform-grid lform-grid-large">
+            <div class="lform-option lform-option-large" onclick="lSelectOption(this)">
+              <span class="lform-option-icon">🏠</span>
+              <span class="lform-option-text">À l'intérieur</span>
+              <span class="lform-option-hint">Escalier intérieur de la maison</span>
             </div>
-            <div class="lform-option" onclick="lSelectOption(this)">
-              <span class="icon">🌿</span> À l'extérieur
+            <div class="lform-option lform-option-large" onclick="lSelectOption(this)">
+              <span class="lform-option-icon">🌿</span>
+              <span class="lform-option-text">À l'extérieur</span>
+              <span class="lform-option-hint">Accès jardin, terrasse, entrée</span>
             </div>
           </div>
+          <div class="lform-reassurance">🔒 Vos données sont sécurisées — Service 100 % gratuit</div>
           <button class="lform-btn-next" id="lbtn-step0" style="display:none;" onclick="lNextStep(0)">Continuer →</button>
         </div>
 
@@ -361,11 +402,11 @@
           <button class="lform-btn-back" onclick="lPrevStep(1)">← Retour</button>
           <div class="lform-label">Étape 2 sur 3</div>
           <div class="lform-question">Votre situation</div>
-          <div class="lform-field">
+          <div class="lform-field lform-field-lg">
             <label>Code postal</label>
             <input type="text" id="lcp" placeholder="Ex. 69001" maxlength="5">
           </div>
-          <div class="lform-field">
+          <div class="lform-field lform-field-lg">
             <label>Ce monte-escalier est pour…</label>
             <select id="lpour">
               <option>Moi-même</option>
@@ -374,6 +415,7 @@
               <option>Un autre proche</option>
             </select>
           </div>
+          <div class="lform-reassurance">Un installateur agréé du Rhône vous rappelle sous 24h</div>
           <button class="lform-btn-next" onclick="lNextStep(1)">Continuer →</button>
         </div>
 
@@ -622,52 +664,30 @@ function lUpdateProgress(step) {
   }
 }
 
-function lSetWrapperHeight(stepEl) {
-  var wrapper = document.querySelector('.lform-steps-wrapper');
-  if (!wrapper) return;
-  // Mesure la hauteur naturelle de l'étape
-  stepEl.style.position = 'relative';
-  var h = stepEl.offsetHeight;
-  stepEl.style.position = '';
-  wrapper.style.height = h + 'px';
-}
-
 function lGoTo(next) {
   var current = document.getElementById('lstep' + lCurrent);
   var target  = document.getElementById('lstep' + next);
   if (!target) return;
 
-  // Direction de la transition
   if (next < lCurrent) {
     target.style.transform = 'translateX(-24px)';
   } else {
     target.style.transform = 'translateX(24px)';
   }
 
-  // Sortie de l'étape courante
   if (current) {
     current.classList.add('leaving');
     current.classList.remove('active');
-    setTimeout(function() { if (current) current.classList.remove('leaving'); }, 280);
+    setTimeout(function() { if (current) current.classList.remove('leaving'); }, 250);
   }
 
-  // Entrée de la nouvelle étape
   target.classList.add('active');
-  target.getBoundingClientRect(); // force reflow
+  target.getBoundingClientRect();
   target.style.transform = '';
-
-  // Animer la hauteur du wrapper
-  lSetWrapperHeight(target);
 
   lCurrent = next;
   lUpdateProgress(Math.min(next, 2));
 }
-
-// Init hauteur au chargement
-document.addEventListener('DOMContentLoaded', function() {
-  var first = document.getElementById('lstep0');
-  if (first) lSetWrapperHeight(first);
-});
 
 function lSelectOption(el) {
   el.closest('.lform-grid').querySelectorAll('.lform-option').forEach(function(o) {

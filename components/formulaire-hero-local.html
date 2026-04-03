@@ -1,5 +1,6 @@
-<!-- HERO LOCAL avec formulaire tunnel — chargé via components.js -->
-<!-- Variables remplacées automatiquement : {{VILLE}} {{DEPT}} {{DEPT_NUM}} {{DATE_MAJ}} -->
+<!-- HERO LOCAL — chargé via components.js -->
+<!-- Variables : {{VILLE_PREFIX}} {{VILLE}} {{DEPT}} {{DEPT_NUM}} {{DATE_MAJ}} -->
+<!-- {{IF_VILLE}}...{{/IF_VILLE}} : blocs affichés seulement si ville présente -->
 
 <section class="hero-local">
   <div class="hero-local-inner">
@@ -8,13 +9,13 @@
     <div class="hero-local-content">
       <div class="breadcrumb">
         <a href="/">Accueil</a> ›
-        <a href="/monte-escaliers/">Monte-escalier</a> ›
-        {{VILLE}}
+        <a href="/monte-escaliers/">Monte-escalier</a>
+        {{IF_VILLE}} › {{VILLE}}{{/IF_VILLE}}
       </div>
-      <h1 class="hero-local-h1"></h1><!-- rempli par JS depuis le <title> ou data-h1 -->
+      <h1 class="hero-local-h1"></h1>
       <div class="article-meta">
         <span>📅 Mis à jour le {{DATE_MAJ}}</span>
-        <span>📍 {{VILLE}}, {{DEPT}} ({{DEPT_NUM}})</span>
+        {{IF_VILLE}}<span>📍 {{VILLE}}, {{DEPT}} ({{DEPT_NUM}})</span>{{/IF_VILLE}}
         <span>✍️ Par l'équipe Solutions Senior</span>
       </div>
       <div class="hero-reassurances">
@@ -27,8 +28,8 @@
 
     <!-- Droite : formulaire tunnel -->
     <div class="hero-form-card">
-      <div class="form-card-title">Votre devis gratuit à {{VILLE}}</div>
-      <div class="form-card-subtitle">2 minutes suffisent. Un installateur agréé à {{VILLE}} vous rappelle sous 24h.</div>
+      <div class="form-card-title">Votre devis gratuit{{VILLE_PREFIX}}</div>
+      <div class="form-card-subtitle">2 minutes suffisent. Un installateur agréé{{VILLE_PREFIX}} vous rappelle sous 24h.</div>
 
       <div class="lform-progress">
         <div class="lform-progress-bar active" id="lbar0"></div>
@@ -38,7 +39,7 @@
 
       <div class="lform-steps-wrapper">
 
-        <!-- ÉTAPE 1 -->
+        <!-- Étape 1 -->
         <div class="lform-step active" id="lstep0">
           <div class="lform-label">Étape 1 sur 3</div>
           <div class="lform-question">Où se trouve votre escalier ?</div>
@@ -60,7 +61,7 @@
           </div>
         </div>
 
-        <!-- ÉTAPE 2 -->
+        <!-- Étape 2 -->
         <div class="lform-step" id="lstep1">
           <button class="lform-btn-back" onclick="lPrevStep(1)">← Retour</button>
           <div class="lform-label">Étape 2 sur 3</div>
@@ -79,12 +80,12 @@
             </select>
           </div>
           <div class="lform-btn-group">
-            <div class="lform-reassurance">Un installateur agréé à {{VILLE}} vous rappelle sous 24h</div>
+            <div class="lform-reassurance">Un installateur agréé{{VILLE_PREFIX}} vous rappelle sous 24h</div>
             <button class="lform-btn-next" onclick="lNextStep(1)">Continuer →</button>
           </div>
         </div>
 
-        <!-- ÉTAPE 3 -->
+        <!-- Étape 3 -->
         <div class="lform-step" id="lstep2">
           <button class="lform-btn-back" onclick="lPrevStep(2)">← Retour</button>
           <div class="lform-label">Étape 3 sur 3</div>
@@ -103,12 +104,12 @@
           </div>
         </div>
 
-        <!-- SUCCÈS -->
+        <!-- Succès -->
         <div class="lform-step" id="lsuccess">
           <div class="lform-success">
             <div class="lform-success-icon">✅</div>
             <h3>Demande envoyée !</h3>
-            <p>Un installateur agréé à {{VILLE}} vous contactera dans les <strong>24 heures</strong>. Merci de votre confiance.</p>
+            <p>Un installateur agréé{{VILLE_PREFIX}} vous contactera dans les <strong>24 heures</strong>. Merci de votre confiance.</p>
           </div>
         </div>
 

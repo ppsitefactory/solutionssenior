@@ -1,165 +1,172 @@
 <div class="modal-overlay" id="modalOverlay" onclick="closeModalOutside(event)">
   <div class="modal-box">
     <button class="modal-close" onclick="closeModal()">✕</button>
-    <div class="form-title">Être rappelé gratuitement</div>
-    <div class="form-subtitle">Décrivez votre projet en 2 minutes. Un professionnel agréé vous contacte sous 24h.</div>
-    <div class="step-indicators" id="modalIndicators">
-      <div class="step-dot active" id="mdot0"></div>
-      <div class="step-dot" id="mdot1"></div>
-      <div class="step-dot" id="mdot2"></div>
-      <div class="step-dot" id="mdot3"></div>
+
+    <!-- ═══ MODE MONTE / LOCAL (3 étapes) ═══ -->
+    <div id="m-mode-monte" style="display:none;">
+      <div class="form-title" id="m-monte-title">Votre devis gratuit</div>
+      <div class="form-subtitle" id="m-monte-subtitle">2 minutes suffisent. Un professionnel agréé vous rappelle sous 24h.</div>
+      <div class="lform-progress" id="m-monte-progress">
+        <div class="lform-progress-bar active" id="mbar0"></div>
+        <div class="lform-progress-bar" id="mbar1"></div>
+        <div class="lform-progress-bar" id="mbar2"></div>
+      </div>
+      <div class="lform-steps-wrapper" style="height:360px;">
+
+        <!-- Étape 1 : intérieur / extérieur -->
+        <div class="lform-step active" id="mstep0">
+          <div class="lform-label">Étape 1 sur 3</div>
+          <div class="lform-question">Où se trouve votre escalier ?</div>
+          <div class="lform-grid lform-grid-large">
+            <div class="lform-option lform-option-large" onclick="mSelectOption(this)">
+              <span class="lform-option-icon">🏠</span>
+              <span class="lform-option-text">À l'intérieur</span>
+              <span class="lform-option-hint">Escalier intérieur de la maison</span>
+            </div>
+            <div class="lform-option lform-option-large" onclick="mSelectOption(this)">
+              <span class="lform-option-icon">🌿</span>
+              <span class="lform-option-text">À l'extérieur</span>
+              <span class="lform-option-hint">Accès jardin, terrasse, entrée</span>
+            </div>
+          </div>
+          <div class="lform-btn-group">
+            <div class="lform-reassurance">🔒 Vos données sont sécurisées — Service 100 % gratuit</div>
+            <button class="lform-btn-next" onclick="mNextStep(0)">Continuer →</button>
+          </div>
+        </div>
+
+        <!-- Étape 2 : situation -->
+        <div class="lform-step" id="mstep1">
+          <button class="lform-btn-back" onclick="mPrevStep(1)">← Retour</button>
+          <div class="lform-label">Étape 2 sur 3</div>
+          <div class="lform-question">Votre situation</div>
+          <div class="lform-field lform-field-lg">
+            <label>Code postal</label>
+            <input type="text" id="m-cp" placeholder="Ex. 69001" maxlength="5">
+          </div>
+          <div class="lform-field lform-field-lg">
+            <label>Ce monte-escalier est pour…</label>
+            <select id="m-pour">
+              <option>Moi-même</option>
+              <option>Mon parent</option>
+              <option>Mon conjoint</option>
+              <option>Un autre proche</option>
+            </select>
+          </div>
+          <div class="lform-btn-group">
+            <div class="lform-reassurance" id="m-reassurance-1">Un professionnel agréé vous rappelle sous 24h</div>
+            <button class="lform-btn-next" onclick="mNextStep(1)">Continuer →</button>
+          </div>
+        </div>
+
+        <!-- Étape 3 : coordonnées -->
+        <div class="lform-step" id="mstep2">
+          <button class="lform-btn-back" onclick="mPrevStep(2)">← Retour</button>
+          <div class="lform-label">Étape 3 sur 3</div>
+          <div class="lform-question">Vos coordonnées</div>
+          <div class="lform-row">
+            <div class="lform-field"><label>Prénom *</label><input type="text" id="m-prenom" placeholder="Marie"></div>
+            <div class="lform-field"><label>Nom *</label><input type="text" id="m-nom" placeholder="Dupont"></div>
+          </div>
+          <div class="lform-row">
+            <div class="lform-field"><label>Téléphone *</label><input type="tel" id="m-tel" placeholder="06 00 00 00 00"></div>
+            <div class="lform-field"><label>Email *</label><input type="email" id="m-email" placeholder="marie@exemple.fr"></div>
+          </div>
+          <div class="lform-btn-group">
+            <button class="lform-btn-submit" onclick="mSubmit()">✓ Je veux être rappelé gratuitement</button>
+            <div class="lform-legal">Service gratuit. Données protégées. <a href="/politique-confidentialite/">Politique de confidentialité</a></div>
+          </div>
+        </div>
+
+        <!-- Succès -->
+        <div class="lform-step" id="msuccess">
+          <div class="lform-success">
+            <div class="lform-success-icon">✅</div>
+            <h3>Demande envoyée !</h3>
+            <p id="m-success-text">Un professionnel agréé vous contactera dans les <strong>24 heures</strong>. Merci de votre confiance.</p>
+          </div>
+        </div>
+
+      </div><!-- /lform-steps-wrapper -->
     </div>
 
-    <!-- ÉTAPE 1 : choix du service -->
-    <div class="step active" id="mstep0">
-      <div class="step-label">Étape 1 / 4</div>
-      <div class="step-question">Quel service recherchez-vous ?</div>
-
-      <div class="service-grid" id="service-grid-full">
-        <div class="service-option" onclick="selectService(this,'modal');nextStep('modal',0)"><span class="icon">🪜</span> Monte-escalier</div>
-        <div class="service-option" onclick="selectService(this,'modal');nextStep('modal',0)"><span class="icon">🛁</span> Douche senior</div>
-        <div class="service-option" onclick="selectService(this,'modal');nextStep('modal',0)"><span class="icon">🤝</span> Aide à domicile</div>
-        <div class="service-option" onclick="selectService(this,'modal');nextStep('modal',0)"><span class="icon">📡</span> Téléassistance</div>
-        <div class="service-option" onclick="selectService(this,'modal');nextStep('modal',0)"><span class="icon">🏘️</span> Résidence / EHPAD</div>
+    <!-- ═══ MODE GÉNÉRIQUE (4 étapes) ═══ -->
+    <div id="m-mode-generic" style="display:none;">
+      <div class="form-title">Être rappelé gratuitement</div>
+      <div class="form-subtitle">Décrivez votre projet en 2 minutes. Un professionnel agréé vous contacte sous 24h.</div>
+      <div class="step-indicators">
+        <div class="step-dot active" id="gdot0"></div>
+        <div class="step-dot" id="gdot1"></div>
+        <div class="step-dot" id="gdot2"></div>
+        <div class="step-dot" id="gdot3"></div>
       </div>
 
-      <div class="service-grid" id="service-grid-single" style="display:none;">
-        <div class="service-option selected" id="service-unique" style="grid-column: 1 / -1; justify-content:center;"></div>
+      <!-- Étape 0 : choix service -->
+      <div class="step active" id="gstep0">
+        <div class="step-label">Étape 1 / 4</div>
+        <div class="step-question">Quel service recherchez-vous ?</div>
+        <div class="service-grid">
+          <div class="service-option" onclick="gSelectService(this,'monte');gNextStep(0)"><span class="icon">🪜</span> Monte-escalier</div>
+          <div class="service-option" onclick="gSelectService(this,'other');gNextStep(0)"><span class="icon">🛁</span> Douche senior</div>
+          <div class="service-option" onclick="gSelectService(this,'other');gNextStep(0)"><span class="icon">🤝</span> Aide à domicile</div>
+          <div class="service-option" onclick="gSelectService(this,'other');gNextStep(0)"><span class="icon">📡</span> Téléassistance</div>
+          <div class="service-option" onclick="gSelectService(this,'other');gNextStep(0)"><span class="icon">🏘️</span> Résidence / EHPAD</div>
+        </div>
       </div>
 
-      <button class="btn-next" id="btn-continuer-step0" style="display:none;" onclick="nextStep('modal',0)">Continuer →</button>
+      <!-- Étape 1 : intérieur/extérieur (monte) ou skip (autres) -->
+      <div class="step" id="gstep1">
+        <button class="btn-back" onclick="gPrevStep(1)">← Retour</button>
+        <div class="step-label">Étape 2 / 4</div>
+        <div class="step-question">Où se trouve votre escalier ?</div>
+        <div class="service-grid" style="grid-template-columns:1fr 1fr;">
+          <div class="service-option" onclick="gSelectService(this,'interior');gNextStep(1)"><span class="icon">🏠</span> À l'intérieur</div>
+          <div class="service-option" onclick="gSelectService(this,'exterior');gNextStep(1)"><span class="icon">🌿</span> À l'extérieur</div>
+        </div>
+      </div>
+
+      <!-- Étape 2 : situation -->
+      <div class="step" id="gstep2">
+        <button class="btn-back" onclick="gPrevStep(2)">← Retour</button>
+        <div class="step-label">Étape 3 / 4</div>
+        <div class="step-question">Votre situation</div>
+        <div class="form-field"><label>Code postal</label><input type="text" id="g-cp" placeholder="Ex. 75001" maxlength="5"></div>
+        <div class="form-field">
+          <label>Ce service est pour...</label>
+          <select id="g-pour">
+            <option>Moi-même</option>
+            <option>Mon parent</option>
+            <option>Mon conjoint</option>
+            <option>Un autre proche</option>
+          </select>
+        </div>
+        <button class="btn-next" onclick="gNextStep(2)">Continuer →</button>
+      </div>
+
+      <!-- Étape 3 : coordonnées -->
+      <div class="step" id="gstep3">
+        <button class="btn-back" onclick="gPrevStep(3)">← Retour</button>
+        <div class="step-label">Étape 4 / 4</div>
+        <div class="step-question">Vos coordonnées</div>
+        <div class="form-row">
+          <div class="form-field"><label>Prénom *</label><input type="text" id="g-prenom" placeholder="Marie"></div>
+          <div class="form-field"><label>Nom *</label><input type="text" id="g-nom" placeholder="Dupont"></div>
+        </div>
+        <div class="form-field"><label>Email *</label><input type="email" id="g-email" placeholder="marie@exemple.fr"></div>
+        <div class="form-field"><label>Téléphone *</label><input type="tel" id="g-tel" placeholder="06 00 00 00 00"></div>
+        <button class="btn-submit" onclick="gSubmit()">✓ Je veux être rappelé gratuitement</button>
+        <div class="form-legal">En soumettant ce formulaire, vous acceptez d'être contacté par Solutions Senior et ses partenaires. Service gratuit.</div>
+      </div>
+
+      <!-- Succès -->
+      <div class="step" id="gsuccess">
+        <div class="success-step">
+          <div class="success-icon">✅</div>
+          <h3>Demande envoyée !</h3>
+          <p>Un professionnel agréé près de chez vous vous contactera dans les <strong>24 heures</strong>. Merci de votre confiance.</p>
+        </div>
+      </div>
     </div>
 
-    <!-- ÉTAPE 2 : question qualifiante (monte-escalier uniquement) -->
-    <div class="step" id="mstep1">
-      <button class="btn-back" onclick="prevStep('modal',1)">← Retour</button>
-      <div class="step-label" id="step1-label">Étape 2 / 4</div>
-      <div class="step-question" id="step1-question">Où se trouve votre escalier ?</div>
-
-      <div id="qualif-monte" class="service-grid" style="grid-template-columns:1fr 1fr;">
-        <div class="service-option" onclick="selectService(this,'modal');nextStep('modal',1)"><span class="icon">🏠</span> À l'intérieur</div>
-        <div class="service-option" onclick="selectService(this,'modal');nextStep('modal',1)"><span class="icon">🌿</span> À l'extérieur</div>
-      </div>
-
-      <button class="btn-next" id="btn-continuer-step1" style="display:none;" onclick="nextStep('modal',1)">Continuer →</button>
-    </div>
-
-    <!-- ÉTAPE 3 : situation -->
-    <div class="step" id="mstep2">
-      <button class="btn-back" onclick="prevStep('modal',2)">← Retour</button>
-      <div class="step-label">Étape 3 / 4</div>
-      <div class="step-question">Votre situation</div>
-      <div class="form-field"><label>Code postal</label><input type="text" placeholder="Ex. 69001" maxlength="5"></div>
-      <div class="form-field"><label>Ce service est pour...</label>
-        <select>
-          <option>Moi-même</option>
-          <option>Mon parent</option>
-          <option>Mon conjoint</option>
-          <option>Un autre proche</option>
-        </select>
-      </div>
-      <button class="btn-next" onclick="nextStep('modal',2)">Continuer →</button>
-    </div>
-
-    <!-- ÉTAPE 4 : coordonnées -->
-    <div class="step" id="mstep3">
-      <button class="btn-back" onclick="prevStep('modal',3)">← Retour</button>
-      <div class="step-label">Étape 4 / 4</div>
-      <div class="step-question">Vos coordonnées</div>
-      <div class="form-row">
-        <div class="form-field"><label>Prénom *</label><input type="text" placeholder="Marie"></div>
-        <div class="form-field"><label>Nom *</label><input type="text" placeholder="Dupont"></div>
-      </div>
-      <div class="form-field"><label>Email *</label><input type="email" placeholder="marie@exemple.fr"></div>
-      <div class="form-field"><label>Téléphone *</label><input type="tel" placeholder="06 00 00 00 00"></div>
-      <button class="btn-submit" onclick="submitForm('modal')">✓ Je veux être rappelé gratuitement</button>
-      <div class="form-legal">En soumettant ce formulaire, vous acceptez d'être contacté par Solutions Senior et ses partenaires. Service gratuit.</div>
-    </div>
-
-    <!-- SUCCÈS -->
-    <div class="step" id="msuccess">
-      <div class="success-step">
-        <div class="success-icon">✅</div>
-        <h3>Demande envoyée !</h3>
-        <p>Un professionnel agréé près de chez vous vous contactera dans les <strong>24 heures</strong>. Merci de votre confiance.</p>
-      </div>
-    </div>
   </div>
 </div>
-
-<script>
-// ─── CONFIG MONTE-ESCALIER ─────────────────────────────────────────────────
-function applyMonteConfig() {
-  // Réinitialiser toutes les étapes
-  document.querySelectorAll('#modalOverlay .step').forEach(function(s) {
-    s.classList.remove('active');
-  });
-
-  // Mstep0 : afficher Monte-escalier présélectionné + bouton Continuer
-  document.getElementById('mstep0').classList.add('active');
-  document.getElementById('service-grid-full').style.display = 'none';
-  document.getElementById('service-grid-single').style.display = 'grid';
-  document.getElementById('service-unique').innerHTML = '<span class="icon">🪜</span> Monte-escalier';
-  document.getElementById('btn-continuer-step0').style.display = 'block';
-
-  // Préparer mstep1 (intérieur/extérieur) pour quand on y arrive
-  document.getElementById('qualif-monte').style.display = 'grid';
-  document.getElementById('btn-continuer-step1').style.display = 'none';
-  document.getElementById('step1-label').textContent = 'Étape 2 / 3';
-  document.getElementById('step1-question').textContent = 'Où se trouve votre escalier ?';
-
-  // Ajuster les dots : dot0 visible et actif
-  document.getElementById('mdot0').style.display = '';
-  updateModalDots('modal', 0);
-}
-
-function applyGenericConfig() {
-  document.getElementById('qualif-monte').style.display = 'none';
-  document.getElementById('btn-continuer-step1').style.display = 'block';
-  document.getElementById('step1-question').textContent = 'Pour qui est ce service ?';
-}
-
-// ─── INIT ──────────────────────────────────────────────────────────────────
-document.addEventListener('DOMContentLoaded', function() {
-  var isMonte = document.body.getAttribute('data-service') === 'monte-escaliers';
-
-  if (isMonte) {
-    applyMonteConfig();
-  } else {
-    applyGenericConfig();
-  }
-
-  // Observer : re-applique la config à chaque ouverture du modal
-  // components.js remet mstep0 actif à chaque ouverture — on corrige juste après
-  // Le CSS utilise la classe .open sur .modal-overlay
-  var overlay = document.getElementById('modalOverlay');
-  if (!overlay || !isMonte) return;
-
-  var observer = new MutationObserver(function(mutations) {
-    mutations.forEach(function(mutation) {
-      if (mutation.attributeName === 'class' && overlay.classList.contains('open')) {
-        // setTimeout(0) : laisse components.js finir son reset avant d'appliquer le nôtre
-        setTimeout(applyMonteConfig, 0);
-      }
-    });
-  });
-
-  observer.observe(overlay, { attributes: true, attributeFilter: ['class'] });
-});
-
-// ─── DOTS ──────────────────────────────────────────────────────────────────
-window.updateDots = function(form, active) {
-  if (form !== 'modal') return;
-  updateModalDots(form, active);
-};
-
-function updateModalDots(form, active) {
-  for (var i = 0; i < 4; i++) {
-    var d = document.getElementById('mdot' + i);
-    if (!d) continue;
-    d.className = 'step-dot';
-    if (i < active) d.classList.add('done');
-    else if (i === active) d.classList.add('active');
-  }
-}
-</script>

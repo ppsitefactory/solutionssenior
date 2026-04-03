@@ -156,7 +156,39 @@ function mSelectOption(el) {
   mData.localisation = textEl ? textEl.textContent.trim() : el.textContent.trim();
 }
 
-function mNextStep(current) { mGoTo(current + 1); }
+
+// ── VALIDATION : feedback visuel ──────────────
+function showError(el, type) {
+  if (type === 'options') {
+    // Bordure rouge sur les options non sélectionnées
+    el.querySelectorAll('.lform-option-large').forEach(function(o) {
+      if (!o.classList.contains('selected')) {
+        o.style.borderColor = '#e05555';
+      }
+    });
+    setTimeout(function() {
+      el.querySelectorAll('.lform-option-large').forEach(function(o) {
+        o.style.borderColor = '';
+      });
+    }, 1500);
+  } else if (type === 'input') {
+    el.style.borderColor = '#e05555';
+    el.focus();
+    setTimeout(function() { el.style.borderColor = ''; }, 1500);
+  }
+}
+
+function mNextStep(current) {
+  if (current === 0) {
+    var sel = document.querySelector('#mstep0 .lform-option-large.selected');
+    if (!sel) { showError(document.getElementById('mstep0'), 'options'); return; }
+  }
+  if (current === 1) {
+    var cp = document.getElementById('m-cp');
+    if (!cp.value.trim()) { showError(cp, 'input'); return; }
+  }
+  mGoTo(current + 1);
+}
 function mPrevStep(current) { mGoTo(current - 1); }
 
 function mSubmit() {
@@ -234,10 +266,14 @@ function gSelectService(el, type) {
 function gNextStep(current) {
   if (current === 0) {
     if (gSelectedService === 'monte') {
-      gGoTo(1, 0); // monte → intérieur/extérieur
+      gGoTo(1, 0);
     } else {
-      gGoTo(2, 0); // autres → situation directement
+      gGoTo(2, 0);
     }
+  } else if (current === 2) {
+    var cp = document.getElementById('g-cp');
+    if (!cp.value.trim()) { showError(cp, 'input'); return; }
+    gGoTo(3, 2);
   } else {
     gGoTo(current + 1, current);
   }
@@ -315,7 +351,17 @@ function lSelectOption(el) {
   lData.localisation = textEl ? textEl.textContent.trim() : el.textContent.trim();
 }
 
-function lNextStep(current) { lGoTo(current + 1); }
+function lNextStep(current) {
+  if (current === 0) {
+    var sel = document.querySelector('#lstep0 .lform-option-large.selected');
+    if (!sel) { showError(document.getElementById('lstep0'), 'options'); return; }
+  }
+  if (current === 1) {
+    var cp = document.getElementById('lcp');
+    if (!cp.value.trim()) { showError(cp, 'input'); return; }
+  }
+  lGoTo(current + 1);
+}
 function lPrevStep(current) { lGoTo(current - 1); }
 
 function lSubmit() {

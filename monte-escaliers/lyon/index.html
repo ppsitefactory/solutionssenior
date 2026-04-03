@@ -142,14 +142,16 @@
       overflow: hidden;
     }
 
-    /* Chaque étape en absolu, transition smooth */
+    /* Chaque étape en absolu, flex column pour bouton en bas */
     .lform-step {
       position: absolute;
-      top: 0; left: 0; right: 0;
+      top: 0; left: 0; right: 0; bottom: 0;
       opacity: 0;
       pointer-events: none;
       transform: translateX(24px);
       transition: opacity 0.25s ease, transform 0.25s ease;
+      display: flex;
+      flex-direction: column;
     }
     .lform-step.active {
       opacity: 1;
@@ -160,6 +162,9 @@
       opacity: 0;
       transform: translateX(-24px);
     }
+    /* Le bouton et la mention légale collés en bas */
+    .lform-btn-next, .lform-btn-submit { margin-top: auto; }
+    .lform-legal { margin-top: 8px; }
 
     .lform-label {
       font-size: 0.75rem;
@@ -394,7 +399,7 @@
             </div>
           </div>
           <div class="lform-reassurance">🔒 Vos données sont sécurisées — Service 100 % gratuit</div>
-          <button class="lform-btn-next" id="lbtn-step0" style="display:none;" onclick="lNextStep(0)">Continuer →</button>
+          <button class="lform-btn-next" id="lbtn-step0" onclick="lNextStep(0)">Continuer →</button>
         </div>
 
         <!-- ÉTAPE 2 : situation -->
@@ -695,9 +700,7 @@ function lSelectOption(el) {
   });
   el.classList.add('selected');
   lData.localisation = el.textContent.trim();
-  // Afficher le bouton Continuer
-  var btn = document.getElementById('lbtn-step0');
-  if (btn) btn.style.display = 'flex';
+
 }
 
 function lSelectAndNext(el, currentStep) {

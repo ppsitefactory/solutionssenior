@@ -135,16 +135,17 @@
     .lform-progress-bar.active { background: var(--sage); }
     .lform-progress-bar.done { background: var(--sage-light); }
 
-    /* Conteneur des étapes à hauteur fixe */
+    /* Conteneur : hauteur animée dynamiquement par JS */
     .lform-steps-wrapper {
       position: relative;
-      height: 370px; /* hauteur fixe = étape la plus haute */
+      overflow: hidden;
+      transition: height 0.28s ease;
     }
 
     /* Chaque étape en absolu, transition smooth */
     .lform-step {
       position: absolute;
-      inset: 0;
+      top: 0; left: 0; right: 0;
       opacity: 0;
       pointer-events: none;
       transform: translateX(24px);
@@ -284,7 +285,7 @@
     @media (max-width: 960px) {
       .hero-local-inner { grid-template-columns: 1fr; gap: 32px; }
       .hero-form-card { max-width: 520px; }
-      .lform-steps-wrapper { height: auto; min-height: 370px; }
+      .lform-steps-wrapper { overflow: visible; transition: none; }
       .lform-step { position: relative; inset: auto; transform: none; }
       .lform-step:not(.active) { display: none; opacity: 1; transform: none; }
       .lform-step.active { display: block; opacity: 1; transform: none; }
@@ -621,35 +622,52 @@ function lUpdateProgress(step) {
   }
 }
 
+function lSetWrapperHeight(stepEl) {
+  var wrapper = document.querySelector('.lform-steps-wrapper');
+  if (!wrapper) return;
+  // Mesure la hauteur naturelle de l'étape
+  stepEl.style.position = 'relative';
+  var h = stepEl.offsetHeight;
+  stepEl.style.position = '';
+  wrapper.style.height = h + 'px';
+}
+
 function lGoTo(next) {
   var current = document.getElementById('lstep' + lCurrent);
   var target  = document.getElementById('lstep' + next);
   if (!target) return;
 
-  // Marquer la sortie de l'étape actuelle
-  if (current) {
-    current.classList.add('leaving');
-    current.classList.remove('active');
-    setTimeout(function() {
-      if (current) current.classList.remove('leaving');
-    }, 250);
-  }
-
-  // Afficher la nouvelle étape
-  // Si on recule, on arrive depuis la gauche
+  // Direction de la transition
   if (next < lCurrent) {
     target.style.transform = 'translateX(-24px)';
   } else {
     target.style.transform = 'translateX(24px)';
   }
+
+  // Sortie de l'étape courante
+  if (current) {
+    current.classList.add('leaving');
+    current.classList.remove('active');
+    setTimeout(function() { if (current) current.classList.remove('leaving'); }, 280);
+  }
+
+  // Entrée de la nouvelle étape
   target.classList.add('active');
-  // Force reflow pour déclencher la transition
-  target.getBoundingClientRect();
+  target.getBoundingClientRect(); // force reflow
   target.style.transform = '';
+
+  // Animer la hauteur du wrapper
+  lSetWrapperHeight(target);
 
   lCurrent = next;
   lUpdateProgress(Math.min(next, 2));
 }
+
+// Init hauteur au chargement
+document.addEventListener('DOMContentLoaded', function() {
+  var first = document.getElementById('lstep0');
+  if (first) lSetWrapperHeight(first);
+});
 
 function lSelectOption(el) {
   el.closest('.lform-grid').querySelectorAll('.lform-option').forEach(function(o) {

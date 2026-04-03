@@ -154,6 +154,8 @@ function mSelectOption(el) {
   el.classList.add('selected');
   var textEl = el.querySelector('.lform-option-text');
   mData.localisation = textEl ? textEl.textContent.trim() : el.textContent.trim();
+  // Avance automatiquement à l'étape suivante
+  mGoTo(mCurrent + 1);
 }
 
 
@@ -353,6 +355,8 @@ function lSelectOption(el) {
   el.classList.add('selected');
   var textEl = el.querySelector('.lform-option-text');
   lData.localisation = textEl ? textEl.textContent.trim() : el.textContent.trim();
+  // Avance automatiquement à l'étape suivante
+  lGoTo(lCurrent + 1);
 }
 
 function lNextStep(current) {

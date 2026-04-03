@@ -377,7 +377,7 @@ footer { background: var(--text); color: rgba(255,255,255,0.6); padding: 60px 5%
 .lform-progress-bar.done { background: var(--sage-light); }
 
 /* Wrapper hauteur fixe */
-.lform-steps-wrapper { position: relative; height: 330px; overflow: hidden; }
+.lform-steps-wrapper { position: relative; height: 360px; overflow: hidden; }
 
 /* Étapes */
 .lform-step {

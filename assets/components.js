@@ -199,10 +199,12 @@ function mSubmit() {
   mData.telephone  = document.getElementById('m-tel').value;
   mData.email      = document.getElementById('m-email').value;
 
-  if (!mData.prenom || !mData.telephone || !mData.email) {
-    alert('Merci de renseigner prénom, téléphone et email.');
-    return;
-  }
+  var ok = true;
+  ['m-prenom','m-tel','m-email'].forEach(function(id) {
+    var el = document.getElementById(id);
+    if (el && !el.value.trim()) { showError(el, 'input'); ok = false; }
+  });
+  if (!ok) return;
   fetch('https://formspree.io/f/mbdpyayv', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
@@ -292,10 +294,12 @@ function gSubmit() {
   gData.email      = document.getElementById('g-email').value;
   gData.telephone  = document.getElementById('g-tel').value;
 
-  if (!gData.prenom || !gData.telephone || !gData.email) {
-    alert('Merci de renseigner prénom, téléphone et email.');
-    return;
-  }
+  var ok = true;
+  ['g-prenom','g-tel','g-email'].forEach(function(id) {
+    var el = document.getElementById(id);
+    if (el && !el.value.trim()) { showError(el, 'input'); ok = false; }
+  });
+  if (!ok) return;
   fetch('https://formspree.io/f/mbdpyayv', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
@@ -372,10 +376,12 @@ function lSubmit() {
   lData.telephone  = document.getElementById('ltel').value;
   lData.email      = document.getElementById('lemail').value;
 
-  if (!lData.prenom || !lData.telephone || !lData.email) {
-    alert('Merci de renseigner prénom, téléphone et email.');
-    return;
-  }
+  var ok = true;
+  ['lprenom','ltel','lemail'].forEach(function(id) {
+    var el = document.getElementById(id);
+    if (el && !el.value.trim()) { showError(el, 'input'); ok = false; }
+  });
+  if (!ok) return;
   fetch('https://formspree.io/f/mbdpyayv', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },

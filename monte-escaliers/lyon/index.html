@@ -138,7 +138,7 @@
     /* Conteneur des étapes à hauteur fixe */
     .lform-steps-wrapper {
       position: relative;
-      height: 220px; /* calée sur la hauteur de l'étape 1 */
+      height: 370px; /* hauteur fixe = étape la plus haute */
     }
 
     /* Chaque étape en absolu, transition smooth */
@@ -284,7 +284,7 @@
     @media (max-width: 960px) {
       .hero-local-inner { grid-template-columns: 1fr; gap: 32px; }
       .hero-form-card { max-width: 520px; }
-      .lform-steps-wrapper { height: auto; min-height: 220px; }
+      .lform-steps-wrapper { height: auto; min-height: 370px; }
       .lform-step { position: relative; inset: auto; transform: none; }
       .lform-step:not(.active) { display: none; opacity: 1; transform: none; }
       .lform-step.active { display: block; opacity: 1; transform: none; }
@@ -345,13 +345,14 @@
           <div class="lform-label">Étape 1 sur 3</div>
           <div class="lform-question">Où se trouve votre escalier ?</div>
           <div class="lform-grid">
-            <div class="lform-option" onclick="lSelectAndNext(this, 0)">
+            <div class="lform-option" onclick="lSelectOption(this)">
               <span class="icon">🏠</span> À l'intérieur
             </div>
-            <div class="lform-option" onclick="lSelectAndNext(this, 0)">
+            <div class="lform-option" onclick="lSelectOption(this)">
               <span class="icon">🌿</span> À l'extérieur
             </div>
           </div>
+          <button class="lform-btn-next" id="lbtn-step0" style="display:none;" onclick="lNextStep(0)">Continuer →</button>
         </div>
 
         <!-- ÉTAPE 2 : situation -->
@@ -650,12 +651,19 @@ function lGoTo(next) {
   lUpdateProgress(Math.min(next, 2));
 }
 
-function lSelectAndNext(el, currentStep) {
+function lSelectOption(el) {
   el.closest('.lform-grid').querySelectorAll('.lform-option').forEach(function(o) {
     o.classList.remove('selected');
   });
   el.classList.add('selected');
   lData.localisation = el.textContent.trim();
+  // Afficher le bouton Continuer
+  var btn = document.getElementById('lbtn-step0');
+  if (btn) btn.style.display = 'flex';
+}
+
+function lSelectAndNext(el, currentStep) {
+  lSelectOption(el);
   lGoTo(currentStep + 1);
 }
 

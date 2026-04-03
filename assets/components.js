@@ -77,7 +77,7 @@ function initModal() {
       'Votre devis gratuit' + villePrefix;
     document.getElementById('m-monte-subtitle').textContent =
       '2 minutes suffisent. Un installateur agréé' + villePrefix + ' vous rappelle sous 24h.';
-    document.getElementById('m-reassurance-1').textContent =
+    document.getElementById('m-reassurance-2').textContent =
       'Un installateur agréé' + villePrefix + ' vous rappelle sous 24h';
     document.getElementById('m-success-text').innerHTML =
       'Un installateur agréé' + villePrefix + ' vous contactera dans les <strong>24 heures</strong>. Merci de votre confiance.';
@@ -91,6 +91,7 @@ function initModal() {
       s.classList.remove('active', 'leaving');
     });
     document.getElementById('mstep0').classList.add('active');
+    mData = { service: 'Monte-escalier', ville: ville || '', departement: dept, codeRegion: deptNum };
     mUpdateBars(0);
 
   } else {
@@ -119,7 +120,7 @@ var mCurrent = 0;
 var mData    = {};
 
 function mUpdateBars(step) {
-  for (var i = 0; i < 3; i++) {
+  for (var i = 0; i < 4; i++) {
     var b = document.getElementById('mbar' + i);
     if (!b) continue;
     b.className = 'lform-progress-bar';
@@ -130,8 +131,7 @@ function mUpdateBars(step) {
 
 function mGoTo(next) {
   var curr = document.getElementById('mstep' + mCurrent);
-  var tgt  = document.getElementById('mstep' + next);
-  if (!tgt) { tgt = document.getElementById('msuccess'); }
+  var tgt  = next >= 4 ? document.getElementById('msuccess') : document.getElementById('mstep' + next);
   if (!tgt) return;
 
   tgt.style.transform = next > mCurrent ? 'translateX(24px)' : 'translateX(-24px)';
@@ -144,17 +144,16 @@ function mGoTo(next) {
   tgt.getBoundingClientRect();
   tgt.style.transform = '';
   mCurrent = next;
-  mUpdateBars(Math.min(next, 2));
+  mUpdateBars(Math.min(next, 3));
 }
 
-function mSelectOption(el) {
+function mAutoSelect(el, dataKey) {
   el.closest('.lform-grid').querySelectorAll('.lform-option-large').forEach(function(o) {
     o.classList.remove('selected');
   });
   el.classList.add('selected');
   var textEl = el.querySelector('.lform-option-text');
-  mData.localisation = textEl ? textEl.textContent.trim() : el.textContent.trim();
-  // Avance automatiquement à l'étape suivante
+  mData[dataKey] = textEl ? textEl.textContent.trim() : el.textContent.trim();
   mGoTo(mCurrent + 1);
 }
 
@@ -181,11 +180,7 @@ function showError(el, type) {
 }
 
 function mNextStep(current) {
-  if (current === 0) {
-    var sel = document.querySelector('#mstep0 .lform-option-large.selected');
-    if (!sel) { showError(document.getElementById('mstep0'), 'options'); return; }
-  }
-  if (current === 1) {
+  if (current === 2) {
     var cp = document.getElementById('m-cp');
     if (!cp.value.trim()) { showError(cp, 'input'); return; }
   }
@@ -214,7 +209,7 @@ function mSubmit() {
   });
 
   document.getElementById('m-monte-progress').style.display = 'none';
-  var step2 = document.getElementById('mstep2');
+  var step2 = document.getElementById('mstep3');
   step2.classList.add('leaving');
   step2.classList.remove('active');
   setTimeout(function() {
@@ -320,7 +315,7 @@ var lCurrent = 0;
 var lData    = {};
 
 function lUpdateBars(step) {
-  for (var i = 0; i < 3; i++) {
+  for (var i = 0; i < 4; i++) {
     var b = document.getElementById('lbar' + i);
     if (!b) continue;
     b.className = 'lform-progress-bar';
@@ -331,8 +326,7 @@ function lUpdateBars(step) {
 
 function lGoTo(next) {
   var curr = document.getElementById('lstep' + lCurrent);
-  var tgt  = document.getElementById('lstep' + next);
-  if (!tgt) { tgt = document.getElementById('lsuccess'); }
+  var tgt  = next >= 4 ? document.getElementById('lsuccess') : document.getElementById('lstep' + next);
   if (!tgt) return;
 
   tgt.style.transform = next > lCurrent ? 'translateX(24px)' : 'translateX(-24px)';
@@ -345,26 +339,21 @@ function lGoTo(next) {
   tgt.getBoundingClientRect();
   tgt.style.transform = '';
   lCurrent = next;
-  lUpdateBars(Math.min(next, 2));
+  lUpdateBars(Math.min(next, 3));
 }
 
-function lSelectOption(el) {
+function lAutoSelect(el, dataKey) {
   el.closest('.lform-grid').querySelectorAll('.lform-option-large').forEach(function(o) {
     o.classList.remove('selected');
   });
   el.classList.add('selected');
   var textEl = el.querySelector('.lform-option-text');
-  lData.localisation = textEl ? textEl.textContent.trim() : el.textContent.trim();
-  // Avance automatiquement à l'étape suivante
+  lData[dataKey] = textEl ? textEl.textContent.trim() : el.textContent.trim();
   lGoTo(lCurrent + 1);
 }
 
 function lNextStep(current) {
-  if (current === 0) {
-    var sel = document.querySelector('#lstep0 .lform-option-large.selected');
-    if (!sel) { showError(document.getElementById('lstep0'), 'options'); return; }
-  }
-  if (current === 1) {
+  if (current === 2) {
     var cp = document.getElementById('lcp');
     if (!cp.value.trim()) { showError(cp, 'input'); return; }
   }
@@ -394,7 +383,7 @@ function lSubmit() {
 
   var heroProgress = document.querySelector('#hero-local .lform-progress');
   if (heroProgress) heroProgress.style.display = 'none';
-  var step2 = document.getElementById('lstep2');
+  var step2 = document.getElementById('lstep3');
   step2.classList.add('leaving');
   step2.classList.remove('active');
   setTimeout(function() {

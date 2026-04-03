@@ -2,7 +2,7 @@
   <div class="modal-box">
     <button class="modal-close" onclick="closeModal()">✕</button>
 
-    <!-- ═══ MODE MONTE / LOCAL (3 étapes) ═══ -->
+    <!-- ═══ MODE MONTE / LOCAL (4 étapes) ═══ -->
     <div id="m-mode-monte" style="display:none;">
       <div class="form-title" id="m-monte-title">Votre devis gratuit</div>
       <div class="form-subtitle" id="m-monte-subtitle">2 minutes suffisent. Un professionnel agréé vous rappelle sous 24h.</div>
@@ -10,32 +10,63 @@
         <div class="lform-progress-bar active" id="mbar0"></div>
         <div class="lform-progress-bar" id="mbar1"></div>
         <div class="lform-progress-bar" id="mbar2"></div>
+        <div class="lform-progress-bar" id="mbar3"></div>
       </div>
       <div class="lform-steps-wrapper" style="height:360px;">
 
-        <!-- Étape 1 : intérieur / extérieur -->
+        <!-- Étape 1 : type -->
         <div class="lform-step active" id="mstep0">
-          <div class="lform-label">Étape 1 sur 3</div>
-          <div class="lform-question">Où se trouve votre escalier ?</div>
-          <div class="lform-grid lform-grid-large">
-            <div class="lform-option lform-option-large" onclick="mSelectOption(this)">
-              <span class="lform-option-icon">🏠</span>
-              <span class="lform-option-text">À l'intérieur</span>
-              <span class="lform-option-hint">Escalier intérieur de la maison</span>
+          <div class="lform-label">Étape 1 sur 4</div>
+          <div class="lform-question">Quel type d'escalier avez-vous ?</div>
+          <div class="lform-grid lform-grid-triple">
+            <div class="lform-option lform-option-large" onclick="mAutoSelect(this,'type')">
+              <span class="lform-option-icon">📐</span>
+              <span class="lform-option-text">Droit</span>
+              <span class="lform-option-hint">Sans virage</span>
             </div>
-            <div class="lform-option lform-option-large" onclick="mSelectOption(this)">
+            <div class="lform-option lform-option-large" onclick="mAutoSelect(this,'type')">
+              <span class="lform-option-icon">↩️</span>
+              <span class="lform-option-text">Tournant</span>
+              <span class="lform-option-hint">Avec virage(s)</span>
+            </div>
+            <div class="lform-option lform-option-large" onclick="mAutoSelect(this,'type')">
               <span class="lform-option-icon">🌿</span>
-              <span class="lform-option-text">À l'extérieur</span>
-              <span class="lform-option-hint">Accès jardin, terrasse, entrée</span>
+              <span class="lform-option-text">Extérieur</span>
+              <span class="lform-option-hint">Jardin, terrasse</span>
             </div>
           </div>
           <div class="lform-reassurance" style="margin-top:auto;">🔒 Vos données sont sécurisées — Service 100 % gratuit</div>
         </div>
 
-        <!-- Étape 2 : situation -->
+        <!-- Étape 2 : délai -->
         <div class="lform-step" id="mstep1">
           <button class="lform-btn-back" onclick="mPrevStep(1)">← Retour</button>
-          <div class="lform-label">Étape 2 sur 3</div>
+          <div class="lform-label">Étape 2 sur 4</div>
+          <div class="lform-question">Quand souhaitez-vous démarrer ?</div>
+          <div class="lform-grid lform-grid-triple">
+            <div class="lform-option lform-option-large" onclick="mAutoSelect(this,'delai')">
+              <span class="lform-option-icon">⚡</span>
+              <span class="lform-option-text">Rapidement</span>
+              <span class="lform-option-hint">Dans les prochaines semaines</span>
+            </div>
+            <div class="lform-option lform-option-large" onclick="mAutoSelect(this,'delai')">
+              <span class="lform-option-icon">📅</span>
+              <span class="lform-option-text">Sous 3 mois</span>
+              <span class="lform-option-hint">Je prends le temps de comparer</span>
+            </div>
+            <div class="lform-option lform-option-large" onclick="mAutoSelect(this,'delai')">
+              <span class="lform-option-icon">🔍</span>
+              <span class="lform-option-text">Je me renseigne</span>
+              <span class="lform-option-hint">Pas encore décidé</span>
+            </div>
+          </div>
+          <div class="lform-reassurance" style="margin-top:auto;">Un devis gratuit, sans engagement</div>
+        </div>
+
+        <!-- Étape 3 : situation -->
+        <div class="lform-step" id="mstep2">
+          <button class="lform-btn-back" onclick="mPrevStep(2)">← Retour</button>
+          <div class="lform-label">Étape 3 sur 4</div>
           <div class="lform-question">Votre situation</div>
           <div class="lform-field lform-field-lg">
             <label>Code postal</label>
@@ -51,15 +82,15 @@
             </select>
           </div>
           <div class="lform-btn-group">
-            <div class="lform-reassurance" id="m-reassurance-1">Un professionnel agréé vous rappelle sous 24h</div>
-            <button class="lform-btn-next" onclick="mNextStep(1)">Continuer →</button>
+            <div class="lform-reassurance" id="m-reassurance-2">Un professionnel agréé vous rappelle sous 24h</div>
+            <button class="lform-btn-next" onclick="mNextStep(2)">Continuer →</button>
           </div>
         </div>
 
-        <!-- Étape 3 : coordonnées -->
-        <div class="lform-step" id="mstep2">
-          <button class="lform-btn-back" onclick="mPrevStep(2)">← Retour</button>
-          <div class="lform-label">Étape 3 sur 3</div>
+        <!-- Étape 4 : coordonnées -->
+        <div class="lform-step" id="mstep3">
+          <button class="lform-btn-back" onclick="mPrevStep(3)">← Retour</button>
+          <div class="lform-label">Étape 4 sur 4</div>
           <div class="lform-question">Vos coordonnées</div>
           <div class="lform-row">
             <div class="lform-field"><label>Prénom *</label><input type="text" id="m-prenom" placeholder="Marie"></div>
@@ -98,7 +129,6 @@
         <div class="step-dot" id="gdot3"></div>
       </div>
 
-      <!-- Étape 0 : choix service -->
       <div class="step active" id="gstep0">
         <div class="step-label">Étape 1 / 4</div>
         <div class="step-question">Quel service recherchez-vous ?</div>
@@ -111,7 +141,6 @@
         </div>
       </div>
 
-      <!-- Étape 1 : intérieur/extérieur (monte) ou skip (autres) -->
       <div class="step" id="gstep1">
         <button class="btn-back" onclick="gPrevStep(1)">← Retour</button>
         <div class="step-label">Étape 2 / 4</div>
@@ -122,7 +151,6 @@
         </div>
       </div>
 
-      <!-- Étape 2 : situation -->
       <div class="step" id="gstep2">
         <button class="btn-back" onclick="gPrevStep(2)">← Retour</button>
         <div class="step-label">Étape 3 / 4</div>
@@ -140,7 +168,6 @@
         <button class="btn-next" onclick="gNextStep(2)">Continuer →</button>
       </div>
 
-      <!-- Étape 3 : coordonnées -->
       <div class="step" id="gstep3">
         <button class="btn-back" onclick="gPrevStep(3)">← Retour</button>
         <div class="step-label">Étape 4 / 4</div>
@@ -155,7 +182,6 @@
         <div class="form-legal">En soumettant ce formulaire, vous acceptez d'être contacté par Solutions Senior et ses partenaires. Service gratuit.</div>
       </div>
 
-      <!-- Succès -->
       <div class="step" id="gsuccess">
         <div class="success-step">
           <div class="success-icon">✅</div>

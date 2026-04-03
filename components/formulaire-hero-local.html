@@ -35,33 +35,64 @@
         <div class="lform-progress-bar active" id="lbar0"></div>
         <div class="lform-progress-bar" id="lbar1"></div>
         <div class="lform-progress-bar" id="lbar2"></div>
+        <div class="lform-progress-bar" id="lbar3"></div>
       </div>
 
       <div class="lform-steps-wrapper">
 
-        <!-- Étape 1 -->
+        <!-- Étape 1 : type de monte-escalier -->
         <div class="lform-step active" id="lstep0">
-          <div class="lform-label">Étape 1 sur 3</div>
-          <div class="lform-question">Où se trouve votre escalier ?</div>
-          <div class="lform-grid lform-grid-large">
-            <div class="lform-option lform-option-large" onclick="lSelectOption(this)">
-              <span class="lform-option-icon">🏠</span>
-              <span class="lform-option-text">À l'intérieur</span>
-              <span class="lform-option-hint">Escalier intérieur de la maison</span>
+          <div class="lform-label">Étape 1 sur 4</div>
+          <div class="lform-question">Quel type d'escalier avez-vous ?</div>
+          <div class="lform-grid lform-grid-triple">
+            <div class="lform-option lform-option-large" onclick="lAutoSelect(this,'type')">
+              <span class="lform-option-icon">📐</span>
+              <span class="lform-option-text">Droit</span>
+              <span class="lform-option-hint">Sans virage</span>
             </div>
-            <div class="lform-option lform-option-large" onclick="lSelectOption(this)">
+            <div class="lform-option lform-option-large" onclick="lAutoSelect(this,'type')">
+              <span class="lform-option-icon">↩️</span>
+              <span class="lform-option-text">Tournant</span>
+              <span class="lform-option-hint">Avec virage(s)</span>
+            </div>
+            <div class="lform-option lform-option-large" onclick="lAutoSelect(this,'type')">
               <span class="lform-option-icon">🌿</span>
-              <span class="lform-option-text">À l'extérieur</span>
-              <span class="lform-option-hint">Accès jardin, terrasse, entrée</span>
+              <span class="lform-option-text">Extérieur</span>
+              <span class="lform-option-hint">Jardin, terrasse</span>
             </div>
           </div>
           <div class="lform-reassurance" style="margin-top:auto;">🔒 Vos données sont sécurisées — Service 100 % gratuit</div>
         </div>
 
-        <!-- Étape 2 -->
+        <!-- Étape 2 : délai -->
         <div class="lform-step" id="lstep1">
           <button class="lform-btn-back" onclick="lPrevStep(1)">← Retour</button>
-          <div class="lform-label">Étape 2 sur 3</div>
+          <div class="lform-label">Étape 2 sur 4</div>
+          <div class="lform-question">Quand souhaitez-vous démarrer ?</div>
+          <div class="lform-grid lform-grid-triple">
+            <div class="lform-option lform-option-large" onclick="lAutoSelect(this,'delai')">
+              <span class="lform-option-icon">⚡</span>
+              <span class="lform-option-text">Rapidement</span>
+              <span class="lform-option-hint">Dans les prochaines semaines</span>
+            </div>
+            <div class="lform-option lform-option-large" onclick="lAutoSelect(this,'delai')">
+              <span class="lform-option-icon">📅</span>
+              <span class="lform-option-text">Sous 3 mois</span>
+              <span class="lform-option-hint">Je prends le temps de comparer</span>
+            </div>
+            <div class="lform-option lform-option-large" onclick="lAutoSelect(this,'delai')">
+              <span class="lform-option-icon">🔍</span>
+              <span class="lform-option-text">Je me renseigne</span>
+              <span class="lform-option-hint">Pas encore décidé</span>
+            </div>
+          </div>
+          <div class="lform-reassurance" style="margin-top:auto;">Un devis gratuit, sans engagement</div>
+        </div>
+
+        <!-- Étape 3 : situation -->
+        <div class="lform-step" id="lstep2">
+          <button class="lform-btn-back" onclick="lPrevStep(2)">← Retour</button>
+          <div class="lform-label">Étape 3 sur 4</div>
           <div class="lform-question">Votre situation</div>
           <div class="lform-field lform-field-lg">
             <label>Code postal</label>
@@ -78,14 +109,14 @@
           </div>
           <div class="lform-btn-group">
             <div class="lform-reassurance">Un installateur agréé{{VILLE_PREFIX}} vous rappelle sous 24h</div>
-            <button class="lform-btn-next" onclick="lNextStep(1)">Continuer →</button>
+            <button class="lform-btn-next" onclick="lNextStep(2)">Continuer →</button>
           </div>
         </div>
 
-        <!-- Étape 3 -->
-        <div class="lform-step" id="lstep2">
-          <button class="lform-btn-back" onclick="lPrevStep(2)">← Retour</button>
-          <div class="lform-label">Étape 3 sur 3</div>
+        <!-- Étape 4 : coordonnées -->
+        <div class="lform-step" id="lstep3">
+          <button class="lform-btn-back" onclick="lPrevStep(3)">← Retour</button>
+          <div class="lform-label">Étape 4 sur 4</div>
           <div class="lform-question">Vos coordonnées</div>
           <div class="lform-row">
             <div class="lform-field"><label>Prénom *</label><input type="text" id="lprenom" placeholder="Marie"></div>

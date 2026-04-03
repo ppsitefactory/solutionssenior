@@ -399,6 +399,7 @@ footer { background: var(--text); color: rgba(255,255,255,0.6); padding: 60px 5%
 
 /* Options étape 1 */
 .lform-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+.lform-grid-triple { grid-template-columns: 1fr 1fr 1fr; gap: 10px; }
 .lform-grid-large { gap: 12px; margin-bottom: 20px; }
 .lform-option-large {
   border: 2px solid #e0e8e2; border-radius: 14px; padding: 22px 16px;
@@ -470,6 +471,7 @@ footer { background: var(--text); color: rgba(255,255,255,0.6); padding: 60px 5%
 @media (max-width: 600px) {
   .lform-row { grid-template-columns: 1fr; }
   .lform-grid { grid-template-columns: 1fr; }
+  .lform-grid-triple { grid-template-columns: 1fr; }
 }
 
 /* ============================================

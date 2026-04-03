@@ -1,5 +1,5 @@
 /* ============================================
-   SENIORCONFORT – JS PARTAGÉ
+   SOLUTIONS SENIOR – JS PARTAGÉ
    Modifier ce fichier = s'applique partout
    ============================================ */
 
@@ -19,6 +19,7 @@ async function loadComponent(id, file) {
 
 document.addEventListener('DOMContentLoaded', async () => {
   await Promise.all([
+    loadHeroLocal(),
     loadComponent('site-header', 'header.html'),
     loadComponent('site-footer', 'footer.html'),
     loadComponent('site-cta', 'cta-devis.html'),
@@ -182,4 +183,112 @@ function initServiceForm() {
     gridSingle.style.display = 'grid';
     serviceEl.innerHTML = '<span class="icon">' + s.icon + '</span> ' + s.label;
   }
+}
+
+// ── HERO LOCAL (pages villes) ─────────────────
+// Se déclenche uniquement sur les pages avec data-ville sur le body
+async function loadHeroLocal() {
+  const ville   = document.body.getAttribute('data-ville');
+  const dept    = document.body.getAttribute('data-dept');
+  const deptNum = document.body.getAttribute('data-dept-num');
+  const dateMaj = document.body.getAttribute('data-date-maj') || '';
+  const h1Text  = document.body.getAttribute('data-h1') || '';
+  const target  = document.getElementById('hero-local');
+
+  if (!ville || !target) return;
+
+  try {
+    const base = window.location.origin;
+    const res  = await fetch(base + '/components/formulaire-hero-local.html');
+    let html   = await res.text();
+
+    // Remplacement des variables
+    html = html.split('{{VILLE}}').join(ville);
+    html = html.split('{{DEPT}}').join(dept);
+    html = html.split('{{DEPT_NUM}}').join(deptNum);
+    html = html.split('{{DATE_MAJ}}').join(dateMaj);
+    target.innerHTML = html;
+
+    // H1 depuis data-h1
+    const h1El = target.querySelector('.hero-local-h1');
+    if (h1El && h1Text) h1El.innerHTML = h1Text;
+
+    // Init tunnel avec les données de la ville
+    lData = { service: 'Monte-escalier', ville: ville, departement: dept, codeRegion: deptNum };
+  } catch(e) {
+    console.warn('Hero local non chargé:', e);
+  }
+}
+
+// ── JS TUNNEL (partagé pour toutes les pages locales) ──
+var lCurrent = 0;
+var lData    = {};
+
+function lUpdateProgress(step) {
+  for (var i = 0; i < 3; i++) {
+    var b = document.getElementById('lbar' + i);
+    if (!b) continue;
+    b.className = 'lform-progress-bar';
+    if (i < step) b.classList.add('done');
+    else if (i === step) b.classList.add('active');
+  }
+}
+
+function lGoTo(next) {
+  var current = document.getElementById('lstep' + lCurrent);
+  var target  = document.getElementById('lstep' + next);
+  if (!target) return;
+  if (next < lCurrent) { target.style.transform = 'translateX(-24px)'; }
+  else { target.style.transform = 'translateX(24px)'; }
+  if (current) {
+    current.classList.add('leaving');
+    current.classList.remove('active');
+    setTimeout(function() { if (current) current.classList.remove('leaving'); }, 250);
+  }
+  target.classList.add('active');
+  target.getBoundingClientRect();
+  target.style.transform = '';
+  lCurrent = next;
+  lUpdateProgress(Math.min(next, 2));
+}
+
+function lSelectOption(el) {
+  el.closest('.lform-grid').querySelectorAll('.lform-option-large').forEach(function(o) {
+    o.classList.remove('selected');
+  });
+  el.classList.add('selected');
+  var textEl = el.querySelector('.lform-option-text');
+  lData.localisation = textEl ? textEl.textContent.trim() : el.textContent.trim();
+}
+
+function lNextStep(current) { lGoTo(current + 1); }
+function lPrevStep(current) { lGoTo(current - 1); }
+
+function lSubmit() {
+  lData.codePostal = document.getElementById('lcp').value;
+  lData.pour       = document.getElementById('lpour').value;
+  lData.prenom     = document.getElementById('lprenom').value;
+  lData.nom        = document.getElementById('lnom').value;
+  lData.telephone  = document.getElementById('ltel').value;
+  lData.email      = document.getElementById('lemail').value;
+
+  if (!lData.prenom || !lData.telephone || !lData.email) {
+    alert('Merci de renseigner prénom, téléphone et email.');
+    return;
+  }
+
+  fetch('https://formspree.io/f/mbdpyayv', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(lData)
+  });
+
+  document.querySelector('.lform-progress').style.display = 'none';
+  var step2 = document.getElementById('lstep2');
+  step2.classList.add('leaving');
+  step2.classList.remove('active');
+  setTimeout(function() {
+    step2.classList.remove('leaving');
+    document.getElementById('lsuccess').classList.add('active');
+  }, 250);
 }

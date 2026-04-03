@@ -77,7 +77,7 @@ function initModal() {
       'Votre devis gratuit' + villePrefix;
     document.getElementById('m-monte-subtitle').textContent =
       '2 minutes suffisent. Un installateur agréé' + villePrefix + ' vous rappelle sous 24h.';
-    document.getElementById('m-reassurance-2').textContent =
+    document.getElementById('m-reassurance-3').textContent =
       'Un installateur agréé' + villePrefix + ' vous rappelle sous 24h';
     document.getElementById('m-success-text').innerHTML =
       'Un installateur agréé' + villePrefix + ' vous contactera dans les <strong>24 heures</strong>. Merci de votre confiance.';
@@ -92,6 +92,7 @@ function initModal() {
     });
     document.getElementById('mstep0').classList.add('active');
     mData = { service: 'Monte-escalier', ville: ville || '', departement: dept, codeRegion: deptNum };
+    mCurrent = 0;
     mUpdateBars(0);
 
   } else {
@@ -120,7 +121,7 @@ var mCurrent = 0;
 var mData    = {};
 
 function mUpdateBars(step) {
-  for (var i = 0; i < 4; i++) {
+  for (var i = 0; i < 5; i++) {
     var b = document.getElementById('mbar' + i);
     if (!b) continue;
     b.className = 'lform-progress-bar';
@@ -131,7 +132,7 @@ function mUpdateBars(step) {
 
 function mGoTo(next) {
   var curr = document.getElementById('mstep' + mCurrent);
-  var tgt  = next >= 4 ? document.getElementById('msuccess') : document.getElementById('mstep' + next);
+  var tgt  = next >= 5 ? document.getElementById('msuccess') : document.getElementById('mstep' + next);
   if (!tgt) return;
 
   tgt.style.transform = next > mCurrent ? 'translateX(24px)' : 'translateX(-24px)';
@@ -144,7 +145,7 @@ function mGoTo(next) {
   tgt.getBoundingClientRect();
   tgt.style.transform = '';
   mCurrent = next;
-  mUpdateBars(Math.min(next, 3));
+  mUpdateBars(Math.min(next, 4));
 }
 
 function mAutoSelect(el, dataKey) {
@@ -180,7 +181,7 @@ function showError(el, type) {
 }
 
 function mNextStep(current) {
-  if (current === 2) {
+  if (current === 3) {
     var cp = document.getElementById('m-cp');
     if (!cp.value.trim()) { showError(cp, 'input'); return; }
   }
@@ -209,7 +210,7 @@ function mSubmit() {
   });
 
   document.getElementById('m-monte-progress').style.display = 'none';
-  var step2 = document.getElementById('mstep3');
+  var step2 = document.getElementById('mstep4');
   step2.classList.add('leaving');
   step2.classList.remove('active');
   setTimeout(function() {
@@ -315,7 +316,7 @@ var lCurrent = 0;
 var lData    = {};
 
 function lUpdateBars(step) {
-  for (var i = 0; i < 4; i++) {
+  for (var i = 0; i < 5; i++) {
     var b = document.getElementById('lbar' + i);
     if (!b) continue;
     b.className = 'lform-progress-bar';
@@ -326,7 +327,7 @@ function lUpdateBars(step) {
 
 function lGoTo(next) {
   var curr = document.getElementById('lstep' + lCurrent);
-  var tgt  = next >= 4 ? document.getElementById('lsuccess') : document.getElementById('lstep' + next);
+  var tgt  = next >= 5 ? document.getElementById('lsuccess') : document.getElementById('lstep' + next);
   if (!tgt) return;
 
   tgt.style.transform = next > lCurrent ? 'translateX(24px)' : 'translateX(-24px)';
@@ -339,7 +340,7 @@ function lGoTo(next) {
   tgt.getBoundingClientRect();
   tgt.style.transform = '';
   lCurrent = next;
-  lUpdateBars(Math.min(next, 3));
+  lUpdateBars(Math.min(next, 4));
 }
 
 function lAutoSelect(el, dataKey) {
@@ -353,7 +354,7 @@ function lAutoSelect(el, dataKey) {
 }
 
 function lNextStep(current) {
-  if (current === 2) {
+  if (current === 3) {
     var cp = document.getElementById('lcp');
     if (!cp.value.trim()) { showError(cp, 'input'); return; }
   }
@@ -383,7 +384,7 @@ function lSubmit() {
 
   var heroProgress = document.querySelector('#hero-local .lform-progress');
   if (heroProgress) heroProgress.style.display = 'none';
-  var step2 = document.getElementById('lstep3');
+  var step2 = document.getElementById('lstep4');
   step2.classList.add('leaving');
   step2.classList.remove('active');
   setTimeout(function() {

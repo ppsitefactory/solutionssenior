@@ -1,11 +1,6 @@
 <!-- HERO LOCAL — chargé via components.js -->
-<!-- Variables : {{VILLE_PREFIX}} {{VILLE}} {{DEPT}} {{DEPT_NUM}} {{DATE_MAJ}} -->
-<!-- {{IF_VILLE}}...{{/IF_VILLE}} : blocs affichés seulement si ville présente -->
-
 <section class="hero-local">
   <div class="hero-local-inner">
-
-    <!-- Gauche : texte -->
     <div class="hero-local-content">
       <div class="breadcrumb">
         <a href="/">Accueil</a> ›
@@ -26,37 +21,57 @@
       </div>
     </div>
 
-    <!-- Droite : formulaire tunnel -->
     <div class="hero-form-card">
       <div class="form-card-title">Votre devis gratuit{{VILLE_PREFIX}}</div>
       <div class="form-card-subtitle">2 minutes suffisent. Un installateur agréé{{VILLE_PREFIX}} vous rappelle sous 24h.</div>
-
       <div class="lform-progress">
-        <div class="lform-progress-bar active" id="lbar0"></div>
+        <div class="lform-progress-bar  active" id="lbar0"></div>
         <div class="lform-progress-bar" id="lbar1"></div>
         <div class="lform-progress-bar" id="lbar2"></div>
         <div class="lform-progress-bar" id="lbar3"></div>
+        <div class="lform-progress-bar" id="lbar4"></div>
       </div>
-
       <div class="lform-steps-wrapper">
 
-        <!-- Étape 1 : type de monte-escalier -->
         <div class="lform-step active" id="lstep0">
-          <div class="lform-label">Étape 1 sur 4</div>
+          <div class="lform-label">Étape 1 sur 5</div>
           <div class="lform-question">Quel type d'escalier avez-vous ?</div>
           <div class="lform-grid lform-grid-triple">
             <div class="lform-option lform-option-large" onclick="lAutoSelect(this,'type')">
-              <span class="lform-option-icon">📐</span>
+              <svg class="lform-option-svg" viewBox="0 0 56 56" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect x="4" y="44" width="18" height="5" rx="1" fill="currentColor"/>
+  <rect x="18" y="39" width="4" height="10" fill="currentColor"/>
+  <rect x="18" y="31" width="18" height="5" rx="1" fill="currentColor"/>
+  <rect x="32" y="26" width="4" height="10" fill="currentColor"/>
+  <rect x="32" y="18" width="20" height="5" rx="1" fill="currentColor"/>
+  <line x1="6" y1="46" x2="50" y2="20" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-dasharray="3 3"/>
+</svg>
               <span class="lform-option-text">Droit</span>
               <span class="lform-option-hint">Sans virage</span>
             </div>
             <div class="lform-option lform-option-large" onclick="lAutoSelect(this,'type')">
-              <span class="lform-option-icon">↩️</span>
+              <svg class="lform-option-svg" viewBox="0 0 56 56" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect x="4" y="44" width="18" height="5" rx="1" fill="currentColor"/>
+  <rect x="4" y="31" width="5" height="18" rx="1" fill="currentColor"/>
+  <rect x="4" y="27" width="18" height="5" rx="1" fill="currentColor"/>
+  <rect x="18" y="14" width="5" height="18" rx="1" fill="currentColor"/>
+  <rect x="18" y="10" width="34" height="5" rx="1" fill="currentColor"/>
+  <path d="M22 44 Q8 44 8 30 Q8 16 20 14" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" fill="none" stroke-dasharray="3 3"/>
+</svg>
               <span class="lform-option-text">Tournant</span>
               <span class="lform-option-hint">Avec virage(s)</span>
             </div>
             <div class="lform-option lform-option-large" onclick="lAutoSelect(this,'type')">
-              <span class="lform-option-icon">🌿</span>
+              <svg class="lform-option-svg" viewBox="0 0 56 56" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect x="4" y="44" width="22" height="5" rx="1" fill="currentColor"/>
+  <rect x="12" y="34" width="18" height="5" rx="1" fill="currentColor"/>
+  <rect x="20" y="24" width="14" height="5" rx="1" fill="currentColor"/>
+  <rect x="12" y="39" width="4" height="10" fill="currentColor"/>
+  <rect x="20" y="29" width="4" height="10" fill="currentColor"/>
+  <circle cx="44" cy="14" r="8" stroke="currentColor" stroke-width="3" fill="none"/>
+  <path d="M42 14 L44 12 L46 14" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+  <path d="M44 14 L44 17" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+</svg>
               <span class="lform-option-text">Extérieur</span>
               <span class="lform-option-hint">Jardin, terrasse</span>
             </div>
@@ -64,35 +79,104 @@
           <div class="lform-reassurance" style="margin-top:auto;">🔒 Vos données sont sécurisées — Service 100 % gratuit</div>
         </div>
 
-        <!-- Étape 2 : délai -->
         <div class="lform-step" id="lstep1">
           <button class="lform-btn-back" onclick="lPrevStep(1)">← Retour</button>
-          <div class="lform-label">Étape 2 sur 4</div>
-          <div class="lform-question">Quand souhaitez-vous démarrer ?</div>
+          <div class="lform-label">Étape 2 sur 5</div>
+          <div class="lform-question">Combien d'étages comporte votre logement ?</div>
           <div class="lform-grid lform-grid-triple">
-            <div class="lform-option lform-option-large" onclick="lAutoSelect(this,'delai')">
-              <span class="lform-option-icon">⚡</span>
-              <span class="lform-option-text">Rapidement</span>
-              <span class="lform-option-hint">Dans les prochaines semaines</span>
+            <div class="lform-option lform-option-large" onclick="lAutoSelect(this,'etages')">
+              <svg class="lform-option-svg" viewBox="0 0 56 56" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <polygon points="28,8 50,26 6,26" fill="currentColor"/>
+  <rect x="10" y="24" width="36" height="26" rx="1" fill="currentColor"/>
+  <rect x="22" y="36" width="12" height="14" rx="1" fill="white"/>
+  <rect x="13" y="28" width="9" height="8" rx="1" fill="white"/>
+  <rect x="34" y="28" width="9" height="8" rx="1" fill="white"/>
+</svg>
+              <span class="lform-option-text">1 étage</span>
             </div>
-            <div class="lform-option lform-option-large" onclick="lAutoSelect(this,'delai')">
-              <span class="lform-option-icon">📅</span>
-              <span class="lform-option-text">Sous 3 mois</span>
-              <span class="lform-option-hint">Je prends le temps de comparer</span>
+            <div class="lform-option lform-option-large" onclick="lAutoSelect(this,'etages')">
+              <svg class="lform-option-svg" viewBox="0 0 56 56" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <polygon points="28,5 50,20 6,20" fill="currentColor"/>
+  <rect x="10" y="18" width="36" height="32" rx="1" fill="currentColor"/>
+  <rect x="22" y="38" width="12" height="12" rx="1" fill="white"/>
+  <rect x="13" y="22" width="8" height="6" rx="1" fill="white"/>
+  <rect x="35" y="22" width="8" height="6" rx="1" fill="white"/>
+  <rect x="13" y="32" width="8" height="6" rx="1" fill="white"/>
+  <rect x="35" y="32" width="8" height="6" rx="1" fill="white"/>
+</svg>
+              <span class="lform-option-text">2 étages</span>
             </div>
-            <div class="lform-option lform-option-large" onclick="lAutoSelect(this,'delai')">
-              <span class="lform-option-icon">🔍</span>
-              <span class="lform-option-text">Je me renseigne</span>
-              <span class="lform-option-hint">Pas encore décidé</span>
+            <div class="lform-option lform-option-large" onclick="lAutoSelect(this,'etages')">
+              <svg class="lform-option-svg" viewBox="0 0 56 56" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect x="8" y="6" width="40" height="44" rx="2" fill="currentColor"/>
+  <rect x="22" y="40" width="12" height="10" rx="1" fill="white"/>
+  <rect x="12" y="10" width="8" height="6" rx="1" fill="white"/>
+  <rect x="36" y="10" width="8" height="6" rx="1" fill="white"/>
+  <rect x="12" y="20" width="8" height="6" rx="1" fill="white"/>
+  <rect x="36" y="20" width="8" height="6" rx="1" fill="white"/>
+  <rect x="12" y="30" width="8" height="6" rx="1" fill="white"/>
+  <rect x="36" y="30" width="8" height="6" rx="1" fill="white"/>
+</svg>
+              <span class="lform-option-text">Plus de 2</span>
             </div>
           </div>
           <div class="lform-reassurance" style="margin-top:auto;">Un devis gratuit, sans engagement</div>
         </div>
 
-        <!-- Étape 3 : situation -->
         <div class="lform-step" id="lstep2">
           <button class="lform-btn-back" onclick="lPrevStep(2)">← Retour</button>
-          <div class="lform-label">Étape 3 sur 4</div>
+          <div class="lform-label">Étape 3 sur 5</div>
+          <div class="lform-question">Quand souhaitez-vous démarrer les travaux ?</div>
+          <div class="lform-grid lform-grid-triple">
+            <div class="lform-option lform-option-large" onclick="lAutoSelect(this,'delai')">
+              <svg class="lform-option-svg" viewBox="0 0 56 56" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <circle cx="28" cy="28" r="22" stroke="currentColor" stroke-width="4"/>
+  <line x1="28" y1="28" x2="28" y2="12" stroke="currentColor" stroke-width="4" stroke-linecap="round"/>
+  <line x1="28" y1="28" x2="40" y2="36" stroke="currentColor" stroke-width="3" stroke-linecap="round"/>
+  <circle cx="28" cy="28" r="3" fill="currentColor"/>
+</svg>
+              <span class="lform-option-text">Immédiatement</span>
+              <span class="lform-option-hint">Prochaines semaines</span>
+            </div>
+            <div class="lform-option lform-option-large" onclick="lAutoSelect(this,'delai')">
+              <svg class="lform-option-svg" viewBox="0 0 56 56" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect x="4" y="10" width="40" height="36" rx="3" fill="currentColor"/>
+  <rect x="4" y="10" width="40" height="12" rx="3" fill="currentColor"/>
+  <rect x="4" y="16" width="40" height="6" fill="currentColor"/>
+  <rect x="12" y="4" width="4" height="12" rx="2" fill="currentColor"/>
+  <rect x="32" y="4" width="4" height="12" rx="2" fill="currentColor"/>
+  <rect x="8" y="28" width="8" height="6" rx="1" fill="white" opacity="0.7"/>
+  <rect x="20" y="28" width="8" height="6" rx="1" fill="white" opacity="0.7"/>
+  <rect x="32" y="28" width="8" height="6" rx="1" fill="white" opacity="0.7"/>
+  <rect x="38" y="36" width="16" height="16" rx="8" fill="currentColor"/>
+  <text x="46" y="48" text-anchor="middle" font-size="9" font-weight="700" fill="white">-3m</text>
+</svg>
+              <span class="lform-option-text">Moins de 3 mois</span>
+              <span class="lform-option-hint">Je prends le temps</span>
+            </div>
+            <div class="lform-option lform-option-large" onclick="lAutoSelect(this,'delai')">
+              <svg class="lform-option-svg" viewBox="0 0 56 56" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect x="4" y="10" width="40" height="36" rx="3" fill="currentColor"/>
+  <rect x="4" y="10" width="40" height="12" rx="3" fill="currentColor"/>
+  <rect x="4" y="16" width="40" height="6" fill="currentColor"/>
+  <rect x="12" y="4" width="4" height="12" rx="2" fill="currentColor"/>
+  <rect x="32" y="4" width="4" height="12" rx="2" fill="currentColor"/>
+  <rect x="8" y="28" width="8" height="6" rx="1" fill="white" opacity="0.7"/>
+  <rect x="20" y="28" width="8" height="6" rx="1" fill="white" opacity="0.7"/>
+  <rect x="32" y="28" width="8" height="6" rx="1" fill="white" opacity="0.7"/>
+  <rect x="38" y="36" width="16" height="16" rx="8" fill="currentColor"/>
+  <text x="46" y="48" text-anchor="middle" font-size="9" font-weight="700" fill="white">+3m</text>
+</svg>
+              <span class="lform-option-text">Plus de 3 mois</span>
+              <span class="lform-option-hint">Je me renseigne</span>
+            </div>
+          </div>
+          <div class="lform-reassurance" style="margin-top:auto;">Un devis gratuit, sans engagement</div>
+        </div>
+
+        <div class="lform-step" id="lstep3">
+          <button class="lform-btn-back" onclick="lPrevStep(3)">← Retour</button>
+          <div class="lform-label">Étape 4 sur 5</div>
           <div class="lform-question">Votre situation</div>
           <div class="lform-field lform-field-lg">
             <label>Code postal</label>
@@ -108,15 +192,14 @@
             </select>
           </div>
           <div class="lform-btn-group">
-            <div class="lform-reassurance">Un installateur agréé{{VILLE_PREFIX}} vous rappelle sous 24h</div>
-            <button class="lform-btn-next" onclick="lNextStep(2)">Continuer →</button>
+            <div class="lform-reassurance" id="l-reassurance-3">Un installateur agréé{{VILLE_PREFIX}} vous rappelle sous 24h</div>
+            <button class="lform-btn-next" onclick="lNextStep(3)">Continuer →</button>
           </div>
         </div>
 
-        <!-- Étape 4 : coordonnées -->
-        <div class="lform-step" id="lstep3">
-          <button class="lform-btn-back" onclick="lPrevStep(3)">← Retour</button>
-          <div class="lform-label">Étape 4 sur 4</div>
+        <div class="lform-step" id="lstep4">
+          <button class="lform-btn-back" onclick="lPrevStep(4)">← Retour</button>
+          <div class="lform-label">Étape 5 sur 5</div>
           <div class="lform-question">Vos coordonnées</div>
           <div class="lform-row">
             <div class="lform-field"><label>Prénom *</label><input type="text" id="lprenom" placeholder="Marie"></div>
@@ -132,7 +215,6 @@
           </div>
         </div>
 
-        <!-- Succès -->
         <div class="lform-step" id="lsuccess">
           <div class="lform-success">
             <div class="lform-success-icon">✅</div>
@@ -141,7 +223,7 @@
           </div>
         </div>
 
-      </div><!-- /lform-steps-wrapper -->
+      </div>
     </div>
   </div>
 </section>

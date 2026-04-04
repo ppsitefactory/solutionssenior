@@ -415,15 +415,18 @@ footer { background: var(--text); color: rgba(255,255,255,0.6); padding: 60px 5%
 .lform-grid-triple { grid-template-columns: 1fr 1fr 1fr; gap: 10px; }
 .lform-grid-large { gap: 12px; margin-bottom: 20px; }
 .lform-option-large {
-  border: 2px solid #e0e8e2; border-radius: 14px; padding: 22px 16px;
+  border: 2.5px solid #e0e8e2; border-radius: 14px; padding: 0;
   cursor: pointer; transition: all 0.2s;
-  display: flex; flex-direction: column; align-items: center; text-align: center; gap: 8px;
+  display: flex; flex-direction: column; align-items: center; text-align: center; gap: 0;
+  overflow: hidden;
 }
-.lform-option-large:hover { border-color: var(--sage-light); background: var(--sage-pale); }
-.lform-option-large.selected { border-color: var(--sage); background: var(--sage-pale); }
+.lform-option-large:hover { border-color: var(--sage-light); transform: translateY(-2px); box-shadow: 0 4px 12px rgba(74,124,89,0.15); }
+.lform-option-large.selected { border-color: var(--sage); box-shadow: 0 0 0 2px var(--sage); }
+.lform-option-img { width: 100%; aspect-ratio: 1/1; object-fit: cover; display: block; }
+.lform-option-label { padding: 8px 6px 10px; width: 100%; }
+.lform-option-text { font-size: 0.92rem; font-weight: 700; color: var(--text); display: block; }
+.lform-option-hint { font-size: 0.76rem; color: var(--text-light); line-height: 1.3; display: block; margin-top: 2px; }
 .lform-option-icon { font-size: 2rem; }
-.lform-option-text { font-size: 0.97rem; font-weight: 700; color: var(--text); }
-.lform-option-hint { font-size: 0.78rem; color: var(--text-light); line-height: 1.3; }
 
 /* Champs */
 .lform-field { margin-bottom: 10px; }

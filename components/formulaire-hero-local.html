@@ -110,35 +110,65 @@
           <div class="lform-reassurance" style="margin-top:auto;">Un devis gratuit, sans engagement</div>
         </div>
 
-        <div class="lform-step" id="lstep2">
+                <div class="lform-step" id="lstep2">
           <button class="lform-btn-back" onclick="lPrevStep(2)">← Retour</button>
           <div class="lform-label">Étape 3 sur 5</div>
           <div class="lform-question">Quand souhaitez-vous démarrer les travaux ?</div>
           <div class="lform-grid lform-grid-triple">
-            <div class="lform-option lform-option-large" onclick="lAutoSelect(this,'delai')">
-              <div class="lform-option-label" style="padding:20px 8px;">
-                <span class="lform-option-icon">⚡</span>
-                <span class="lform-option-text">Immédiatement</span>
-                <span class="lform-option-hint">Prochaines semaines</span>
-              </div>
+            <div class="lform-option lform-option-large lform-option-icon-card" onclick="lAutoSelect(this,'delai')">
+              <svg viewBox="0 0 64 64" width="52" height="52" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <circle cx="32" cy="32" r="26" fill="#4a7c59"/>
+  <circle cx="32" cy="32" r="4" fill="white"/>
+  <line x1="32" y1="28" x2="32" y2="14" stroke="white" stroke-width="3.5" stroke-linecap="round"/>
+  <line x1="32" y1="36" x2="44" y2="43" stroke="white" stroke-width="3" stroke-linecap="round"/>
+  <line x1="32" y1="8" x2="32" y2="11" stroke="white" stroke-width="3" stroke-linecap="round"/>
+  <line x1="32" y1="53" x2="32" y2="56" stroke="white" stroke-width="3" stroke-linecap="round"/>
+  <line x1="8" y1="32" x2="11" y2="32" stroke="white" stroke-width="3" stroke-linecap="round"/>
+  <line x1="53" y1="32" x2="56" y2="32" stroke="white" stroke-width="3" stroke-linecap="round"/>
+</svg>
+              <span class="lform-option-text">Immédiatement</span>
+              <span class="lform-option-hint">Prochaines semaines</span>
             </div>
-            <div class="lform-option lform-option-large" onclick="lAutoSelect(this,'delai')">
-              <div class="lform-option-label" style="padding:20px 8px;">
-                <span class="lform-option-icon">📅</span>
-                <span class="lform-option-text">Moins de 3 mois</span>
-                <span class="lform-option-hint">Je prends le temps</span>
-              </div>
+            <div class="lform-option lform-option-large lform-option-icon-card" onclick="lAutoSelect(this,'delai')">
+              <svg viewBox="0 0 64 64" width="52" height="52" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect x="6" y="14" width="52" height="44" rx="4" fill="#4a7c59"/>
+  <rect x="6" y="14" width="52" height="16" rx="4" fill="#2d5c3e"/>
+  <rect x="6" y="22" width="52" height="8" fill="#2d5c3e"/>
+  <rect x="16" y="8" width="5" height="14" rx="2.5" fill="#4a7c59"/>
+  <rect x="43" y="8" width="5" height="14" rx="2.5" fill="#4a7c59"/>
+  <rect x="14" y="36" width="8" height="7" rx="1" fill="white" opacity="0.7"/>
+  <rect x="28" y="36" width="8" height="7" rx="1" fill="white" opacity="0.7"/>
+  <rect x="42" y="36" width="8" height="7" rx="1" fill="white" opacity="0.7"/>
+  <rect x="14" y="47" width="8" height="7" rx="1" fill="white" opacity="0.7"/>
+  <rect x="28" y="47" width="8" height="7" rx="1" fill="white" opacity="0.7"/>
+  <circle cx="49" cy="50" r="10" fill="#1e2a22"/>
+  <text x="49" y="54" text-anchor="middle" font-family="system-ui" font-size="10" font-weight="700" fill="white">-3m</text>
+</svg>
+              <span class="lform-option-text">Moins de 3 mois</span>
+              <span class="lform-option-hint">Je prends le temps</span>
             </div>
-            <div class="lform-option lform-option-large" onclick="lAutoSelect(this,'delai')">
-              <div class="lform-option-label" style="padding:20px 8px;">
-                <span class="lform-option-icon">🔍</span>
-                <span class="lform-option-text">Plus de 3 mois</span>
-                <span class="lform-option-hint">Je me renseigne</span>
-              </div>
+            <div class="lform-option lform-option-large lform-option-icon-card" onclick="lAutoSelect(this,'delai')">
+              <svg viewBox="0 0 64 64" width="52" height="52" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect x="6" y="14" width="52" height="44" rx="4" fill="#4a7c59"/>
+  <rect x="6" y="14" width="52" height="16" rx="4" fill="#2d5c3e"/>
+  <rect x="6" y="22" width="52" height="8" fill="#2d5c3e"/>
+  <rect x="16" y="8" width="5" height="14" rx="2.5" fill="#4a7c59"/>
+  <rect x="43" y="8" width="5" height="14" rx="2.5" fill="#4a7c59"/>
+  <rect x="14" y="36" width="8" height="7" rx="1" fill="white" opacity="0.7"/>
+  <rect x="28" y="36" width="8" height="7" rx="1" fill="white" opacity="0.7"/>
+  <rect x="42" y="36" width="8" height="7" rx="1" fill="white" opacity="0.7"/>
+  <rect x="14" y="47" width="8" height="7" rx="1" fill="white" opacity="0.7"/>
+  <rect x="28" y="47" width="8" height="7" rx="1" fill="white" opacity="0.7"/>
+  <circle cx="49" cy="50" r="10" fill="#1e2a22"/>
+  <text x="49" y="54" text-anchor="middle" font-family="system-ui" font-size="10" font-weight="700" fill="white">+3m</text>
+</svg>
+              <span class="lform-option-text">Plus de 3 mois</span>
+              <span class="lform-option-hint">Je me renseigne</span>
             </div>
           </div>
           <div class="lform-reassurance" style="margin-top:auto;">Un devis gratuit, sans engagement</div>
         </div>
+
 
         <div class="lform-step" id="lstep3">
           <button class="lform-btn-back" onclick="lPrevStep(3)">← Retour</button>

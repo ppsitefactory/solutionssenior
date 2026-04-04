@@ -73,14 +73,14 @@ function initModal() {
 
     // Textes adaptés selon présence de ville
     const villePrefix = ville ? ' à ' + ville : '';
-    document.getElementById('m-monte-title').textContent =
-      'Votre devis gratuit' + villePrefix;
-    document.getElementById('m-monte-subtitle').textContent =
-      '2 minutes suffisent. Un installateur agréé' + villePrefix + ' vous rappelle sous 24h.';
-    document.getElementById('m-reassurance-3').textContent =
-      'Un installateur agréé' + villePrefix + ' vous rappelle sous 24h';
-    document.getElementById('m-success-text').innerHTML =
-      'Un installateur agréé' + villePrefix + ' vous contactera dans les <strong>24 heures</strong>. Merci de votre confiance.';
+    const mTitle = document.getElementById('m-monte-title');
+    const mSub   = document.getElementById('m-monte-subtitle');
+    const mRea   = document.getElementById('m-reassurance-3');
+    const mSucc  = document.getElementById('m-success-text');
+    if (mTitle) mTitle.textContent = 'Votre devis gratuit' + villePrefix;
+    if (mSub)   mSub.textContent   = '2 minutes suffisent. Un installateur agréé' + villePrefix + ' vous rappelle sous 24h.';
+    if (mRea)   mRea.textContent   = 'Un installateur agréé' + villePrefix + ' vous rappelle sous 24h';
+    if (mSucc)  mSucc.innerHTML    = 'Un installateur agréé' + villePrefix + ' vous contactera dans les <strong>24 heures</strong>. Merci de votre confiance.';
 
     // Données initiales du tunnel
     mData    = { service: 'Monte-escalier', ville: ville || '', departement: dept, codeRegion: deptNum };

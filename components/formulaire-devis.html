@@ -2,12 +2,12 @@
   <div class="modal-box">
     <button class="modal-close" onclick="closeModal()">✕</button>
 
-    <!-- ═══ MODE MONTE / LOCAL (5 étapes) ═══ -->
+    <!-- MODE MONTE / LOCAL (5 étapes) -->
     <div id="m-mode-monte" style="display:none;">
       <div class="form-title" id="m-monte-title">Votre devis gratuit</div>
       <div class="form-subtitle" id="m-monte-subtitle">2 minutes suffisent. Un professionnel agréé vous rappelle sous 24h.</div>
       <div class="lform-progress" id="m-monte-progress">
-        <div class="lform-progress-bar active" id="mbar0"></div>
+        <div class="lform-progress-bar  active" id="mbar0"></div>
         <div class="lform-progress-bar" id="mbar1"></div>
         <div class="lform-progress-bar" id="mbar2"></div>
         <div class="lform-progress-bar" id="mbar3"></div>
@@ -15,7 +15,7 @@
       </div>
       <div class="lform-steps-wrapper" style="height:360px;">
 
-                <div class="lform-step active" id="mstep0">
+        <div class="lform-step active" id="mstep0">
           <div class="lform-label">Étape 1 sur 5</div>
           <div class="lform-question">Quel type d'escalier avez-vous ?</div>
           <div class="lform-grid lform-grid-triple">
@@ -44,6 +44,123 @@
           <div class="lform-reassurance" style="margin-top:auto;">🔒 Vos données sont sécurisées — Service 100 % gratuit</div>
         </div>
 
+        <div class="lform-step" id="mstep1">
+          <button class="lform-btn-back" onclick="mPrevStep(1)">← Retour</button>
+          <div class="lform-label">Étape 2 sur 5</div>
+          <div class="lform-question">Combien d'étages comporte votre logement ?</div>
+          <div class="lform-grid lform-grid-triple">
+            <div class="lform-option lform-option-large lform-option-icon-card" onclick="mAutoSelect(this,'etages')">
+              <svg viewBox="0 0 64 64" width="52" height="52" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <polygon points="32,8 58,28 6,28" fill="#4a7c59"/>
+  <rect x="10" y="26" width="44" height="30" rx="1" fill="#4a7c59"/>
+  <rect x="24" y="38" width="16" height="18" rx="1" fill="white"/>
+  <rect x="14" y="31" width="10" height="10" rx="1" fill="white"/>
+  <rect x="40" y="31" width="10" height="10" rx="1" fill="white"/>
+  <rect x="10" y="54" width="44" height="3" rx="1" fill="#2d5c3e"/>
+</svg>
+              <span class="lform-option-text">1 étage</span>
+            </div>
+            <div class="lform-option lform-option-large lform-option-icon-card" onclick="mAutoSelect(this,'etages')">
+              <svg viewBox="0 0 64 64" width="52" height="52" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <polygon points="32,6 58,22 6,22" fill="#4a7c59"/>
+  <rect x="10" y="20" width="44" height="36" rx="1" fill="#4a7c59"/>
+  <rect x="24" y="42" width="16" height="14" rx="1" fill="white"/>
+  <rect x="13" y="25" width="10" height="8" rx="1" fill="white"/>
+  <rect x="41" y="25" width="10" height="8" rx="1" fill="white"/>
+  <rect x="13" y="36" width="10" height="8" rx="1" fill="white"/>
+  <rect x="41" y="36" width="10" height="8" rx="1" fill="white"/>
+  <rect x="10" y="54" width="44" height="3" rx="1" fill="#2d5c3e"/>
+</svg>
+              <span class="lform-option-text">2 étages</span>
+            </div>
+            <div class="lform-option lform-option-large lform-option-icon-card" onclick="mAutoSelect(this,'etages')">
+              <svg viewBox="0 0 64 64" width="52" height="52" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect x="8" y="8" width="48" height="48" rx="2" fill="#4a7c59"/>
+  <rect x="24" y="44" width="16" height="12" rx="1" fill="white"/>
+  <rect x="12" y="12" width="10" height="8" rx="1" fill="white"/>
+  <rect x="42" y="12" width="10" height="8" rx="1" fill="white"/>
+  <rect x="12" y="24" width="10" height="8" rx="1" fill="white"/>
+  <rect x="42" y="24" width="10" height="8" rx="1" fill="white"/>
+  <rect x="12" y="36" width="10" height="8" rx="1" fill="white"/>
+  <rect x="42" y="36" width="10" height="8" rx="1" fill="white"/>
+  <rect x="8" y="54" width="48" height="3" rx="1" fill="#2d5c3e"/>
+</svg>
+              <span class="lform-option-text">Plus de 2</span>
+            </div>
+          </div>
+          <div class="lform-reassurance" style="margin-top:auto;">Un devis gratuit, sans engagement</div>
+        </div>
+
+        <div class="lform-step" id="mstep2">
+          <button class="lform-btn-back" onclick="mPrevStep(2)">← Retour</button>
+          <div class="lform-label">Étape 3 sur 5</div>
+          <div class="lform-question">Quand souhaitez-vous démarrer les travaux ?</div>
+          <div class="lform-grid lform-grid-triple">
+            <div class="lform-option lform-option-large lform-option-icon-card" onclick="mAutoSelect(this,'delai')">
+              <div class="lform-option-label" style="padding:20px 8px;">
+                <span class="lform-option-icon">⚡</span>
+                <span class="lform-option-text">Immédiatement</span>
+                <span class="lform-option-hint">Prochaines semaines</span>
+              </div>
+            </div>
+            <div class="lform-option lform-option-large lform-option-icon-card" onclick="mAutoSelect(this,'delai')">
+              <div class="lform-option-label" style="padding:20px 8px;">
+                <span class="lform-option-icon">📅</span>
+                <span class="lform-option-text">Moins de 3 mois</span>
+                <span class="lform-option-hint">Je prends le temps</span>
+              </div>
+            </div>
+            <div class="lform-option lform-option-large lform-option-icon-card" onclick="mAutoSelect(this,'delai')">
+              <div class="lform-option-label" style="padding:20px 8px;">
+                <span class="lform-option-icon">🔍</span>
+                <span class="lform-option-text">Plus de 3 mois</span>
+                <span class="lform-option-hint">Je me renseigne</span>
+              </div>
+            </div>
+          </div>
+          <div class="lform-reassurance" style="margin-top:auto;">Un devis gratuit, sans engagement</div>
+        </div>
+
+        <div class="lform-step" id="mstep3">
+          <button class="lform-btn-back" onclick="mPrevStep(3)">← Retour</button>
+          <div class="lform-label">Étape 4 sur 5</div>
+          <div class="lform-question">Votre situation</div>
+          <div class="lform-field lform-field-lg">
+            <label>Code postal</label>
+            <input type="text" id="m-cp" placeholder="Ex. 69001" maxlength="5">
+          </div>
+          <div class="lform-field lform-field-lg">
+            <label>Ce monte-escalier est pour…</label>
+            <select id="m-pour">
+              <option>Moi-même</option>
+              <option>Mon parent</option>
+              <option>Mon conjoint</option>
+              <option>Un autre proche</option>
+            </select>
+          </div>
+          <div class="lform-btn-group">
+            <div class="lform-reassurance" id="m-reassurance-3">Un professionnel agréé vous rappelle sous 24h</div>
+            <button class="lform-btn-next" onclick="mNextStep(3)">Continuer →</button>
+          </div>
+        </div>
+
+        <div class="lform-step" id="mstep4">
+          <button class="lform-btn-back" onclick="mPrevStep(4)">← Retour</button>
+          <div class="lform-label">Étape 5 sur 5</div>
+          <div class="lform-question">Vos coordonnées</div>
+          <div class="lform-row">
+            <div class="lform-field"><label>Prénom *</label><input type="text" id="m-prenom" placeholder="Marie"></div>
+            <div class="lform-field"><label>Nom *</label><input type="text" id="m-nom" placeholder="Dupont"></div>
+          </div>
+          <div class="lform-row">
+            <div class="lform-field"><label>Téléphone *</label><input type="tel" id="m-tel" placeholder="06 00 00 00 00"></div>
+            <div class="lform-field"><label>Email *</label><input type="email" id="m-email" placeholder="marie@exemple.fr"></div>
+          </div>
+          <div class="lform-btn-group">
+            <button class="lform-btn-submit" onclick="mSubmit()">✓ Je veux être rappelé gratuitement</button>
+            <div class="lform-legal">Service gratuit. Données protégées. <a href="/politique-confidentialite/">Politique de confidentialité</a></div>
+          </div>
+        </div>
 
         <div class="lform-step" id="msuccess">
           <div class="lform-success">
@@ -56,7 +173,7 @@
       </div>
     </div>
 
-    <!-- ═══ MODE GÉNÉRIQUE (4 étapes) ═══ -->
+    <!-- MODE GÉNÉRIQUE (4 étapes) -->
     <div id="m-mode-generic" style="display:none;">
       <div class="form-title">Être rappelé gratuitement</div>
       <div class="form-subtitle">Décrivez votre projet en 2 minutes. Un professionnel agréé vous contacte sous 24h.</div>

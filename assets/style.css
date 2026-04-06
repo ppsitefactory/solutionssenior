@@ -244,16 +244,11 @@ footer { background: var(--text); color: rgba(255,255,255,0.6); padding: 60px 5%
 .btn-cta-white:hover { opacity: 0.92; }
 
 /* FAQ accordéon */
-.faq-item { border: 1px solid #e0e8e2; border-radius: 10px; margin-bottom: 12px; overflow: hidden; }
-.faq-question { width: 100%; background: white; border: none; padding: 20px 24px; display: flex; justify-content: space-between; align-items: center; cursor: pointer; font-family: 'DM Sans', sans-serif; font-size: 1rem; font-weight: 600; color: var(--text); text-align: left; gap: 16px; margin: 0; line-height: 1.4; }
-h3.faq-question { font-family: 'DM Sans', sans-serif; font-size: 1rem; font-weight: 600; }
-.faq-question:hover { background: var(--sage-pale); }
-.faq-arrow { font-size: 0.8rem; color: var(--sage); transition: transform 0.25s; flex-shrink: 0; }
-.faq-answer { display: none; padding: 0 24px 20px; font-size: 0.97rem; color: var(--text-light); line-height: 1.75; }
-.faq-answer a { color: var(--sage); }
-.faq-item.open .faq-answer { display: block; }
-.faq-item.open .faq-arrow { transform: rotate(180deg); }
-.faq-item.open .faq-question { background: var(--sage-pale); }
+/* FAQ — format ouvert (H3 + paragraphe visible pour SEO) */
+.faq-open-item { border-left: 3px solid var(--sage); padding: 20px 0 20px 24px; margin-bottom: 28px; }
+.faq-open-item h3 { font-family: 'DM Sans', sans-serif; font-size: 1rem; font-weight: 700; color: var(--text); margin: 0 0 10px; line-height: 1.4; }
+.faq-open-item p { font-size: 0.97rem; color: var(--text-light); line-height: 1.75; margin: 0; }
+.faq-open-item a { color: var(--sage); }
 
 /* Cartes types de monte-escalier */
 .types-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin: 28px 0; }

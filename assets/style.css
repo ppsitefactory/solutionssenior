@@ -267,7 +267,9 @@ footer { background: var(--text); color: rgba(255,255,255,0.6); padding: 60px 5%
 .etape-desc { font-size: 0.88rem; color: var(--text-light); line-height: 1.5; }
 
 /* Placeholder visuel (avant vraies images) */
-.visuel-local { background: var(--sage-pale); border: 2px dashed #b0ccb8; border-radius: 12px; height: 360px; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 24px; margin: 24px 0; color: var(--sage); gap: 10px; }
+.visuel-local { border-radius: 12px; margin: 24px 0; overflow: hidden; }
+.visuel-local img { width: 100%; height: auto; display: block; border-radius: 12px; }
+.visuel-local.placeholder { background: var(--sage-pale); border: 2px dashed #b0ccb8; height: 360px; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 24px; color: var(--sage); gap: 10px; }
 .visuel-local .v-icon { font-size: 2rem; opacity: 0.5; }
 .visuel-local .v-label { font-size: 0.82rem; font-weight: 600; opacity: 0.75; line-height: 1.5; }
 

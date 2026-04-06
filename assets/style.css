@@ -494,7 +494,11 @@ footer { background: var(--text); color: rgba(255,255,255,0.6); padding: 60px 5%
   .lform-option-text { font-size: 0.8rem; }
   .lform-option-hint { font-size: 0.68rem; }
   .hero-form-card .lform-steps-wrapper { height: auto; }
+  .modal-box .lform-steps-wrapper { height: auto !important; }
 }
+
+/* Masquer le bandeau sticky quand le modal est ouvert */
+body:has(.modal-overlay.open) #bandeau-sticky { display: none !important; }
 
 /* ============================================
    RESPONSIVE

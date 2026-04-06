@@ -28,12 +28,33 @@
       },
       {
         "@type": "FAQPage",
-        "mainEntity": [
-          { "@type": "Question", "name": "Quel est le prix d'un monte-escalier à Lyon ?", "acceptedAnswer": { "@type": "Answer", "text": "Le prix varie de 3 000 € à 9 000 € selon le type (droit ou tournant), la marque et les options." } },
-          { "@type": "Question", "name": "Comment trouver un installateur agréé à Lyon ?", "acceptedAnswer": { "@type": "Answer", "text": "Solutions Senior vous met en relation gratuitement avec des installateurs agréés intervenant à Lyon et dans le Rhône. Remplissez le formulaire et un professionnel vous contacte sous 24h." } },
-          { "@type": "Question", "name": "Quelles aides pour un monte-escalier à Lyon ?", "acceptedAnswer": { "@type": "Answer", "text": "MaPrimeAdapt' (jusqu'à 70 % des travaux HT), APA, CARSAT (jusqu'à 3 500 €) et TVA réduite à 5,5 %." } },
-          { "@type": "Question", "name": "Combien de temps prend l'installation d'un monte-escalier à Lyon ?", "acceptedAnswer": { "@type": "Answer", "text": "Un monte-escalier droit s'installe en une demi-journée. Un modèle tournant nécessite 2 à 4 semaines de fabrication puis une journée d'installation." } }
-        ]
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Quel est le prix d'un monte-escalier à Lyon ?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Le prix varie de 3 000 € à 9 000 € selon le type (droit ou tournant), la marque et les options. Avec les aides cumulées, le reste à charge peut descendre à environ 1 000 € pour un ménage aux revenus très modestes." }
+        },
+        {
+          "@type": "Question",
+          "name": "Comment trouver un installateur agréé à Lyon ?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Solutions Senior vous met en relation gratuitement avec des installateurs certifiés intervenant à Lyon et dans le Rhône. Remplissez le formulaire — un professionnel vous rappelle sous 24h." }
+        },
+        {
+          "@type": "Question",
+          "name": "Quelles aides pour un monte-escalier dans le Rhône ?",
+          "acceptedAnswer": { "@type": "Answer", "text": "MaPrimeAdapt' (jusqu'à 70 % des travaux HT, plafond 22 000 € HT), APA, CARSAT (jusqu'à 3 500 €) et TVA réduite à 5,5 %. Le guichet MaPrimeAdapt' est actuellement suspendu — la réouverture est attendue." }
+        },
+        {
+          "@type": "Question",
+          "name": "Faut-il faire des travaux pour installer un monte-escalier à Lyon ?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Non. L'installation est non-invasive et entièrement réversible. Le rail se fixe sur les marches ou contre le mur, sans percement porteur." }
+        },
+        {
+          "@type": "Question",
+          "name": "Mon escalier lyonnais est-il compatible avec un monte-escalier ?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Dans la très grande majorité des cas, oui. Les escaliers étroits et raides des maisons lyonnaises peuvent accueillir des modèles compacts à partir de 60 cm de largeur libre." }
+        }
+      ]
       },
       {
         "@type": "BreadcrumbList",
@@ -62,9 +83,7 @@
 <div id="site-header"></div>
 
 <!-- Le hero avec formulaire est injecté ici par components.js -->
-<div id="hero-local">
-  <h1 class="hero-local-h1" style="position:absolute;left:-9999px;visibility:hidden;">Monte-escalier à Lyon&nbsp;: devis gratuit, installateurs agréés dans le Rhône</h1>
-</div>
+<div id="hero-local"></div>
 
 <div id="bandeau-rea"></div>
 <div class="article-layout">
@@ -230,24 +249,56 @@
       <h2 id="faq">Questions fréquentes — Monte-escalier à Lyon</h2>
 
       <div class="faq-item">
-        <button class="faq-question" onclick="this.closest('.faq-item').classList.toggle('open')">Quel est le prix d'un monte-escalier à Lyon ?<span class="faq-arrow">▼</span></button>
-        <div class="faq-answer">Le prix varie de 3 000 € à 9 000 € selon le type (droit ou tournant), la marque et les options. <a href="/monte-escaliers/prix/">Voir le guide complet des prix →</a></div>
+        <h3 class="faq-question" onclick="this.closest('.faq-item').classList.toggle('open')">
+          Quel est le prix d'un monte-escalier à Lyon ?
+          <span class="faq-arrow">▼</span>
+        </h3>
+        <div class="faq-answer">
+          <p>Le prix varie de 3 000 € à 9 000 € selon le type (droit ou tournant), la marque et les options. Avec les aides cumulées, le reste à charge peut descendre à environ 1 000 € pour un ménage aux revenus très modestes.
+          <a href="/monte-escaliers/prix/">Voir le guide complet des prix →</a></p>
+        </div>
       </div>
+
       <div class="faq-item">
-        <button class="faq-question" onclick="this.closest('.faq-item').classList.toggle('open')">Comment trouver un installateur agréé à Lyon ?<span class="faq-arrow">▼</span></button>
-        <div class="faq-answer">Solutions Senior vous met en relation gratuitement avec des installateurs certifiés intervenant à Lyon et dans le Rhône. Remplissez le formulaire — un professionnel vous rappelle sous 24h.</div>
+        <h3 class="faq-question" onclick="this.closest('.faq-item').classList.toggle('open')">
+          Comment trouver un installateur agréé à Lyon ?
+          <span class="faq-arrow">▼</span>
+        </h3>
+        <div class="faq-answer">
+          <p>Solutions Senior vous met en relation gratuitement avec des installateurs certifiés intervenant à Lyon et dans le Rhône. Remplissez le formulaire — un professionnel vous rappelle sous 24h.</p>
+        </div>
       </div>
+
       <div class="faq-item">
-        <button class="faq-question" onclick="this.closest('.faq-item').classList.toggle('open')">Quelles aides pour un monte-escalier dans le Rhône ?<span class="faq-arrow">▼</span></button>
-        <div class="faq-answer">MaPrimeAdapt' (jusqu'à 70 % des travaux HT, plafond 22 000 € HT), APA, CARSAT (jusqu'à 3 500 €) et TVA réduite à 5,5 %. <a href="/monte-escaliers/aides/">Voir toutes les aides →</a></div>
+        <h3 class="faq-question" onclick="this.closest('.faq-item').classList.toggle('open')">
+          Quelles aides pour un monte-escalier dans le Rhône ?
+          <span class="faq-arrow">▼</span>
+        </h3>
+        <div class="faq-answer">
+          <p>MaPrimeAdapt' (jusqu'à 70 % des travaux HT, plafond 22 000 € HT), APA, CARSAT (jusqu'à 3 500 €) et TVA réduite à 5,5 %. Le guichet MaPrimeAdapt' est actuellement suspendu — la réouverture est attendue.
+          <a href="/monte-escaliers/aides/">Voir toutes les aides →</a></p>
+        </div>
       </div>
+
       <div class="faq-item">
-        <button class="faq-question" onclick="this.closest('.faq-item').classList.toggle('open')">Faut-il faire des travaux pour installer un monte-escalier à Lyon ?<span class="faq-arrow">▼</span></button>
-        <div class="faq-answer">Non. L'installation est non-invasive et entièrement réversible. Le rail se fixe sur les marches ou contre le mur, sans percement porteur. <a href="/monte-escaliers/installation/">En savoir plus →</a></div>
+        <h3 class="faq-question" onclick="this.closest('.faq-item').classList.toggle('open')">
+          Faut-il faire des travaux pour installer un monte-escalier à Lyon ?
+          <span class="faq-arrow">▼</span>
+        </h3>
+        <div class="faq-answer">
+          <p>Non. L'installation est non-invasive et entièrement réversible. Le rail se fixe sur les marches ou contre le mur, sans percement porteur. C'est important pour les immeubles anciens du Vieux-Lyon ou de la Croix-Rousse soumis à des règles de copropriété.
+          <a href="/monte-escaliers/installation/">En savoir plus →</a></p>
+        </div>
       </div>
+
       <div class="faq-item">
-        <button class="faq-question" onclick="this.closest('.faq-item').classList.toggle('open')">Mon escalier lyonnais est-il compatible avec un monte-escalier ?<span class="faq-arrow">▼</span></button>
-        <div class="faq-answer">Dans la très grande majorité des cas, oui. Les escaliers étroits et raides des maisons lyonnaises peuvent accueillir des modèles compacts à partir de 60 cm de largeur libre.</div>
+        <h3 class="faq-question" onclick="this.closest('.faq-item').classList.toggle('open')">
+          Mon escalier lyonnais est-il compatible avec un monte-escalier ?
+          <span class="faq-arrow">▼</span>
+        </h3>
+        <div class="faq-answer">
+          <p>Dans la très grande majorité des cas, oui. Les escaliers étroits et raides des maisons lyonnaises peuvent accueillir des modèles compacts à partir de 60 cm de largeur libre. Un technicien évalue la faisabilité gratuitement lors d'une visite à domicile.</p>
+        </div>
       </div>
 
     </div>

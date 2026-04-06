@@ -476,7 +476,7 @@ footer { background: var(--text); color: rgba(255,255,255,0.6); padding: 60px 5%
 
 @media (max-width: 960px) {
   .hero-local-inner { grid-template-columns: 1fr; gap: 32px; }
-  .hero-form-card { max-width: 520px; }
+  .hero-form-card { max-width: 100%; width: 100%; }
   .lform-steps-wrapper { height: auto; overflow: visible; }
   .lform-step { position: relative; inset: auto; transform: none; display: flex; flex-direction: column; }
   .lform-step:not(.active) { display: none; }
@@ -531,4 +531,21 @@ footer { background: var(--text); color: rgba(255,255,255,0.6); padding: 60px 5%
   font-size: 0.88rem;
   font-weight: 700;
   color: var(--text);
+}
+
+@media (max-width: 480px) {
+  .hero-local { padding: 24px 0; }
+  .hero-local-inner { padding: 0 16px; gap: 24px; }
+  .hero-form-card { padding: 20px 16px; border-radius: 12px; }
+  .hero-local-content h1 { font-size: 1.7rem; }
+  .form-card-title { font-size: 1.15rem; }
+  .type-card img { max-width: 100%; height: auto; }
+  .types-grid { gap: 12px; }
+  .table-responsive, table { display: block; overflow-x: auto; width: 100%; }
+  .article-content { padding: 0 4px; }
+  .highlight-green, .cta-inline, .cta-banner { margin-left: 0; margin-right: 0; }
+  .lform-grid-triple { grid-template-columns: 1fr !important; }
+  .lform-option-large { padding: 12px 8px; }
+  .hero-reassurances { gap: 8px; }
+  .hero-reassurance { font-size: 0.8rem; padding: 4px 10px; }
 }

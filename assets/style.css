@@ -493,6 +493,7 @@ footer { background: var(--text); color: rgba(255,255,255,0.6); padding: 60px 5%
   .lform-option-label { padding: 6px 4px 8px; }
   .lform-option-text { font-size: 0.8rem; }
   .lform-option-hint { font-size: 0.68rem; }
+  .hero-form-card .lform-steps-wrapper { height: auto; }
 }
 
 /* ============================================

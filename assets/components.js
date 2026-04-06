@@ -429,9 +429,17 @@ async function loadHeroLocal() {
 
     target.innerHTML = html;
 
-    // H1 depuis data-h1
+    // H1 : remplir seulement si le texte n'est pas déjà dans le DOM statique
     const h1El = target.querySelector('.hero-local-h1');
-    if (h1El && h1Text) h1El.innerHTML = h1Text;
+    if (h1El && h1Text && !h1El.textContent.trim()) {
+      h1El.innerHTML = h1Text;
+    }
+    // Rendre le H1 visible (il était caché via style inline en attendant le composant)
+    if (h1El) {
+      h1El.style.position = '';
+      h1El.style.left = '';
+      h1El.style.visibility = '';
+    }
 
     // Init données du tunnel hero
     lData    = { service: 'Monte-escalier', ville: ville || '', departement: dept, codeRegion: deptNum };

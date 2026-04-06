@@ -488,7 +488,11 @@ footer { background: var(--text); color: rgba(255,255,255,0.6); padding: 60px 5%
 @media (max-width: 600px) {
   .lform-row { grid-template-columns: 1fr; }
   .lform-grid { grid-template-columns: 1fr; }
-  .lform-grid-triple { grid-template-columns: 1fr; }
+  .lform-grid-triple { grid-template-columns: repeat(3, 1fr); gap: 6px; }
+  .lform-option-large { border-radius: 10px; border-width: 2px; }
+  .lform-option-label { padding: 6px 4px 8px; }
+  .lform-option-text { font-size: 0.8rem; }
+  .lform-option-hint { font-size: 0.68rem; }
 }
 
 /* ============================================
@@ -547,7 +551,7 @@ footer { background: var(--text); color: rgba(255,255,255,0.6); padding: 60px 5%
   .table-responsive, table { display: block; overflow-x: auto; width: 100%; }
   .article-content { padding: 0 4px; }
   .highlight-green, .cta-inline, .cta-banner { margin-left: 0; margin-right: 0; }
-  .lform-grid-triple { grid-template-columns: 1fr !important; }
+  .lform-grid-triple { grid-template-columns: repeat(3, 1fr) !important; gap: 5px; }
   .lform-option-large { padding: 12px 8px; }
   .hero-reassurances { gap: 8px; }
   .hero-reassurance { font-size: 0.8rem; padding: 4px 10px; }

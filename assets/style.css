@@ -1,3 +1,4 @@
+html, body { overflow-x: hidden; }
 /* ============================================
    SOLUTIONS SENIOR – STYLES GLOBAUX PARTAGÉS
    Modifier ce fichier = s'applique partout
@@ -267,9 +268,11 @@ footer { background: var(--text); color: rgba(255,255,255,0.6); padding: 60px 5%
 .etape-desc { font-size: 0.88rem; color: var(--text-light); line-height: 1.5; }
 
 /* Placeholder visuel (avant vraies images) */
-.visuel-local { border-radius: 12px; margin: 24px 0; overflow: hidden; }
-.visuel-local img { width: 100%; height: auto; display: block; border-radius: 12px; }
-.visuel-local.placeholder { background: var(--sage-pale); border: 2px dashed #b0ccb8; height: 360px; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 24px; color: var(--sage); gap: 10px; }
+.visuel-local { border-radius: 12px; margin: 24px 0; overflow: hidden; background: var(--sage-pale); border: 2px dashed #b0ccb8; }
+.visuel-local img { width: 100%; height: auto; display: block; border-radius: 12px; border: none; }
+.visuel-local:has(img) { border: none; background: none; }
+.visuel-local .v-icon { display: flex; justify-content: center; font-size: 2rem; opacity: 0.5; padding-top: 80px; }
+.visuel-local .v-label { font-size: 0.82rem; font-weight: 600; opacity: 0.75; line-height: 1.5; text-align: center; padding: 16px 24px 80px; color: var(--sage); }
 .visuel-local .v-icon { font-size: 2rem; opacity: 0.5; }
 .visuel-local .v-label { font-size: 0.82rem; font-weight: 600; opacity: 0.75; line-height: 1.5; }
 
@@ -476,8 +479,8 @@ footer { background: var(--text); color: rgba(255,255,255,0.6); padding: 60px 5%
 
 @media (max-width: 960px) {
   .hero-local-inner { grid-template-columns: 1fr; gap: 32px; }
-  .hero-form-card { max-width: 100%; width: 100%; }
-  .lform-steps-wrapper { height: auto; overflow: visible; }
+  .hero-form-card { max-width: 520px; margin: 0 auto; }
+  .hero-form-card .lform-steps-wrapper { height: 440px; overflow: hidden; }
   .lform-step { position: relative; inset: auto; transform: none; display: flex; flex-direction: column; }
   .lform-step:not(.active) { display: none; }
   .lform-step.active { opacity: 1; transform: none; }

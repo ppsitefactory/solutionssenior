@@ -2,8 +2,8 @@ User-agent: *
 Allow: /
 
 # Bloquer les ressources techniques
-Disallow: /assets/
 Disallow: /components/
+Disallow: /monte-escaliers/template-article.html
 
 # Sitemap
 Sitemap: https://solutionssenior.fr/sitemap.xml

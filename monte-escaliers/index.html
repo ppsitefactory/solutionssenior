@@ -997,6 +997,85 @@
     @media (max-width: 800px) { .articles-grid { grid-template-columns: repeat(2, 1fr); } }
     @media (max-width: 500px) { .articles-grid { grid-template-columns: 1fr; } }
 
+    /* ─── MOBILE ─────────────────────────────────────────────── */
+    @media (max-width: 700px) {
+      html, body { overflow-x: hidden; }
+
+      body { font-size: 16px; line-height: 1.7; }
+
+      .page-wrapper { padding: 0 16px; }
+
+      h2 { font-size: 22px; }
+      h3 { font-size: 17px; }
+
+      /* Hero */
+      .hero-banner-img { height: 300px; }
+      .hero h1 { font-size: 24px; margin-bottom: 40px; }
+      .hero-desc { font-size: 15px; }
+      .hero-cta-group { flex-direction: column; }
+      .hero-cta-group .btn-primary,
+      .hero-cta-group .btn-secondary { font-size: 16px; padding: 14px 20px; }
+
+      /* Quick nav */
+      .qnav-item { padding: 14px 14px; font-size: 14px; }
+
+      /* Section principale */
+      .main-section { padding: 36px 0; }
+      .section-intro { font-size: 16px; }
+
+      /* Résumé essentiel */
+      .quick-summary { padding: 20px 16px; }
+      .quick-summary h2 { font-size: 20px; }
+
+      /* Type rows : 1 colonne */
+      .type-row {
+        grid-template-columns: 1fr;
+        gap: 20px;
+        padding: 20px 16px;
+      }
+      .type-row-reverse { direction: ltr; }
+      .type-row-reverse .type-img { order: -1; }
+      .type-content h3 { font-size: 19px; }
+      .type-content p { font-size: 15px; }
+
+      /* Tableau prix */
+      .price-table-wrap { overflow-x: auto; }
+      table { font-size: 14px; min-width: 380px; }
+      thead th { padding: 10px 12px; }
+      tbody td { padding: 10px 12px; }
+
+      /* Aides */
+      .aides-grid { grid-template-columns: 1fr !important; }
+      .aide-card { padding: 16px; }
+
+      /* Marques */
+      .marques-grid { grid-template-columns: repeat(2, 1fr) !important; }
+
+      /* Étapes */
+      .steps-list { gap: 16px; }
+      .step-num { width: 32px; height: 32px; font-size: 14px; flex-shrink: 0; }
+
+      /* Sidebar */
+      .sidebar-card { margin-top: 0; }
+
+      /* Highlight boxes */
+      .highlight-green, .highlight-yellow { padding: 14px 16px; font-size: 15px; }
+
+      /* Articles section */
+      .articles-section { padding: 40px 0; }
+      .articles-section h2 { font-size: 22px; }
+    }
+
+    @media (max-width: 480px) {
+      .page-wrapper { padding: 0 12px; }
+      body { font-size: 15px; }
+      h2 { font-size: 20px; }
+      .hero-banner-img { height: 260px; }
+      .hero h1 { font-size: 21px; }
+      .qnav-item { padding: 12px 10px; font-size: 13px; gap: 5px; }
+      .marques-grid { grid-template-columns: repeat(2, 1fr) !important; gap: 8px; }
+    }
+
     .article-card {
       background: var(--cream);
       border: 1px solid var(--border);
@@ -1217,9 +1296,7 @@
 
               <!-- PORTABLE / MOBILE -->
               <div class="type-row">
-                <div class="type-img" style="background:var(--sage-pale);">
-                  <img src="/assets/images/monte-escalier-portable.png" alt="Monte-escalier portable à chenilles avec aidant" loading="lazy" style="object-fit:cover; object-position: left center;">
-                </div>
+                <div class="type-img" style="background-image: url('/assets/images/monte-escalier-portable.png'); background-size: cover; background-position: left center;"></div>
                 <div class="type-content">
                   <span class="type-num">05</span>
                   <h3><a href="/monte-escaliers/mobile/">Monte-escalier portable / mobile</a></h3>
@@ -1230,9 +1307,7 @@
 
               <!-- MONTE-PERSONNE / PMR -->
               <div class="type-row type-row-reverse">
-                <div class="type-img" style="background:var(--sage-pale);">
-                  <img src="/assets/images/plateforme-elevatrice.png" alt="Plateforme élévatrice pour fauteuil roulant" loading="lazy" style="object-fit:cover; object-position: right center;">
-                </div>
+                <div class="type-img" style="background-image: url('/assets/images/plateforme-elevatrice.png'); background-size: cover; background-position: right center;"></div>
                 <div class="type-content">
                   <span class="type-num">06</span>
                   <h3><a href="/monte-escaliers/monte-personne/">Plateforme élévatrice (monte-personne)</a></h3>

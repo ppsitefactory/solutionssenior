@@ -523,7 +523,11 @@ body:has(.modal-overlay.open) #bandeau-sticky { display: none !important; }
   .service-grid { grid-template-columns: 1fr; }
   .form-row { grid-template-columns: 1fr; }
   .footer-grid { grid-template-columns: 1fr; }
-  .bandeau-rea-inner { grid-template-columns: 1fr 1fr; }
+  .bandeau-rea { padding: 14px 5%; }
+  .bandeau-rea-inner { grid-template-columns: repeat(4, 1fr); gap: 8px; }
+  .rea-icon { font-size: 1.3rem; }
+  .rea-title { font-size: 0.72rem; }
+  .rea-desc { display: none; }
 }
 
 .lform-option-icon-card {

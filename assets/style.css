@@ -244,6 +244,35 @@ footer { background: var(--text); color: rgba(255,255,255,0.6); padding: 60px 5%
 .btn-cta-white { display: inline-block; background: #fff; color: var(--sage); font-family: 'DM Sans', sans-serif; font-weight: 700; font-size: 0.95rem; padding: 13px 28px; border-radius: 6px; text-decoration: none; transition: opacity 0.2s; cursor: pointer; border: none; }
 .btn-cta-white:hover { opacity: 0.92; }
 
+.check { color: var(--sage); font-weight: 700; }
+.cross { color: #c0392b; font-weight: 700; }
+
+.calcul-aide {
+  background: var(--sage-pale);
+  border-radius: 10px;
+  padding: 20px 24px;
+  margin: 20px 0 28px;
+  overflow-x: auto;
+}
+.calcul-aide .ca-title {
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 600;
+  font-size: 0.95rem;
+  color: var(--text);
+  margin-bottom: 12px;
+}
+.calcul-aide table { width: 100%; font-size: 0.9rem; border-collapse: collapse; }
+.calcul-aide td { padding: 6px 10px; border-bottom: 1px solid rgba(74,124,89,0.15); }
+.calcul-aide tr:last-child td { border-bottom: none; font-weight: 600; color: var(--sage); }
+.calcul-aide td:last-child { text-align: right; }
+
+@media (max-width: 600px) {
+  .calcul-aide { padding: 14px 16px; }
+  .calcul-aide .ca-title { font-size: 0.85rem; }
+  .calcul-aide table { font-size: 0.8rem; }
+  .calcul-aide td { padding: 5px 8px; }
+}
+
 /* FAQ accordéon */
 /* FAQ — format ouvert (H3 + paragraphe visible pour SEO) */
 .faq-open-item { border-left: 3px solid var(--sage); padding: 20px 0 20px 24px; margin-bottom: 28px; }

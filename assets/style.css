@@ -533,7 +533,7 @@ body:has(.modal-overlay.open) #bandeau-sticky { display: none !important; }
    RESPONSIVE
    ============================================ */
 @media (max-width: 1024px) {
-  .article-layout { grid-template-columns: 1fr; }
+  .article-layout { grid-template-columns: minmax(0, 1fr); }
   .toc { display: none; }
   .toc-mobile { display: block; }
 }

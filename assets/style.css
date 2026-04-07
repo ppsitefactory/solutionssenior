@@ -558,6 +558,7 @@ body:has(.modal-overlay.open) #bandeau-sticky { display: none !important; }
   .highlight-green, .cta-inline, .cta-banner { margin-left: 0; margin-right: 0; }
   .lform-grid-triple { grid-template-columns: repeat(3, 1fr) !important; gap: 5px; }
   .lform-option-large { padding: 12px 8px; }
+  .lform-option-icon-card .lform-option-text { font-size: 0.75rem; hyphens: auto; overflow-wrap: break-word; word-break: break-word; }
   .hero-reassurances { gap: 8px; }
   .hero-reassurance { font-size: 0.8rem; padding: 4px 10px; }
 }

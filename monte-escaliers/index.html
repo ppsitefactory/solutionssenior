@@ -1039,8 +1039,8 @@
       .type-content p { font-size: 15px; }
 
       /* Tableau prix */
-      .price-table-wrap { overflow-x: auto; }
-      table { font-size: 14px; min-width: 380px; }
+      .price-table-wrap { overflow-x: auto; max-width: 100%; }
+      table { font-size: 14px; width: 100%; }
       thead th { padding: 10px 12px; }
       tbody td { padding: 10px 12px; }
 
@@ -1074,6 +1074,8 @@
       .hero h1 { font-size: 21px; }
       .qnav-item { padding: 12px 10px; font-size: 13px; gap: 5px; }
       .marques-grid { grid-template-columns: repeat(2, 1fr) !important; gap: 8px; }
+      img, table, .type-row, .highlight-green, .highlight-yellow,
+      .price-table-wrap, .aide-card, .sidebar-card { max-width: 100%; }
     }
 
     .article-card {

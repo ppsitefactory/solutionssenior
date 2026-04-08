@@ -16,6 +16,13 @@
     <priority>1.0</priority>
   </url>
 
+  <url>
+    <loc>https://solutionssenior.fr/monte-escaliers/plateforme-pmr/</loc>
+    <lastmod>2026-04-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
   <!-- ─── MONTE-ESCALIERS (page mère) ─────────────────────────── -->
   <url>
     <loc>https://solutionssenior.fr/monte-escaliers/</loc>

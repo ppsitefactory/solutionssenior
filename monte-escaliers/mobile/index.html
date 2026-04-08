@@ -82,121 +82,20 @@
 
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/assets/style.css">
-
-  <style>
-    .cta-inline {
-      background: var(--sage-pale, #e8f0eb);
-      border-left: 4px solid var(--sage, #4a7c59);
-      border-radius: 0 10px 10px 0;
-      padding: 20px 26px;
-      margin: 32px 0;
-      display: flex;
-      align-items: center;
-      gap: 22px;
-      flex-wrap: wrap;
-    }
-    .cta-inline-text { flex: 1; min-width: 200px; }
-    .cta-inline-text strong {
-      display: block;
-      font-family: 'Playfair Display', serif;
-      font-size: 1.05rem;
-      color: var(--text, #1e2a22);
-      margin-bottom: 4px;
-    }
-    .cta-inline-text span { font-size: 0.9rem; color: var(--text-light, #5a6b60); }
-    .btn-cta {
-      display: inline-block;
-      background: var(--sage, #4a7c59);
-      color: #fff;
-      font-family: 'DM Sans', sans-serif;
-      font-weight: 600;
-      font-size: 0.9rem;
-      padding: 12px 22px;
-      border-radius: 6px;
-      text-decoration: none;
-      white-space: nowrap;
-      transition: background 0.2s;
-    }
-    .btn-cta:hover { background: var(--sage-light, #6a9e78); }
-
-    .cta-banner {
-      background: linear-gradient(135deg, var(--sage, #4a7c59) 0%, #3a6248 100%);
-      border-radius: 12px;
-      padding: 30px 34px;
-      margin: 44px 0;
-      text-align: center;
-      color: #fff;
-    }
-    .cta-banner-title { font-family: 'Playfair Display', serif; font-size: 1.35rem; font-weight: 700; margin: 0 0 8px; }
-    .cta-banner-sub { font-size: 0.93rem; opacity: 0.88; margin: 0 0 18px; }
-    .cta-banner-badges { display: flex; justify-content: center; gap: 14px; flex-wrap: wrap; margin-bottom: 20px; }
-    .cta-banner-badges .badge { background: rgba(255,255,255,0.18); border: 1px solid rgba(255,255,255,0.35); border-radius: 20px; padding: 4px 13px; font-size: 0.82rem; font-weight: 500; }
-    .btn-cta-white { display: inline-block; background: #fff; color: var(--sage, #4a7c59); font-family: 'DM Sans', sans-serif; font-weight: 700; font-size: 0.95rem; padding: 13px 28px; border-radius: 6px; text-decoration: none; transition: opacity 0.2s; }
-    .btn-cta-white:hover { opacity: 0.92; }
-
-    .type-cards {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 14px;
-      margin: 20px 0 28px;
-    }
-    .type-card {
-      border: 1px solid var(--sage-pale, #e8f0eb);
-      border-radius: 10px;
-      padding: 16px 18px;
-      background: var(--cream, #faf8f4);
-    }
-    .type-card .tc-title {
-      font-family: 'DM Sans', sans-serif;
-      font-weight: 600;
-      font-size: 0.95rem;
-      color: var(--text, #1e2a22);
-      margin-bottom: 6px;
-    }
-    .type-card .tc-body { font-size: 0.88rem; color: var(--text-light, #5a6b60); line-height: 1.5; }
-    .type-card .tc-tag {
-      display: inline-block;
-      margin-top: 8px;
-      font-size: 0.78rem;
-      font-weight: 600;
-      padding: 2px 10px;
-      border-radius: 99px;
-      background: var(--sage-pale, #e8f0eb);
-      color: var(--sage, #4a7c59);
-    }
-
-    .decision-table { width: 100%; border-collapse: collapse; margin: 16px 0 24px; font-size: 0.9rem; }
-    .decision-table th { background: var(--sage, #4a7c59); color: #fff; padding: 10px 12px; text-align: left; font-weight: 600; }
-    .decision-table td { padding: 9px 12px; border-bottom: 1px solid var(--sage-pale, #e8f0eb); vertical-align: top; }
-    .decision-table tr:last-child td { border-bottom: none; }
-    .decision-table tr:nth-child(even) td { background: var(--cream, #faf8f4); }
-    .check { color: var(--sage, #4a7c59); font-weight: 700; }
-    .cross { color: #c0392b; font-weight: 700; }
-  </style>
 </head>
 
-<body data-service="monte-escaliers">
+<body
+  data-service="monte-escaliers"
+  data-date-maj="8 avril 2026"
+  data-h1="Monte-escalier portable / mobile&nbsp;: devis gratuit, prix et aides 2026">
 
-<a href="tel:0800000000" class="sticky-tel">📞 Appel gratuit</a>
 
 <div id="site-header"></div>
 
-<section class="article-hero">
-  <div style="max-width:1200px; margin:0 auto; padding:0 5%;">
-    <div class="breadcrumb">
-      <a href="/">Accueil</a> ›
-      <a href="/monte-escaliers/">Monte-escalier</a> ›
-      Monte-escalier portable et mobile
-    </div>
-    <h1>Monte-escalier portable et mobile&nbsp;: comment ça marche et comment choisir</h1>
-    <div class="article-meta">
-      <span>📅 Mis à jour le 1 mars 2026</span>
-      <span>⏱️ 10 min de lecture</span>
-      <span>✍️ Par l'équipe Solutions Senior</span>
-    </div>
-  </div>
-</section>
+<div id="hero-local">
+  <h1 class="hero-local-h1" style="position:absolute;left:-9999px;visibility:hidden;">Monte-escalier portable / mobile&nbsp;: devis gratuit, prix et aides 2026</h1></div>
 
+<div id="bandeau-rea"></div>
 <div class="article-layout">
 
   <aside class="toc">
@@ -518,10 +417,11 @@
   </main>
 </div>
 
-<div id="bandeau-rea"></div>
+
 <div id="site-cta"></div>
 <div id="site-footer"></div>
 <div id="formulaire-modal"></div>
+<div id="bandeau-sticky" data-titre="Devis gratuit — Monte-escalier portable"></div>
 
 <script src="/assets/components.js"></script>
 </body>

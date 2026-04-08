@@ -352,7 +352,7 @@ footer { background: var(--text); color: rgba(255,255,255,0.6); padding: 60px 5%
 .hero-local {
   background: linear-gradient(135deg, var(--sage) 0%, #2d5c3e 100%);
   color: white;
-  padding: 40px 5% 48px;
+  padding: 28px 5% 36px;
   position: relative;
   overflow: hidden;
 }

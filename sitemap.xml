@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   <!-- ─── ACCUEIL ─────────────────────────────────────────────── -->
   <url>
     <loc>https://solutionssenior.fr/</loc>
@@ -18,6 +19,17 @@
 
   <url>
     <loc>https://solutionssenior.fr/monte-escaliers/plateforme-pmr/</loc>
+    <image:image>
+      <image:loc>https://solutionssenior.fr/assets/images/monte-escalier-plateforme-hero.webp</image:loc>
+      <image:title>Plateforme élévatrice PMR pour fauteuil roulant</image:title>
+      <image:caption>Plateforme PMR — montée verticale sans transfert, prix de 6 000 à 14 000 €</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://solutionssenior.fr/assets/images/plateforme-elevatrice.webp</image:loc>
+      <image:title>Plateforme élévatrice résidentielle</image:title>
+      <image:caption>Plateforme PMR — MaPrimeAdapt' jusqu'à 70 %</image:caption>
+    </image:image>
+
     <lastmod>2026-04-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -26,6 +38,27 @@
   <!-- ─── MONTE-ESCALIERS (page mère) ─────────────────────────── -->
   <url>
     <loc>https://solutionssenior.fr/monte-escaliers/</loc>
+    <image:image>
+      <image:loc>https://solutionssenior.fr/assets/images/monte-escalier-hero.webp</image:loc>
+      <image:title>Monte-escalier résidentiel installé dans une maison</image:title>
+      <image:caption>Monte-escalier — guide des types, prix et aides en France 2026</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://solutionssenior.fr/assets/images/monte-escalier-droit-form.webp</image:loc>
+      <image:title>Monte-escalier droit pour devis</image:title>
+      <image:caption>Monte-escalier droit — demandez votre devis gratuit</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://solutionssenior.fr/assets/images/monte-escalier-tournant-form.webp</image:loc>
+      <image:title>Monte-escalier tournant pour devis</image:title>
+      <image:caption>Monte-escalier tournant — demandez votre devis gratuit</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://solutionssenior.fr/assets/images/monte-escalier-exterieur-form.webp</image:loc>
+      <image:title>Monte-escalier extérieur pour devis</image:title>
+      <image:caption>Monte-escalier extérieur — demandez votre devis gratuit</image:caption>
+    </image:image>
+
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
@@ -33,26 +66,76 @@
   <!-- ─── TYPES DE MONTE-ESCALIER ─────────────────────────────── -->
   <url>
     <loc>https://solutionssenior.fr/monte-escaliers/mobile/</loc>
+    <image:image>
+      <image:loc>https://solutionssenior.fr/assets/images/monte-escalier-portable.webp</image:loc>
+      <image:title>Monte-escalier portable sans installation</image:title>
+      <image:caption>Monte-escalier portable — solution sans travaux</image:caption>
+    </image:image>
+
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://solutionssenior.fr/monte-escaliers/debout/</loc>
+    <image:image>
+      <image:loc>https://solutionssenior.fr/assets/images/monte-escalier-debout-hero.webp</image:loc>
+      <image:title>Monte-escalier debout — utilisateur en position semi-debout</image:title>
+      <image:caption>Monte-escalier debout — pour personnes ayant du mal à plier les genoux</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://solutionssenior.fr/assets/images/monte-escalier-debout.webp</image:loc>
+      <image:title>Monte-escalier debout vue de profil</image:title>
+      <image:caption>Monte-escalier debout — alternative au modèle assis classique</image:caption>
+    </image:image>
+
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://solutionssenior.fr/monte-escaliers/tournant/</loc>
+    <image:image>
+      <image:loc>https://solutionssenior.fr/assets/images/monte-escalier-tournant-hero.webp</image:loc>
+      <image:title>Monte-escalier tournant avec rail courbé sur mesure</image:title>
+      <image:caption>Monte-escalier tournant — rail fabriqué sur mesure, prix de 5 000 à 9 000 €</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://solutionssenior.fr/assets/images/monte-escalier-tournant.webp</image:loc>
+      <image:title>Monte-escalier tournant vue de profil</image:title>
+      <image:caption>Monte-escalier tournant — pour escalier avec virage</image:caption>
+    </image:image>
+
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://solutionssenior.fr/monte-escaliers/exterieur/</loc>
+    <image:image>
+      <image:loc>https://solutionssenior.fr/assets/images/monte-escalier-exterieur-hero.webp</image:loc>
+      <image:title>Monte-escalier extérieur installé sur un escalier de jardin</image:title>
+      <image:caption>Monte-escalier extérieur — résistant aux intempéries, prix de 4 000 à 8 000 €</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://solutionssenior.fr/assets/images/monte-escalier-exterieur.webp</image:loc>
+      <image:title>Monte-escalier extérieur vue de profil</image:title>
+      <image:caption>Monte-escalier extérieur — pour jardin et terrasse</image:caption>
+    </image:image>
+
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://solutionssenior.fr/monte-escaliers/droit/</loc>
+    <image:image>
+      <image:loc>https://solutionssenior.fr/assets/images/monte-escalier-droit-hero.webp</image:loc>
+      <image:title>Monte-escalier droit installé sur un escalier rectiligne intérieur</image:title>
+      <image:caption>Monte-escalier droit — le modèle le plus courant, prix de 2 000 à 5 000 €</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://solutionssenior.fr/assets/images/monte-escalier-droit.webp</image:loc>
+      <image:title>Monte-escalier droit vue de profil</image:title>
+      <image:caption>Monte-escalier droit — installation en demi-journée</image:caption>
+    </image:image>
+
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -185,156 +268,312 @@
   <!-- ─── PAGES VILLES — MONTE-ESCALIER ──────────────────────── -->
   <url>
     <loc>https://solutionssenior.fr/monte-escaliers/lyon/</loc>
+    <image:image>
+      <image:loc>https://solutionssenior.fr/assets/images/lyon-ville.webp</image:loc>
+      <image:title>Vue de Lyon — monte-escalier à Lyon</image:title>
+      <image:caption>Installation de monte-escalier à Lyon</image:caption>
+    </image:image>
+
     <lastmod>2026-04-06</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://solutionssenior.fr/monte-escaliers/marseille/</loc>
+    <image:image>
+      <image:loc>https://solutionssenior.fr/assets/images/marseille-ville.webp</image:loc>
+      <image:title>Vue de Marseille — monte-escalier à Marseille</image:title>
+      <image:caption>Installation de monte-escalier à Marseille</image:caption>
+    </image:image>
+
     <lastmod>2026-04-06</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://solutionssenior.fr/monte-escaliers/toulouse/</loc>
+    <image:image>
+      <image:loc>https://solutionssenior.fr/assets/images/toulouse-ville.webp</image:loc>
+      <image:title>Vue de Toulouse — monte-escalier à Toulouse</image:title>
+      <image:caption>Installation de monte-escalier à Toulouse</image:caption>
+    </image:image>
+
     <lastmod>2026-04-06</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://solutionssenior.fr/monte-escaliers/nice/</loc>
+    <image:image>
+      <image:loc>https://solutionssenior.fr/assets/images/nice-ville.webp</image:loc>
+      <image:title>Vue de Nice — monte-escalier à Nice</image:title>
+      <image:caption>Installation de monte-escalier à Nice</image:caption>
+    </image:image>
+
     <lastmod>2026-04-06</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://solutionssenior.fr/monte-escaliers/nantes/</loc>
+    <image:image>
+      <image:loc>https://solutionssenior.fr/assets/images/nantes-ville.webp</image:loc>
+      <image:title>Vue de Nantes — monte-escalier à Nantes</image:title>
+      <image:caption>Installation de monte-escalier à Nantes</image:caption>
+    </image:image>
+
     <lastmod>2026-04-06</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://solutionssenior.fr/monte-escaliers/strasbourg/</loc>
+    <image:image>
+      <image:loc>https://solutionssenior.fr/assets/images/strasbourg-ville.webp</image:loc>
+      <image:title>Vue de Strasbourg — monte-escalier à Strasbourg</image:title>
+      <image:caption>Installation de monte-escalier à Strasbourg</image:caption>
+    </image:image>
+
     <lastmod>2026-04-06</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://solutionssenior.fr/monte-escaliers/bordeaux/</loc>
+    <image:image>
+      <image:loc>https://solutionssenior.fr/assets/images/bordeaux-ville.webp</image:loc>
+      <image:title>Vue de Bordeaux — monte-escalier à Bordeaux</image:title>
+      <image:caption>Installation de monte-escalier à Bordeaux</image:caption>
+    </image:image>
+
     <lastmod>2026-04-06</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://solutionssenior.fr/monte-escaliers/lille/</loc>
+    <image:image>
+      <image:loc>https://solutionssenior.fr/assets/images/lille-ville.webp</image:loc>
+      <image:title>Vue de Lille — monte-escalier à Lille</image:title>
+      <image:caption>Installation de monte-escalier à Lille</image:caption>
+    </image:image>
+
     <lastmod>2026-04-06</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://solutionssenior.fr/monte-escaliers/montpellier/</loc>
+    <image:image>
+      <image:loc>https://solutionssenior.fr/assets/images/montpellier-ville.webp</image:loc>
+      <image:title>Vue de Montpellier — monte-escalier à Montpellier</image:title>
+      <image:caption>Installation de monte-escalier à Montpellier</image:caption>
+    </image:image>
+
     <lastmod>2026-04-06</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://solutionssenior.fr/monte-escaliers/rennes/</loc>
+    <image:image>
+      <image:loc>https://solutionssenior.fr/assets/images/rennes-ville.webp</image:loc>
+      <image:title>Vue de Rennes — monte-escalier à Rennes</image:title>
+      <image:caption>Installation de monte-escalier à Rennes</image:caption>
+    </image:image>
+
     <lastmod>2026-04-06</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://solutionssenior.fr/monte-escaliers/grenoble/</loc>
+    <image:image>
+      <image:loc>https://solutionssenior.fr/assets/images/grenoble-ville.webp</image:loc>
+      <image:title>Vue de Grenoble — monte-escalier à Grenoble</image:title>
+      <image:caption>Installation de monte-escalier à Grenoble</image:caption>
+    </image:image>
+
     <lastmod>2026-04-06</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://solutionssenior.fr/monte-escaliers/toulon/</loc>
+    <image:image>
+      <image:loc>https://solutionssenior.fr/assets/images/toulon-ville.webp</image:loc>
+      <image:title>Vue de Toulon — monte-escalier à Toulon</image:title>
+      <image:caption>Installation de monte-escalier à Toulon</image:caption>
+    </image:image>
+
     <lastmod>2026-04-06</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://solutionssenior.fr/monte-escaliers/saint-etienne/</loc>
+    <image:image>
+      <image:loc>https://solutionssenior.fr/assets/images/saint-etienne-ville.webp</image:loc>
+      <image:title>Vue de Saint-Étienne — monte-escalier à Saint-Étienne</image:title>
+      <image:caption>Installation de monte-escalier à Saint-Étienne</image:caption>
+    </image:image>
+
     <lastmod>2026-04-06</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://solutionssenior.fr/monte-escaliers/nimes/</loc>
+    <image:image>
+      <image:loc>https://solutionssenior.fr/assets/images/nimes-ville.webp</image:loc>
+      <image:title>Vue de Nîmes — monte-escalier à Nîmes</image:title>
+      <image:caption>Installation de monte-escalier à Nîmes</image:caption>
+    </image:image>
+
     <lastmod>2026-04-06</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://solutionssenior.fr/monte-escaliers/dijon/</loc>
+    <image:image>
+      <image:loc>https://solutionssenior.fr/assets/images/dijon-ville.webp</image:loc>
+      <image:title>Vue de Dijon — monte-escalier à Dijon</image:title>
+      <image:caption>Installation de monte-escalier à Dijon</image:caption>
+    </image:image>
+
     <lastmod>2026-04-06</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://solutionssenior.fr/monte-escaliers/angers/</loc>
+    <image:image>
+      <image:loc>https://solutionssenior.fr/assets/images/angers-ville.webp</image:loc>
+      <image:title>Vue de Angers — monte-escalier à Angers</image:title>
+      <image:caption>Installation de monte-escalier à Angers</image:caption>
+    </image:image>
+
     <lastmod>2026-04-06</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://solutionssenior.fr/monte-escaliers/clermont-ferrand/</loc>
+    <image:image>
+      <image:loc>https://solutionssenior.fr/assets/images/clermont-ferrand-ville.webp</image:loc>
+      <image:title>Vue de Clermont-Ferrand — monte-escalier à Clermont-Ferrand</image:title>
+      <image:caption>Installation de monte-escalier à Clermont-Ferrand</image:caption>
+    </image:image>
+
     <lastmod>2026-04-06</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://solutionssenior.fr/monte-escaliers/le-havre/</loc>
+    <image:image>
+      <image:loc>https://solutionssenior.fr/assets/images/le-havre-ville.webp</image:loc>
+      <image:title>Vue de Le Havre — monte-escalier à Le Havre</image:title>
+      <image:caption>Installation de monte-escalier à Le Havre</image:caption>
+    </image:image>
+
     <lastmod>2026-04-06</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://solutionssenior.fr/monte-escaliers/reims/</loc>
+    <image:image>
+      <image:loc>https://solutionssenior.fr/assets/images/reims-ville.webp</image:loc>
+      <image:title>Vue de Reims — monte-escalier à Reims</image:title>
+      <image:caption>Installation de monte-escalier à Reims</image:caption>
+    </image:image>
+
     <lastmod>2026-04-06</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://solutionssenior.fr/monte-escaliers/aix-en-provence/</loc>
+    <image:image>
+      <image:loc>https://solutionssenior.fr/assets/images/aix-en-provence-ville.webp</image:loc>
+      <image:title>Vue de Aix-en-Provence — monte-escalier à Aix-en-Provence</image:title>
+      <image:caption>Installation de monte-escalier à Aix-en-Provence</image:caption>
+    </image:image>
+
     <lastmod>2026-04-06</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://solutionssenior.fr/monte-escaliers/brest/</loc>
+    <image:image>
+      <image:loc>https://solutionssenior.fr/assets/images/brest-ville.webp</image:loc>
+      <image:title>Vue de Brest — monte-escalier à Brest</image:title>
+      <image:caption>Installation de monte-escalier à Brest</image:caption>
+    </image:image>
+
     <lastmod>2026-04-06</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://solutionssenior.fr/monte-escaliers/tours/</loc>
+    <image:image>
+      <image:loc>https://solutionssenior.fr/assets/images/tours-ville.webp</image:loc>
+      <image:title>Vue de Tours — monte-escalier à Tours</image:title>
+      <image:caption>Installation de monte-escalier à Tours</image:caption>
+    </image:image>
+
     <lastmod>2026-04-06</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://solutionssenior.fr/monte-escaliers/limoges/</loc>
+    <image:image>
+      <image:loc>https://solutionssenior.fr/assets/images/limoges-ville.webp</image:loc>
+      <image:title>Vue de Limoges — monte-escalier à Limoges</image:title>
+      <image:caption>Installation de monte-escalier à Limoges</image:caption>
+    </image:image>
+
     <lastmod>2026-04-06</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://solutionssenior.fr/monte-escaliers/perpignan/</loc>
+    <image:image>
+      <image:loc>https://solutionssenior.fr/assets/images/perpignan-ville.webp</image:loc>
+      <image:title>Vue de Perpignan — monte-escalier à Perpignan</image:title>
+      <image:caption>Installation de monte-escalier à Perpignan</image:caption>
+    </image:image>
+
     <lastmod>2026-04-06</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://solutionssenior.fr/monte-escaliers/amiens/</loc>
+    <image:image>
+      <image:loc>https://solutionssenior.fr/assets/images/amiens-ville.webp</image:loc>
+      <image:title>Vue de Amiens — monte-escalier à Amiens</image:title>
+      <image:caption>Installation de monte-escalier à Amiens</image:caption>
+    </image:image>
+
     <lastmod>2026-04-06</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://solutionssenior.fr/monte-escaliers/metz/</loc>
+    <image:image>
+      <image:loc>https://solutionssenior.fr/assets/images/metz-ville.webp</image:loc>
+      <image:title>Vue de Metz — monte-escalier à Metz</image:title>
+      <image:caption>Installation de monte-escalier à Metz</image:caption>
+    </image:image>
+
     <lastmod>2026-04-06</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -348,26 +587,56 @@
   </url>
   <url>
     <loc>https://solutionssenior.fr/monte-escaliers/comparatif/stannah/</loc>
+    <image:image>
+      <image:loc>https://solutionssenior.fr/assets/images/marques/stannah.webp</image:loc>
+      <image:title>Logo Stannah</image:title>
+      <image:caption>Stannah — avis, prix et gamme 2026</image:caption>
+    </image:image>
+
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://solutionssenior.fr/monte-escaliers/comparatif/thyssenkrupp-home-solutions/</loc>
+    <image:image>
+      <image:loc>https://solutionssenior.fr/assets/images/marques/thyssenkrupp-home-solutions.webp</image:loc>
+      <image:title>Logo Thyssenkrupp TK Home Solutions</image:title>
+      <image:caption>Thyssenkrupp TK Home Solutions — avis, prix et gamme 2026</image:caption>
+    </image:image>
+
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://solutionssenior.fr/monte-escaliers/comparatif/acorn/</loc>
+    <image:image>
+      <image:loc>https://solutionssenior.fr/assets/images/marques/acorn.webp</image:loc>
+      <image:title>Logo Acorn Stairlifts</image:title>
+      <image:caption>Acorn Stairlifts — avis, prix et gamme 2026</image:caption>
+    </image:image>
+
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://solutionssenior.fr/monte-escaliers/comparatif/otolift/</loc>
+    <image:image>
+      <image:loc>https://solutionssenior.fr/assets/images/marques/otolift.webp</image:loc>
+      <image:title>Logo Otolift</image:title>
+      <image:caption>Otolift — avis, prix et gamme 2026</image:caption>
+    </image:image>
+
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://solutionssenior.fr/monte-escaliers/comparatif/handicare/</loc>
+    <image:image>
+      <image:loc>https://solutionssenior.fr/assets/images/marques/handicare.webp</image:loc>
+      <image:title>Logo Handicare</image:title>
+      <image:caption>Handicare — avis, prix et gamme 2026</image:caption>
+    </image:image>
+
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -378,6 +647,12 @@
   </url>
   <url>
     <loc>https://solutionssenior.fr/monte-escaliers/comparatif/lehner-lifttechnik/</loc>
+    <image:image>
+      <image:loc>https://solutionssenior.fr/assets/images/marques/lehner-lifttechnik.webp</image:loc>
+      <image:title>Logo Lehner Lifttechnik</image:title>
+      <image:caption>Lehner Lifttechnik — avis, prix et gamme 2026</image:caption>
+    </image:image>
+
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -388,6 +663,12 @@
   </url>
   <url>
     <loc>https://solutionssenior.fr/monte-escaliers/comparatif/independance-royale/</loc>
+    <image:image>
+      <image:loc>https://solutionssenior.fr/assets/images/marques/independance-royale.webp</image:loc>
+      <image:title>Logo Indépendance Royale</image:title>
+      <image:caption>Indépendance Royale — avis, prix et gamme 2026</image:caption>
+    </image:image>
+
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>

@@ -1,7 +1,11 @@
 User-agent: *
 Allow: /
 
+# Autoriser les images explicitement (avant le Disallow assets)
+Allow: /assets/images/
+
 # Bloquer les ressources techniques
+Disallow: /assets/
 Disallow: /components/
 Disallow: /monte-escaliers/template-article.html
 

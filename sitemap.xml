@@ -4,15 +4,37 @@
   <!-- ─── ACCUEIL ─────────────────────────────────────────────── -->
   <url>
     <loc>https://solutionssenior.fr/</loc>
-    <lastmod>2026-04-07</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
-  </url>
-
-
-  <!-- ─── ACCUEIL ─────────────────────────────────────────────── -->
-  <url>
-    <loc>https://solutionssenior.fr/</loc>
+    <image:image>
+      <image:loc>https://solutionssenior.fr/assets/images/home-installateur.webp</image:loc>
+      <image:title>Technicien agréé installant un monte-escalier</image:title>
+      <image:caption>Installation d'un monte-escalier par un professionnel certifié</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://solutionssenior.fr/assets/images/home-guides.webp</image:loc>
+      <image:title>Guides d'information monte-escalier</image:title>
+      <image:caption>Guides complets pour choisir son monte-escalier en 2026</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://solutionssenior.fr/assets/images/home-conseiller.webp</image:loc>
+      <image:title>Conseiller disponible par téléphone</image:title>
+      <image:caption>Conseiller Solutions Senior à votre écoute</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://solutionssenior.fr/assets/images/home-guide-monte-escalier.webp</image:loc>
+      <image:title>Guide complet du monte-escalier en 2026</image:title>
+      <image:caption>Monte-escalier droit installé dans un intérieur lumineux</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://solutionssenior.fr/assets/images/home-guide-aides.webp</image:loc>
+      <image:title>Aides pour un monte-escalier en 2026</image:title>
+      <image:caption>Couple de seniors consultant un document sur les aides financières</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://solutionssenior.fr/assets/images/home-guide-comparatif.webp</image:loc>
+      <image:title>Comparatif des meilleurs monte-escaliers</image:title>
+      <image:caption>Comparatif visuel de plusieurs modèles de monte-escaliers</image:caption>
+    </image:image>
+    <lastmod>2026-04-16</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>

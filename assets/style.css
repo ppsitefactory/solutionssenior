@@ -638,3 +638,42 @@ body:has(.modal-overlay.open) #bandeau-sticky { display: none !important; }
   .article-hero h1 { font-size: 1.4rem; }
   .sticky-tel { bottom: 16px; right: 16px; padding: 10px 18px; font-size: 0.9rem; }
 }
+
+/* ============================================================
+   HOME — Blocs visuels (image + texte)
+   Utilisés dans les sections "Pourquoi nous" de la home
+   ============================================================ */
+.home-visuel-bloc {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 48px;
+  align-items: center;
+  margin-bottom: 64px;
+}
+.home-visuel-bloc:last-child { margin-bottom: 0; }
+
+.home-visuel-bloc img {
+  width: 100%;
+  height: 280px;
+  object-fit: cover;
+  border-radius: 12px;
+  display: block;
+}
+
+@media (max-width: 960px) {
+  .home-visuel-bloc {
+    grid-template-columns: 1fr;
+    gap: 24px;
+    margin-bottom: 48px;
+  }
+  .home-visuel-bloc img { height: 240px; }
+  /* Sur un bloc "texte à gauche / image à droite" en desktop,
+     on force l'image en haut sur mobile via la classe modificatrice */
+  .home-visuel-bloc--reverse > div:first-child  { order: 2; }
+  .home-visuel-bloc--reverse > div:last-child   { order: 1; }
+}
+
+@media (max-width: 600px) {
+  .home-visuel-bloc img { height: 200px; }
+  .home-visuel-bloc { margin-bottom: 40px; }
+}

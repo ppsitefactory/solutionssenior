@@ -1,1 +1,6 @@
+# Fichiers systeme macOS
 .DS_Store
+
+# Archives et scripts de travail (ne pas versionner)
+*.zip
+*.sh

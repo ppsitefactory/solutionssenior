@@ -1,48 +1,48 @@
 # ============================================================
-# REDIRECTIONS 301 — Pages villes (recentrage geographique)
+# REDIRECTIONS 301 - Pages villes (recentrage geographique)
 # Mise en place : 2026-06-24
 #
 # Toutes les anciennes pages villes redirigent vers le hub
 # /monte-escaliers/. Quand une ville est recreee (PACA), retirer
-# sa ligne ci-dessous.
+# son bloc RewriteRule ci-dessous.
 #
-# NB : le HTTPS et le www sont geres par Hostinger (hPanel),
-# pas ici. Ce fichier ne contient que les redirections de pages.
+# NB 1 : le HTTPS et le www sont geres par Hostinger (hPanel).
+# NB 2 : on utilise RewriteRule [R=301,L] et non Redirect, car le
+# dossier physique de la ville existe encore (index.html present).
+# RewriteRule force la redirection meme si le fichier existe.
 # ============================================================
 
 <IfModule mod_rewrite.c>
   RewriteEngine On
+
+  # --- Villes hors PACA ---
+  RewriteRule ^monte-escaliers/amiens/?$ /monte-escaliers/ [R=301,L]
+  RewriteRule ^monte-escaliers/angers/?$ /monte-escaliers/ [R=301,L]
+  RewriteRule ^monte-escaliers/bordeaux/?$ /monte-escaliers/ [R=301,L]
+  RewriteRule ^monte-escaliers/brest/?$ /monte-escaliers/ [R=301,L]
+  RewriteRule ^monte-escaliers/clermont-ferrand/?$ /monte-escaliers/ [R=301,L]
+  RewriteRule ^monte-escaliers/dijon/?$ /monte-escaliers/ [R=301,L]
+  RewriteRule ^monte-escaliers/grenoble/?$ /monte-escaliers/ [R=301,L]
+  RewriteRule ^monte-escaliers/le-havre/?$ /monte-escaliers/ [R=301,L]
+  RewriteRule ^monte-escaliers/lille/?$ /monte-escaliers/ [R=301,L]
+  RewriteRule ^monte-escaliers/limoges/?$ /monte-escaliers/ [R=301,L]
+  RewriteRule ^monte-escaliers/lyon/?$ /monte-escaliers/ [R=301,L]
+  RewriteRule ^monte-escaliers/metz/?$ /monte-escaliers/ [R=301,L]
+  RewriteRule ^monte-escaliers/montpellier/?$ /monte-escaliers/ [R=301,L]
+  RewriteRule ^monte-escaliers/nantes/?$ /monte-escaliers/ [R=301,L]
+  RewriteRule ^monte-escaliers/nimes/?$ /monte-escaliers/ [R=301,L]
+  RewriteRule ^monte-escaliers/perpignan/?$ /monte-escaliers/ [R=301,L]
+  RewriteRule ^monte-escaliers/reims/?$ /monte-escaliers/ [R=301,L]
+  RewriteRule ^monte-escaliers/rennes/?$ /monte-escaliers/ [R=301,L]
+  RewriteRule ^monte-escaliers/saint-etienne/?$ /monte-escaliers/ [R=301,L]
+  RewriteRule ^monte-escaliers/strasbourg/?$ /monte-escaliers/ [R=301,L]
+  RewriteRule ^monte-escaliers/toulouse/?$ /monte-escaliers/ [R=301,L]
+  RewriteRule ^monte-escaliers/tours/?$ /monte-escaliers/ [R=301,L]
+
+  # --- Villes PACA (retirer le bloc quand la vraie page est publiee) ---
+  RewriteRule ^monte-escaliers/aix-en-provence/?$ /monte-escaliers/ [R=301,L]
+  RewriteRule ^monte-escaliers/marseille/?$ /monte-escaliers/ [R=301,L]
+  RewriteRule ^monte-escaliers/nice/?$ /monte-escaliers/ [R=301,L]
+  RewriteRule ^monte-escaliers/toulon/?$ /monte-escaliers/ [R=301,L]
+
 </IfModule>
-
-# --- Villes hors PACA (zones non couvertes pour l'instant) ---
-Redirect 301 /monte-escaliers/amiens/ https://solutionssenior.fr/monte-escaliers/
-Redirect 301 /monte-escaliers/angers/ https://solutionssenior.fr/monte-escaliers/
-Redirect 301 /monte-escaliers/bordeaux/ https://solutionssenior.fr/monte-escaliers/
-Redirect 301 /monte-escaliers/brest/ https://solutionssenior.fr/monte-escaliers/
-Redirect 301 /monte-escaliers/clermont-ferrand/ https://solutionssenior.fr/monte-escaliers/
-Redirect 301 /monte-escaliers/dijon/ https://solutionssenior.fr/monte-escaliers/
-Redirect 301 /monte-escaliers/grenoble/ https://solutionssenior.fr/monte-escaliers/
-Redirect 301 /monte-escaliers/le-havre/ https://solutionssenior.fr/monte-escaliers/
-Redirect 301 /monte-escaliers/lille/ https://solutionssenior.fr/monte-escaliers/
-Redirect 301 /monte-escaliers/limoges/ https://solutionssenior.fr/monte-escaliers/
-Redirect 301 /monte-escaliers/lyon/ https://solutionssenior.fr/monte-escaliers/
-Redirect 301 /monte-escaliers/metz/ https://solutionssenior.fr/monte-escaliers/
-Redirect 301 /monte-escaliers/montpellier/ https://solutionssenior.fr/monte-escaliers/
-Redirect 301 /monte-escaliers/nantes/ https://solutionssenior.fr/monte-escaliers/
-Redirect 301 /monte-escaliers/nimes/ https://solutionssenior.fr/monte-escaliers/
-Redirect 301 /monte-escaliers/perpignan/ https://solutionssenior.fr/monte-escaliers/
-Redirect 301 /monte-escaliers/reims/ https://solutionssenior.fr/monte-escaliers/
-Redirect 301 /monte-escaliers/rennes/ https://solutionssenior.fr/monte-escaliers/
-Redirect 301 /monte-escaliers/saint-etienne/ https://solutionssenior.fr/monte-escaliers/
-Redirect 301 /monte-escaliers/strasbourg/ https://solutionssenior.fr/monte-escaliers/
-Redirect 301 /monte-escaliers/toulouse/ https://solutionssenior.fr/monte-escaliers/
-Redirect 301 /monte-escaliers/tours/ https://solutionssenior.fr/monte-escaliers/
-
-# --- Villes PACA (a recreer en version unique : retirer la ligne ---
-# --- correspondante le jour ou la vraie page ville est publiee) ---
-Redirect 301 /monte-escaliers/aix-en-provence/ https://solutionssenior.fr/monte-escaliers/
-Redirect 301 /monte-escaliers/marseille/ https://solutionssenior.fr/monte-escaliers/
-Redirect 301 /monte-escaliers/nice/ https://solutionssenior.fr/monte-escaliers/
-Redirect 301 /monte-escaliers/toulon/ https://solutionssenior.fr/monte-escaliers/
-
-# --- Fin des redirections villes ---

@@ -6,8 +6,8 @@
     <loc>https://solutionssenior.fr/</loc>
     <image:image>
       <image:loc>https://solutionssenior.fr/assets/images/home-installateur.webp</image:loc>
-      <image:title>Technicien agréé installant un monte-escalier</image:title>
-      <image:caption>Installation d'un monte-escalier par un professionnel certifié</image:caption>
+      <image:title>Technicien qualifié installant un monte-escalier</image:title>
+      <image:caption>Installation d'un monte-escalier par un professionnel qualifié</image:caption>
     </image:image>
     <image:image>
       <image:loc>https://solutionssenior.fr/assets/images/home-guides.webp</image:loc>
@@ -52,7 +52,7 @@
       <image:caption>Plateforme PMR — MaPrimeAdapt' jusqu'à 70 %</image:caption>
     </image:image>
 
-    <lastmod>2026-04-08</lastmod>
+    <lastmod>2026-06-24</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -60,6 +60,7 @@
   <!-- ─── MONTE-ESCALIERS (page mère) ─────────────────────────── -->
   <url>
     <loc>https://solutionssenior.fr/monte-escaliers/</loc>
+    <lastmod>2026-06-24</lastmod>
     <image:image>
       <image:loc>https://solutionssenior.fr/assets/images/monte-escalier-hero.webp</image:loc>
       <image:title>Monte-escalier résidentiel installé dans une maison</image:title>
@@ -88,6 +89,7 @@
   <!-- ─── TYPES DE MONTE-ESCALIER ─────────────────────────────── -->
   <url>
     <loc>https://solutionssenior.fr/monte-escaliers/mobile/</loc>
+    <lastmod>2026-06-24</lastmod>
     <image:image>
       <image:loc>https://solutionssenior.fr/assets/images/monte-escalier-portable.webp</image:loc>
       <image:title>Monte-escalier portable sans installation</image:title>
@@ -99,6 +101,7 @@
   </url>
   <url>
     <loc>https://solutionssenior.fr/monte-escaliers/debout/</loc>
+    <lastmod>2026-06-24</lastmod>
     <image:image>
       <image:loc>https://solutionssenior.fr/assets/images/monte-escalier-debout-hero.webp</image:loc>
       <image:title>Monte-escalier debout — utilisateur en position semi-debout</image:title>
@@ -115,6 +118,7 @@
   </url>
   <url>
     <loc>https://solutionssenior.fr/monte-escaliers/tournant/</loc>
+    <lastmod>2026-06-24</lastmod>
     <image:image>
       <image:loc>https://solutionssenior.fr/assets/images/monte-escalier-tournant-hero.webp</image:loc>
       <image:title>Monte-escalier tournant avec rail courbé sur mesure</image:title>
@@ -131,6 +135,7 @@
   </url>
   <url>
     <loc>https://solutionssenior.fr/monte-escaliers/exterieur/</loc>
+    <lastmod>2026-06-24</lastmod>
     <image:image>
       <image:loc>https://solutionssenior.fr/assets/images/monte-escalier-exterieur-hero.webp</image:loc>
       <image:title>Monte-escalier extérieur installé sur un escalier de jardin</image:title>
@@ -147,6 +152,7 @@
   </url>
   <url>
     <loc>https://solutionssenior.fr/monte-escaliers/droit/</loc>
+    <lastmod>2026-06-24</lastmod>
     <image:image>
       <image:loc>https://solutionssenior.fr/assets/images/monte-escalier-droit-hero.webp</image:loc>
       <image:title>Monte-escalier droit installé sur un escalier rectiligne intérieur</image:title>
@@ -163,16 +169,19 @@
   </url>
   <url>
     <loc>https://solutionssenior.fr/monte-escaliers/monte-charge/</loc>
+    <lastmod>2026-06-24</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://solutionssenior.fr/monte-escaliers/sans-installation/</loc>
+    <lastmod>2026-06-24</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://solutionssenior.fr/monte-escaliers/batterie/</loc>
+    <lastmod>2026-06-24</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -180,36 +189,43 @@
   <!-- ─── GUIDES TECHNIQUES ───────────────────────────────────── -->
   <url>
     <loc>https://solutionssenior.fr/monte-escaliers/installation/</loc>
+    <lastmod>2026-06-24</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://solutionssenior.fr/monte-escaliers/largeur-minimum-escalier/</loc>
+    <lastmod>2026-06-24</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://solutionssenior.fr/monte-escaliers/types-de-rail/</loc>
+    <lastmod>2026-06-24</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://solutionssenior.fr/monte-escaliers/poids-maximum/</loc>
+    <lastmod>2026-06-24</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://solutionssenior.fr/monte-escaliers/ceinture-de-securite/</loc>
+    <lastmod>2026-06-24</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://solutionssenior.fr/monte-escaliers/escalier-colimacon/</loc>
+    <lastmod>2026-06-24</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://solutionssenior.fr/monte-escaliers/pourquoi-les-monte-escaliers-ont-des-telecommandes/</loc>
+    <lastmod>2026-06-24</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -217,16 +233,19 @@
   <!-- ─── ACCESSIBILITÉ PMR ────────────────────────────────────── -->
   <url>
     <loc>https://solutionssenior.fr/monte-escaliers/guide-pmr-escalier/</loc>
+    <lastmod>2026-06-24</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://solutionssenior.fr/monte-escaliers/monte-personne/</loc>
+    <lastmod>2026-06-24</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://solutionssenior.fr/monte-escaliers/monte-escalier-vs-ascenseur/</loc>
+    <lastmod>2026-06-24</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -234,16 +253,19 @@
   <!-- ─── PRIX & FINANCEMENT ───────────────────────────────────── -->
   <url>
     <loc>https://solutionssenior.fr/monte-escaliers/prix/</loc>
+    <lastmod>2026-06-24</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://solutionssenior.fr/monte-escaliers/prix/location/</loc>
+    <lastmod>2026-06-24</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://solutionssenior.fr/monte-escaliers/meilleur-monte-escalier/</loc>
+    <lastmod>2026-06-24</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -251,11 +273,13 @@
   <!-- ─── OCCASION & DÉBARRAS ──────────────────────────────────── -->
   <url>
     <loc>https://solutionssenior.fr/monte-escaliers/occasion/</loc>
+    <lastmod>2026-06-24</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://solutionssenior.fr/monte-escaliers/debarrasser/</loc>
+    <lastmod>2026-06-24</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
@@ -263,26 +287,31 @@
   <!-- ─── SAV ──────────────────────────────────────────────────── -->
   <url>
     <loc>https://solutionssenior.fr/monte-escaliers/sav/</loc>
+    <lastmod>2026-06-24</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://solutionssenior.fr/monte-escaliers/sav/depannage/</loc>
+    <lastmod>2026-06-24</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://solutionssenior.fr/monte-escaliers/sav/monte-escalier-bloque/</loc>
+    <lastmod>2026-06-24</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://solutionssenior.fr/monte-escaliers/sav/entretien/</loc>
+    <lastmod>2026-06-24</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://solutionssenior.fr/monte-escaliers/sav/reparateur-technicien/</loc>
+    <lastmod>2026-06-24</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
@@ -695,4 +724,146 @@
     <priority>0.7</priority>
   </url>
 
+
+  <!-- ─── AIDES FINANCIÈRES (cluster transversal) ──────────────── -->
+  <url>
+    <loc>https://solutionssenior.fr/aides/</loc>
+    <lastmod>2026-06-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- MaPrimeAdapt' -->
+  <url>
+    <loc>https://solutionssenior.fr/aides/maprimeadapt/</loc>
+    <lastmod>2026-05-31</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://solutionssenior.fr/aides/maprimeadapt/conditions/</loc>
+    <lastmod>2026-05-31</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://solutionssenior.fr/aides/maprimeadapt/comment-faire-demande/</loc>
+    <lastmod>2026-05-31</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://solutionssenior.fr/aides/maprimeadapt/refus-recours/</loc>
+    <lastmod>2026-06-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- APA -->
+  <url>
+    <loc>https://solutionssenior.fr/aides/apa/</loc>
+    <lastmod>2026-05-31</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://solutionssenior.fr/aides/apa/dossier-demande/</loc>
+    <lastmod>2026-05-31</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://solutionssenior.fr/aides/apa/montant-calcul/</loc>
+    <lastmod>2026-05-31</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://solutionssenior.fr/aides/apa/gir/</loc>
+    <lastmod>2026-05-31</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://solutionssenior.fr/aides/apa/a-domicile/</loc>
+    <lastmod>2026-05-31</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://solutionssenior.fr/aides/apa/ehpad/</loc>
+    <lastmod>2026-05-31</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- PCH -->
+  <url>
+    <loc>https://solutionssenior.fr/aides/pch/</loc>
+    <lastmod>2026-05-31</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://solutionssenior.fr/aides/pch/aide-humaine/</loc>
+    <lastmod>2026-05-31</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://solutionssenior.fr/aides/pch/amenagement-logement/</loc>
+    <lastmod>2026-05-31</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://solutionssenior.fr/aides/pch/dossier-mdph/</loc>
+    <lastmod>2026-05-31</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- Satellites -->
+  <url>
+    <loc>https://solutionssenior.fr/aides/caisse-retraite/</loc>
+    <lastmod>2026-05-31</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://solutionssenior.fr/aides/action-logement/</loc>
+    <lastmod>2026-06-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://solutionssenior.fr/aides/tva-reduite/</loc>
+    <lastmod>2026-06-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://solutionssenior.fr/aides/caf-msa/</loc>
+    <lastmod>2026-06-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://solutionssenior.fr/aides/microcredit-social/</loc>
+    <lastmod>2026-06-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://solutionssenior.fr/aides/aides-locales/</loc>
+    <lastmod>2026-06-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://solutionssenior.fr/monte-escaliers/aides/</loc>
+    <lastmod>2026-06-24</lastmod>
+  </url>
 </urlset>
+

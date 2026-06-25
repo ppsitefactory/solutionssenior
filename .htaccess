@@ -1,15 +1,17 @@
 # ============================================================
+# CONFIGURATION .htaccess - solutionssenior.fr
+# ============================================================
+# NB : le HTTPS et le www sont geres par Hostinger (hPanel).
+
+# --- Page d'erreur 404 personnalisee ---
+ErrorDocument 404 /404.html
+
+# ============================================================
 # REDIRECTIONS 301 - Pages villes (recentrage geographique)
 # Mise en place : 2026-06-24
-#
-# Toutes les anciennes pages villes redirigent vers le hub
-# /monte-escaliers/. Quand une ville est recreee (PACA), retirer
-# son bloc RewriteRule ci-dessous.
-#
-# NB 1 : le HTTPS et le www sont geres par Hostinger (hPanel).
-# NB 2 : on utilise RewriteRule [R=301,L] et non Redirect, car le
-# dossier physique de la ville existe encore (index.html present).
-# RewriteRule force la redirection meme si le fichier existe.
+# Quand une ville PACA est recreee, retirer sa ligne ci-dessous.
+# On utilise RewriteRule [R=301,L] et non Redirect, car le dossier
+# physique de la ville existe encore (index.html present).
 # ============================================================
 
 <IfModule mod_rewrite.c>

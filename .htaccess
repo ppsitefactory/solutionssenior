@@ -44,6 +44,5 @@ ErrorDocument 404 /404.html
   # --- Villes PACA (retirer le bloc quand la vraie page est publiee) ---
   RewriteRule ^monte-escaliers/aix-en-provence/?$ /monte-escaliers/ [R=301,L]
   RewriteRule ^monte-escaliers/marseille/?$ /monte-escaliers/ [R=301,L]
-  RewriteRule ^monte-escaliers/toulon/?$ /monte-escaliers/ [R=301,L]
 
 </IfModule>

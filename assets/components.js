@@ -203,6 +203,8 @@ function mSubmit() {
     if (el && !el.value.trim()) { showError(el, 'input'); ok = false; }
   });
   if (!ok) return;
+  mData.page_origine = window.location.href;
+  mData.source_externe = document.referrer || 'direct';
   fetch('https://formspree.io/f/mbdpyayv', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
@@ -298,6 +300,8 @@ function gSubmit() {
     if (el && !el.value.trim()) { showError(el, 'input'); ok = false; }
   });
   if (!ok) return;
+  gData.page_origine = window.location.href;
+  gData.source_externe = document.referrer || 'direct';
   fetch('https://formspree.io/f/mbdpyayv', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
@@ -376,6 +380,8 @@ function lSubmit() {
     if (el && !el.value.trim()) { showError(el, 'input'); ok = false; }
   });
   if (!ok) return;
+  lData.page_origine = window.location.href;
+  lData.source_externe = document.referrer || 'direct';
   fetch('https://formspree.io/f/mbdpyayv', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },

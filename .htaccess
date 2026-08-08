@@ -5,9 +5,17 @@
 
 RewriteEngine On
 
-# --- Forcer la version sans www (301) ---
+# --- 1. Forcer la version sans www (301) ---
 RewriteCond %{HTTP_HOST} ^www\.solutionssenior\.fr$ [NC]
 RewriteRule ^(.*)$ https://solutionssenior.fr/$1 [R=301,L]
 
-# --- Page d'erreur 404 personnalisee ---
+# --- 2. Anciennes URLs (ancienne architecture) -> 301 vers l'equivalent actuel ---
+RewriteRule ^simulateur/?$ /aides/ [R=301,L]
+# NB : retirer la ligne ci-dessus le jour ou le simulateur sera construit a /simulateur/
+RewriteRule ^monte-escaliers/sav-entretien-et-depannage/monte-escalier-qui-bip/?$ /monte-escaliers/sav/monte-escalier-bloque/ [R=301,L]
+RewriteRule ^monte-escaliers/sav-entretien-et-depannage/comment-reinitialiser/?$ /monte-escaliers/sav/monte-escalier-bloque/ [R=301,L]
+RewriteRule ^monte-escaliers/declaration-impot/?$ /monte-escaliers/aides/ [R=301,L]
+RewriteRule ^monte-escaliers/batterie/duree-de-vie/?$ /monte-escaliers/batterie/ [R=301,L]
+
+# --- 3. Page d'erreur 404 personnalisee ---
 ErrorDocument 404 /404.html

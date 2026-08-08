@@ -4,3 +4,6 @@
 # Archives et scripts de travail (ne pas versionner)
 *.zip
 *.sh
+
+# sauvegardes locales (ne pas versionner)
+_sauvegardes/

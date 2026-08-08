@@ -1,7 +1,13 @@
 # ============================================================
 # CONFIGURATION .htaccess - solutionssenior.fr
 # ============================================================
-# NB : le HTTPS et le www sont geres par Hostinger (hPanel).
+# HTTPS gere par Hostinger (hPanel). www force en non-www ci-dessous.
+
+RewriteEngine On
+
+# --- Forcer la version sans www (301) ---
+RewriteCond %{HTTP_HOST} ^www\.solutionssenior\.fr$ [NC]
+RewriteRule ^(.*)$ https://solutionssenior.fr/$1 [R=301,L]
 
 # --- Page d'erreur 404 personnalisee ---
 ErrorDocument 404 /404.html

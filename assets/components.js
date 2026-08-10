@@ -78,9 +78,9 @@ function initModal() {
     const mRea   = document.getElementById('m-reassurance-3');
     const mSucc  = document.getElementById('m-success-text');
     if (mTitle) mTitle.textContent = 'Votre devis gratuit' + villePrefix;
-    if (mSub)   mSub.textContent   = '2 minutes suffisent. Un installateur agréé' + villePrefix + ' vous rappelle sous 24h.';
-    if (mRea)   mRea.textContent   = 'Un installateur agréé' + villePrefix + ' vous rappelle sous 24h';
-    if (mSucc)  mSucc.innerHTML    = 'Un installateur agréé' + villePrefix + ' vous contactera dans les <strong>24 heures</strong>. Merci de votre confiance.';
+    if (mSub)   mSub.textContent   = '2 minutes suffisent. Un installateur qualifié' + villePrefix + ' vous rappelle sous 24h.';
+    if (mRea)   mRea.textContent   = 'Un installateur qualifié' + villePrefix + ' vous rappelle sous 24h';
+    if (mSucc)  mSucc.innerHTML    = 'Un installateur qualifié' + villePrefix + ' vous contactera dans les <strong>24 heures</strong>. Merci de votre confiance.';
 
     // Données initiales du tunnel
     mData    = { service: 'Monte-escalier', ville: ville || '', departement: dept, codeRegion: deptNum };

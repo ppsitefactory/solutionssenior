@@ -622,7 +622,7 @@
     }
   </style>
 </head>
-<body>
+<body data-service="monte-escaliers">
 
 <!-- STICKY CTA -->
 <button class="sticky-cta" onclick="openModal()">📋 Devis gratuit</button>
@@ -647,66 +647,12 @@
       </div>
     </div>
 
-    <!-- FORMULAIRE HERO -->
+    <!-- CTA HERO -->
     <div class="hero-form-card">
-      <div class="form-card-title">Votre mise en relation gratuite</div>
-      <div class="form-card-subtitle">Décrivez votre projet en 2 minutes. Un professionnel vous contacte sous 24h.</div>
-      <div class="step-indicators" id="heroIndicators">
-        <div class="step-dot active" id="hdot0"></div>
-        <div class="step-dot" id="hdot1"></div>
-        <div class="step-dot" id="hdot2"></div>
-      </div>
-
-      <div class="step active" id="hstep0">
-        <div class="step-label">Étape 1 sur 3</div>
-        <div class="step-question">Quel service recherchez-vous ?</div>
-        <div class="service-grid">
-          <div class="service-option" onclick="selectService(this,'hero')"><span class="icon">🪜</span> Monte-escalier</div>
-          <div class="service-option" onclick="selectService(this,'hero')"><span class="icon">🛁</span> Douche senior</div>
-          <div class="service-option" onclick="selectService(this,'hero')"><span class="icon">🤝</span> Aide à domicile</div>
-          <div class="service-option" onclick="selectService(this,'hero')"><span class="icon">📡</span> Téléassistance</div>
-        </div>
-        <button class="btn-next" onclick="nextStep('hero',0)">Continuer →</button>
-      </div>
-
-      <div class="step" id="hstep1">
-        <button class="btn-back-form" onclick="prevStep('hero',1)">← Retour</button>
-        <div class="step-label">Étape 2 sur 3</div>
-        <div class="step-question">Votre situation</div>
-        <div class="form-field"><label>Code postal</label><input type="text" placeholder="Ex. 75001" maxlength="5"></div>
-        <div class="form-field">
-          <label>Ce service est pour...</label>
-          <select>
-            <option>Moi-même</option>
-            <option>Mon parent</option>
-            <option>Mon conjoint</option>
-            <option>Un autre proche</option>
-          </select>
-        </div>
-        <button class="btn-next" onclick="nextStep('hero',1)">Continuer →</button>
-      </div>
-
-      <div class="step" id="hstep2">
-        <button class="btn-back-form" onclick="prevStep('hero',2)">← Retour</button>
-        <div class="step-label">Étape 3 sur 3</div>
-        <div class="step-question">Vos coordonnées</div>
-        <div class="form-row">
-          <div class="form-field"><label>Prénom *</label><input type="text" placeholder="Marie"></div>
-          <div class="form-field"><label>Nom *</label><input type="text" placeholder="Dupont"></div>
-        </div>
-        <div class="form-field"><label>Email *</label><input type="email" placeholder="marie@exemple.fr"></div>
-        <div class="form-field"><label>Téléphone</label><input type="tel" placeholder="06 00 00 00 00"></div>
-        <button class="btn-submit-form" onclick="submitForm('hero')">✓ Envoyer ma demande</button>
-        <div class="form-legal">Service gratuit et sans engagement. Vos données sont protégées. <a href="/politique-confidentialite/" style="color:#999;">Politique de confidentialité</a></div>
-      </div>
-
-      <div class="step" id="hsuccess">
-        <div class="success-step">
-          <div class="success-icon">✅</div>
-          <h3>Demande envoyée !</h3>
-          <p>Un professionnel qualifié près de chez vous vous contactera dans les <strong>24 heures</strong>. Merci de votre confiance.</p>
-        </div>
-      </div>
+      <div class="form-card-title">Votre devis monte-escalier gratuit</div>
+      <div class="form-card-subtitle">Décrivez votre projet en 2 minutes. Un professionnel qualifié vous rappelle sous 24h, sans engagement.</div>
+      <button class="btn-next open-formulaire">Obtenir mon devis gratuit →</button>
+      <div class="form-legal">Service 100 % gratuit et sans engagement. Vos données sont protégées. <a href="/politique-confidentialite/" style="color:#999;">Politique de confidentialité</a></div>
     </div>
   </div>
 </section>
@@ -738,11 +684,11 @@
   <div class="section-inner">
     <div class="section-header">
       <div class="section-tag">Nos services</div>
-      <h2 class="section-title">Toutes les solutions pour<br>bien vieillir chez soi</h2>
-      <p class="section-desc">Un seul interlocuteur pour adapter votre logement, trouver de l'aide au quotidien et préserver votre indépendance le plus longtemps possible.</p>
+      <h2 class="section-title">Le monte-escalier,<br>et les aides pour le financer</h2>
+      <p class="section-desc">Des guides complets, un comparatif des marques, les aides financières et la mise en relation avec des installateurs qualifiés, près de chez vous.</p>
     </div>
 
-    <div class="services-grid">
+    <div class="services-grid" style="grid-template-columns:repeat(2,1fr); max-width:760px; margin:0 auto;">
 
       <!-- Monte-escalier — ACTIF -->
       <a class="service-card" href="/monte-escaliers/">
@@ -753,50 +699,18 @@
         <div class="card-link">Découvrir les guides <span>→</span></div>
       </a>
 
-      <!-- Douche senior — À VENIR -->
-      <div class="service-card coming-soon">
-        <div class="card-icon">🛁</div>
-        <span class="card-badge badge-soon">Bientôt disponible</span>
-        <div class="card-title">Douche & salle de bain senior</div>
-        <div class="card-desc">Remplacement de baignoire par une douche à l'italienne, barres d'appui, sol antidérapant. Sécurisez la pièce la plus accidentogène du logement.</div>
-        <div class="card-link" style="opacity:0.5;">Guides à venir</div>
-      </div>
 
-      <!-- Aide à domicile — À VENIR -->
-      <div class="service-card coming-soon">
-        <div class="card-icon">🤝</div>
-        <span class="card-badge badge-soon">Bientôt disponible</span>
-        <div class="card-title">Aide à domicile</div>
-        <div class="card-desc">Aide à la toilette, ménage, portage de repas, dame de compagnie, garde de nuit. Tous les services pour rester autonome chez soi au quotidien.</div>
-        <div class="card-link" style="opacity:0.5;">Guides à venir</div>
-      </div>
 
-      <!-- Téléassistance — À VENIR -->
-      <div class="service-card coming-soon">
-        <div class="card-icon">📡</div>
-        <span class="card-badge badge-soon">Bientôt disponible</span>
-        <div class="card-title">Téléassistance</div>
-        <div class="card-desc">Dispositifs connectés pour alerter les proches ou les secours en cas de chute ou de malaise. Sécurité 24h/24, 7j/7.</div>
-        <div class="card-link" style="opacity:0.5;">Guides à venir</div>
-      </div>
 
       <!-- Aides financières — ACTIF -->
       <a class="service-card" href="/monte-escaliers/aides/">
         <div class="card-icon">🏛</div>
         <span class="card-badge badge-active">Disponible</span>
         <div class="card-title">Aides financières</div>
-        <div class="card-desc">MaPrimeAdapt', APA, CARSAT, TVA 5,5 %… Découvrez toutes les aides disponibles en 2026 pour financer l'adaptation de votre logement.</div>
+        <div class="card-desc">MaPrimeAdapt', APA, aides des caisses de retraite, TVA 5,5 %… Découvrez toutes les aides disponibles en 2026 pour financer l'adaptation de votre logement.</div>
         <div class="card-link">Voir les aides <span>→</span></div>
       </a>
 
-      <!-- Résidence senior — À VENIR -->
-      <div class="service-card coming-soon">
-        <div class="card-icon">🏘️</div>
-        <span class="card-badge badge-soon">Bientôt disponible</span>
-        <div class="card-title">Résidence senior & EHPAD</div>
-        <div class="card-desc">Résidences services, EHPAD, accueil familial : comparez les établissements adaptés à votre situation et à votre budget.</div>
-        <div class="card-link" style="opacity:0.5;">Guides à venir</div>
-      </div>
 
     </div>
   </div>
@@ -949,7 +863,7 @@
         <div class="guide-card-body">
           <span class="guide-card-tag">Aides financières</span>
           <div class="guide-card-title">Aides pour un monte-escalier en 2026</div>
-          <div class="guide-card-desc">MaPrimeAdapt', APA, CARSAT, TVA 5,5 % — simulations de reste à charge par profil.</div>
+          <div class="guide-card-desc">MaPrimeAdapt', APA, aides des caisses de retraite, TVA 5,5 % — simulations de reste à charge par profil.</div>
           <div class="guide-card-link">Lire le guide →</div>
         </div>
       </a>
@@ -990,29 +904,5 @@
 <div id="formulaire-modal"></div>
 <div id="bandeau-sticky" data-titre="Être rappelé gratuitement"></div>
 <script src="/assets/components.js"></script>
-<script>
-  // Formspree — envoi du formulaire hero uniquement
-  window.submitForm = function(form) {
-    const p = form === 'hero' ? 'h' : 'm';
-    const data = {};
-    [0,1,2].forEach(i => {
-      const step = document.getElementById(p+'step'+i);
-      if (!step) return;
-      step.querySelectorAll('input, select').forEach(f => { if (f.value) data[f.name || f.type] = f.value; });
-      const sel = step.querySelector('.service-option.selected');
-      if (sel) data['service'] = sel.textContent.trim();
-    });
-    fetch('https://formspree.io/f/mbdpyayv', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(data)
-    });
-    for(let i=0;i<3;i++){const el=document.getElementById(p+'step'+i);if(el)el.classList.remove('active');}
-    const ind = document.getElementById(form==='hero'?'heroIndicators':'modalIndicators');
-    if(ind) ind.style.display='none';
-    const s = document.getElementById(p+'success');
-    if(s) s.classList.add('active');
-  };
-</script>
 </body>
 </html>

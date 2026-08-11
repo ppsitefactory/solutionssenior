@@ -3,11 +3,14 @@
    Chargé uniquement par les pages /monte-escaliers/comparatif/[marque]/
    ============================================ */
 
-/* Variables de base utilisées par cette feuille (sinon bordures/ombres invisibles) */
+/* Variables de base utilisées par cette feuille (sinon bordures/ombres/arrondis invisibles) */
 :root {
   --border: #e7e2d8;
+  --radius-sm: 8px;
   --radius-md: 12px;
+  --radius-lg: 20px;
   --shadow-sm: 0 2px 12px rgba(74,124,89,.08);
+  --shadow-md: 0 6px 24px rgba(74,124,89,.10);
 }
 
 .page-wrapper { max-width: 1100px; margin: 0 auto; padding: 0 24px; }
@@ -419,8 +422,6 @@
       font-weight: 600;
       font-size: 15px;
     }
-
-    .sidebar-card-
 
     .sidebar-devis {
       background: linear-gradient(135deg, var(--sage) 0%, var(--sage-light) 100%);

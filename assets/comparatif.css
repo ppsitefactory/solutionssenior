@@ -582,3 +582,4 @@
 .verdict-pros h3 { color: #2e7d32; }
 .verdict-cons { background: #fce4ec; border: 1px solid #f8bbd0; }
 .verdict-cons h3 { color: #c2185b; }
+.verdict-note { margin-top: 16px; font-size: 15px; line-height: 1.6; color: var(--text-light); }

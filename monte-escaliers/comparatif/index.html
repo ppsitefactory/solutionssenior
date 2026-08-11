@@ -426,7 +426,44 @@
       box-shadow: 0 4px 16px rgba(201,168,76,.35);
     }
     .btn-gold:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(201,168,76,.45); }
+
+    .guide-comparatif { padding: 8px 0 8px; }
+    /* FAQ + sources */
+    .faq-section { padding: 8px 0 56px; }
+    .faq-item { border-top: 1px solid var(--border); padding: 20px 0; }
+    .faq-item:last-child { border-bottom: 1px solid var(--border); }
+    .faq-q { font-family: 'Playfair Display', serif; font-size: 19px; color: var(--text); margin-bottom: 8px; }
+    .faq-a { color: var(--text-light); font-size: 16px; }
+    .faq-a a { color: var(--sage); font-weight: 500; }
+    .sources-bloc { margin-top: 36px; font-size: 14px; color: var(--text-light); line-height: 1.7; }
+    .sources-bloc h3 { font-size: 15px; margin-bottom: 8px; color: var(--text); font-family: 'DM Sans', sans-serif; }
+    .sources-bloc ul { padding-left: 20px; }
+    .sources-bloc a { color: var(--sage); }
   </style>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Accueil", "item": "https://solutionssenior.fr/" },
+          { "@type": "ListItem", "position": 2, "name": "Monte-escalier", "item": "https://solutionssenior.fr/monte-escaliers/" },
+          { "@type": "ListItem", "position": 3, "name": "Comparatif marques", "item": "https://solutionssenior.fr/monte-escaliers/comparatif/" }
+        ]
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          { "@type": "Question", "name": "Peut-on acheter un monte-escalier d'occasion ?", "acceptedAnswer": { "@type": "Answer", "text": "Oui pour un modele droit, dont le rail standard peut etre reutilise, avec une garantie legale de conformite de 2 ans qui s'applique aussi au reconditionne. Un rail tournant est fabrique sur mesure pour un escalier precis et ne se reinstalle quasiment pas ailleurs." } },
+          { "@type": "Question", "name": "Quelle largeur d'escalier faut-il pour un monte-escalier ?", "acceptedAnswer": { "@type": "Answer", "text": "Un monte-escalier a siege s'installe sur un escalier d'environ 60 a 65 cm de large. Pour une plateforme destinee a un fauteuil roulant, comptez de l'ordre de 90 cm a plus d'un metre selon les modeles. Une visite technique reste indispensable pour confirmer la faisabilite sur votre escalier." } },
+          { "@type": "Question", "name": "Combien de temps prend l'installation selon la marque ?", "acceptedAnswer": { "@type": "Answer", "text": "Un modele droit, dont le rail est standard et en stock, s'installe en quelques jours et la pose prend une demi-journee. Un modele tournant, dont le rail est fabrique sur mesure, demande plusieurs semaines de fabrication avant une pose d'environ une journee, quelle que soit la marque." } },
+          { "@type": "Question", "name": "Faut-il l'accord de la copropriete pour installer un monte-escalier ?", "acceptedAnswer": { "@type": "Answer", "text": "Depuis le 31 decembre 2020 (article 25-2 de la loi du 10 juillet 1965), installer un monte-escalier a ses frais dans une partie commune releve d'une simple information au syndic, et non d'une autorisation de l'assemblee generale. L'assemblee conserve un droit d'opposition, mais il doit etre motive et encadre." } }
+        ]
+      }
+    ]
+  }
+  </script>
 </head>
 
 <body data-service="monte-escaliers">
@@ -733,7 +770,7 @@
             </div>
             <div class="marque-card-info">
               <span class="marque-card-name">Lehner Lifttechnik</span>
-              <span class="marque-card-origin">🇩🇪 Allemagne</span>
+              <span class="marque-card-origin">🇦🇹 Autriche</span>
               <div class="marque-card-rating">
                 <span class="rating-stars">★★★★☆</span>
                 <span class="rating-score">N/D</span>
@@ -742,7 +779,7 @@
             </div>
           </div>
           <div class="marque-card-body">
-            <p class="marque-card-desc">Ingénierie allemande reconnue. Technicité et durabilité. Idéal pour les configurations complexes.</p>
+            <p class="marque-card-desc">Ingénierie autrichienne reconnue. Technicité et durabilité. Idéale pour les configurations complexes.</p>
             <div class="marque-card-tags">
               <span class="tag">Droit</span>
               <span class="tag">Tournant</span>
@@ -763,7 +800,7 @@
   <section class="comparatif-section">
     <div class="page-wrapper">
       <span class="section-label">Comparatif rapide</span>
-      <h2>Tableau comparatif — critères clés</h2>
+      <h2>Tableau comparatif : critères clés</h2>
       <p>Vue d'ensemble des principales caractéristiques pour vous aider à choisir.</p>
 
       <div class="comparatif-table-wrap">
@@ -789,7 +826,7 @@
               <td><span class="check">✓</span></td>
               <td>160 kg</td>
               <td>5 ans</td>
-              <td>3 500–5 500 €</td>
+              <td>3 500-5 500 €</td>
             </tr>
             <tr>
               <td>Thyssenkrupp</td>
@@ -799,7 +836,7 @@
               <td><span class="check">✓</span></td>
               <td>160 kg</td>
               <td>2 ans</td>
-              <td>3 500–6 000 €</td>
+              <td>3 500-6 000 €</td>
             </tr>
             <tr>
               <td>Indépendance Royale</td>
@@ -809,7 +846,7 @@
               <td><span class="cross">✗</span></td>
               <td>130 kg</td>
               <td>2 ans</td>
-              <td>3 000–5 000 €</td>
+              <td>3 000-5 000 €</td>
             </tr>
             <tr>
               <td>Mobilae</td>
@@ -819,7 +856,7 @@
               <td><span class="check">✓</span></td>
               <td>160 kg</td>
               <td>2 ans</td>
-              <td>3 200–5 500 €</td>
+              <td>3 200-5 500 €</td>
             </tr>
             <tr>
               <td>Otolift</td>
@@ -829,7 +866,7 @@
               <td><span class="cross">✗</span></td>
               <td>160 kg</td>
               <td>2 ans</td>
-              <td>3 200–5 000 €</td>
+              <td>3 200-5 000 €</td>
             </tr>
             <tr>
               <td>Handicare</td>
@@ -839,7 +876,7 @@
               <td><span class="cross">✗</span></td>
               <td>160 kg</td>
               <td>2 ans</td>
-              <td>3 500–6 000 €</td>
+              <td>3 500-6 000 €</td>
             </tr>
             <tr>
               <td>Acorn</td>
@@ -849,7 +886,7 @@
               <td><span class="check">✓</span></td>
               <td>130 kg</td>
               <td>2 ans</td>
-              <td>3 000–4 500 €</td>
+              <td>3 000-4 500 €</td>
             </tr>
             <tr>
               <td>Platinum</td>
@@ -859,7 +896,7 @@
               <td><span class="check">✓</span></td>
               <td>160 kg</td>
               <td>2 ans</td>
-              <td>4 000–7 000 €</td>
+              <td>4 000-7 000 €</td>
             </tr>
             <tr>
               <td>Lehner</td>
@@ -869,11 +906,125 @@
               <td><span class="cross">✗</span></td>
               <td>160 kg</td>
               <td>2 ans</td>
-              <td>3 500–6 000 €</td>
+              <td>3 500-6 000 €</td>
             </tr>
           </tbody>
         </table>
       </div>
+    </div>
+  </section>
+
+  <!-- ─── GUIDE / CONTENU ────────────────────────────────────── -->
+  <section class="guide-comparatif">
+    <div class="page-wrapper">
+      <div class="article-content">
+
+        <h2 id="types">Les types de monte-escalier à comparer</h2>
+        <p>Avant de comparer les marques, identifiez le type adapté à votre escalier : c'est lui qui détermine l'essentiel du prix et des options, bien plus que la marque.</p>
+        <ul>
+          <li><strong><a href="/monte-escaliers/droit/">Droit</a></strong> : escalier rectiligne, rail standard en stock, le modèle le moins cher et le plus rapide à poser.</li>
+          <li><strong><a href="/monte-escaliers/tournant/">Tournant</a></strong> : virage ou palier intermédiaire, rail fabriqué sur mesure, prix et délais plus élevés.</li>
+          <li><strong><a href="/monte-escaliers/exterieur/">Extérieur</a></strong> : perron ou jardin, avec une motorisation protégée contre l'eau et la poussière.</li>
+          <li><strong><a href="/monte-escaliers/debout/">Debout</a></strong> : pour rester debout quand plier les genoux est difficile, utile sur les escaliers très étroits.</li>
+          <li><strong><a href="/monte-escaliers/plateforme-pmr/">Plateforme PMR</a></strong> : pour rester en fauteuil roulant pendant la montée.</li>
+        </ul>
+
+        <div class="cta-inline">
+          <div class="cta-inline-text">
+            <strong>Vous ne savez pas quel type correspond à votre escalier ?</strong>
+            <span>Recevez un devis gratuit d'un installateur qualifié près de chez vous, sans engagement.</span>
+          </div>
+          <a href="#formulaire-modal" class="btn-cta open-formulaire">Être conseillé gratuitement →</a>
+        </div>
+
+        <h2 id="prix">Prix d'un monte-escalier selon la configuration</h2>
+        <p>Les écarts de prix entre marques restent faibles au regard de l'écart créé par la configuration de l'escalier. Voici les fourchettes indicatives, pose comprise :</p>
+        <table>
+          <thead>
+            <tr><th>Configuration</th><th>Prix indicatif (neuf, pose comprise)</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Droit</td><td>3 000 à 5 500 €</td></tr>
+            <tr><td>Tournant</td><td>6 000 à 12 000 €</td></tr>
+            <tr><td>Colimaçon</td><td>à partir de 12 000 €</td></tr>
+            <tr><td>Extérieur</td><td>4 000 à 13 000 €</td></tr>
+            <tr><td>Plateforme (fauteuil roulant)</td><td>8 000 à 18 000 €</td></tr>
+          </tbody>
+        </table>
+        <p>Le détail par marque et par option figure dans notre <a href="/monte-escaliers/prix/">guide complet des prix</a>, et les modèles reconditionnés dans notre <a href="/monte-escaliers/occasion/">guide de l'occasion</a>.</p>
+
+        <h2 id="aides">Les aides financières, quelle que soit la marque</h2>
+        <p>Les aides ne dépendent pas de la marque choisie mais de votre situation. MaPrimeAdapt' peut couvrir 50 à 70 % du montant hors taxes selon vos revenus, dans la limite d'un plafond de travaux de 22 000 € HT. Le calcul se fait sur le montant hors taxes.</p>
+
+        <div class="calcul-aide">
+          <div class="ca-title">Exemple : monte-escalier à 4 000 € HT, foyer très modeste éligible à MaPrimeAdapt' (70 %)</div>
+          <table>
+            <tr><td>Prix des travaux HT</td><td>4 000 €</td></tr>
+            <tr><td>MaPrimeAdapt' (70 %)</td><td>- 2 800 €</td></tr>
+            <tr><td><strong>Reste à charge estimé</strong></td><td><strong>environ 1 200 €</strong></td></tr>
+          </table>
+        </div>
+
+        <p>La pose bénéficie aussi de la TVA réduite à 5,5 % lorsqu'elle est réalisée par le professionnel. Une aide de votre caisse de retraite (AGIRC-ARRCO pour les retraités du privé) ou une aide locale peuvent compléter MaPrimeAdapt'. En revanche, le crédit d'impôt autonomie de 25 % est supprimé depuis le 1er janvier 2026. Le détail appliqué au monte-escalier figure sur notre <a href="/monte-escaliers/aides/">guide des aides financières</a>.</p>
+
+        <div class="cta-inline">
+          <div class="cta-inline-text">
+            <strong>Vous voulez connaître votre reste à charge exact ?</strong>
+            <span>Nos conseillers calculent vos aides selon vos revenus et vous envoient une estimation gratuite.</span>
+          </div>
+          <a href="#formulaire-modal" class="btn-cta open-formulaire">Calculer mes aides →</a>
+        </div>
+
+        <h2 id="comment-comparer">Comment comparer les marques</h2>
+        <p>Une note globale ne suffit pas à départager les marques. Comparez plutôt sur des critères vérifiables :</p>
+        <ul>
+          <li><strong>Le type de votre escalier</strong> : il restreint le choix plus que la marque (un tournant ou un colimaçon élimine d'emblée certaines gammes).</li>
+          <li><strong>Le réseau et la réactivité du SAV</strong> près de chez vous, décisifs pour une personne qui dépend de son appareil au quotidien.</li>
+          <li><strong>La garantie réelle</strong> : durée et, surtout, conditions (certaines garanties longues imposent un entretien annuel payant).</li>
+          <li><strong>Le reste à charge après aides</strong>, pas le prix brut : une fois l'aide déduite, les marques se rapprochent fortement.</li>
+          <li><strong>Les délais</strong> : un droit se pose en quelques jours, un tournant demande plusieurs semaines de fabrication.</li>
+        </ul>
+        <p>Pour une recommandation adaptée à votre situation précise, voir notre guide du <a href="/monte-escaliers/meilleur-monte-escalier/">meilleur monte-escalier</a>, qui trie les marques par usage.</p>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── FAQ ────────────────────────────────────────────────── -->
+  <section class="faq-section">
+    <div class="page-wrapper">
+      <span class="section-label">Questions fréquentes</span>
+      <h2>Comparatif monte-escalier : vos questions</h2>
+
+      <div class="faq-item">
+        <h3 class="faq-q">Peut-on acheter un monte-escalier d'occasion ?</h3>
+        <p class="faq-a">Oui pour un modèle droit, dont le rail standard peut être réutilisé, avec une garantie légale de conformité de 2 ans qui s'applique aussi au reconditionné. Un rail tournant, lui, est fabriqué sur mesure pour un escalier précis et ne se réinstalle quasiment pas ailleurs. Voir notre page <a href="/monte-escaliers/occasion/">monte-escalier d'occasion</a>.</p>
+      </div>
+
+      <div class="faq-item">
+        <h3 class="faq-q">Quelle largeur d'escalier faut-il pour un monte-escalier ?</h3>
+        <p class="faq-a">Un monte-escalier à siège s'installe sur un escalier d'environ 60 à 65 cm de large. Pour une plateforme destinée à un fauteuil roulant, comptez de l'ordre de 90 cm à plus d'un mètre selon les modèles. Une visite technique reste indispensable pour confirmer la faisabilité sur votre escalier.</p>
+      </div>
+
+      <div class="faq-item">
+        <h3 class="faq-q">Combien de temps prend l'installation selon la marque ?</h3>
+        <p class="faq-a">Un modèle droit, dont le rail est standard et en stock, s'installe en quelques jours et la pose prend une demi-journée. Un modèle tournant, dont le rail est fabriqué sur mesure, demande plusieurs semaines de fabrication avant une pose d'environ une journée, quelle que soit la marque.</p>
+      </div>
+
+      <div class="faq-item">
+        <h3 class="faq-q">Faut-il l'accord de la copropriété pour installer un monte-escalier ?</h3>
+        <p class="faq-a">Depuis le 31 décembre 2020 (article 25-2 de la loi du 10 juillet 1965), installer un monte-escalier à ses frais dans une partie commune relève d'une simple information au syndic, et non d'une autorisation de l'assemblée générale. L'assemblée conserve un droit d'opposition, mais il doit être motivé et encadré.</p>
+      </div>
+
+      <aside class="sources-bloc">
+        <h3>Sources et références</h3>
+        <ul>
+          <li>MaPrimeAdapt' : <a href="https://www.service-public.gouv.fr/particuliers/vosdroits/F37501" target="_blank" rel="nofollow noopener">service-public.gouv.fr, fiche F37501</a>.</li>
+          <li>Suppression du crédit d'impôt autonomie : <a href="https://www.service-public.gouv.fr/particuliers/vosdroits/F10752" target="_blank" rel="nofollow noopener">service-public.gouv.fr, fiche F10752</a>.</li>
+          <li>Garantie légale de conformité (2 ans) : <a href="https://www.service-public.gouv.fr/particuliers/vosdroits/F11094" target="_blank" rel="nofollow noopener">service-public.gouv.fr, fiche F11094</a>.</li>
+          <li>Copropriété, article 25-2 : <a href="https://www.legifrance.gouv.fr/loda/article_lc/LEGIARTI000039301660" target="_blank" rel="nofollow noopener">Légifrance, loi du 10 juillet 1965</a>.</li>
+        </ul>
+      </aside>
     </div>
   </section>
 

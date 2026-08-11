@@ -591,3 +591,14 @@
 .verdict-cons { background: #fce4ec; border: 1px solid #f8bbd0; }
 .verdict-cons h3 { color: #c2185b; }
 .verdict-note { margin-top: 16px; font-size: 15px; line-height: 1.6; color: var(--text-light); }
+
+/* ─── Gamme & prix par modèle (enrichissement fiches) ───────────── */
+.gamme-prix { margin: 8px 0 4px; }
+.gamme-table { width: 100%; border-collapse: collapse; margin: 14px 0; font-size: .95rem; }
+.gamme-table th, .gamme-table td { text-align: left; padding: 10px 12px; border-bottom: 1px solid var(--border); vertical-align: top; }
+.gamme-table thead th { background: #f7f5f0; font-weight: 600; }
+.gamme-table tbody tr:last-child td { border-bottom: none; }
+.gamme-delai { margin-top: 10px; }
+@media (max-width: 600px) {
+  .gamme-table th, .gamme-table td { padding: 8px 8px; font-size: .88rem; }
+}

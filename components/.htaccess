@@ -1,0 +1,10 @@
+# ============================================================
+# /components/ - fragments HTML injectes par /assets/components.js
+# ============================================================
+# Ces fichiers DOIVENT etre explorables par Google (sinon le header et
+# le footer n'existent pas pour lui), mais ne doivent jamais etre
+# indexes comme des pages autonomes.
+
+<IfModule mod_headers.c>
+  Header set X-Robots-Tag "noindex"
+</IfModule>

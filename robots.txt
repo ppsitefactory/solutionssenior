@@ -1,13 +1,23 @@
 User-agent: *
 Allow: /
 
-# Autoriser les images explicitement (avant le Disallow assets)
+# Ressources necessaires au rendu de la page (header, footer, formulaire).
+# NE PAS bloquer : Google doit pouvoir executer le JS et lire la CSS,
+# sinon la navigation du site est invisible pour lui.
 Allow: /assets/images/
+Allow: /assets/*.js
+Allow: /assets/*.css
 
-# Bloquer les ressources techniques
+# Bloquer le reste des ressources techniques
 Disallow: /assets/
-Disallow: /components/
-Disallow: /monte-escaliers/template-article.html
+
+# NB : template-article.html n'est plus bloque ici. Il porte desormais
+# <meta name="robots" content="noindex, nofollow"> : Google doit pouvoir
+# lire la page pour voir le noindex (un Disallow l'en aurait empeche).
+
+# NB : /components/ n'est plus bloque ici (le JS y charge header.html et
+# footer.html). Ces fragments sont rendus non indexables par l'en-tete
+# X-Robots-Tag: noindex defini dans components/.htaccess
 
 # Sitemap
 Sitemap: https://solutionssenior.fr/sitemap.xml

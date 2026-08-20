@@ -326,11 +326,13 @@
   <!-- ─── COMPARATIF MARQUES ───────────────────────────────────── -->
   <url>
     <loc>https://solutionssenior.fr/monte-escaliers/comparatif/</loc>
+    <lastmod>2026-08-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://solutionssenior.fr/monte-escaliers/comparatif/stannah/</loc>
+    <lastmod>2026-08-11</lastmod>
     <image:image>
       <image:loc>https://solutionssenior.fr/assets/images/marques/stannah.webp</image:loc>
       <image:title>Logo Stannah</image:title>
@@ -342,6 +344,7 @@
   </url>
   <url>
     <loc>https://solutionssenior.fr/monte-escaliers/comparatif/thyssenkrupp-home-solutions/</loc>
+    <lastmod>2026-08-11</lastmod>
     <image:image>
       <image:loc>https://solutionssenior.fr/assets/images/marques/thyssenkrupp-home-solutions.webp</image:loc>
       <image:title>Logo Thyssenkrupp TK Home Solutions</image:title>
@@ -353,6 +356,7 @@
   </url>
   <url>
     <loc>https://solutionssenior.fr/monte-escaliers/comparatif/acorn/</loc>
+    <lastmod>2026-08-11</lastmod>
     <image:image>
       <image:loc>https://solutionssenior.fr/assets/images/marques/acorn.webp</image:loc>
       <image:title>Logo Acorn Stairlifts</image:title>
@@ -364,6 +368,7 @@
   </url>
   <url>
     <loc>https://solutionssenior.fr/monte-escaliers/comparatif/otolift/</loc>
+    <lastmod>2026-08-11</lastmod>
     <image:image>
       <image:loc>https://solutionssenior.fr/assets/images/marques/otolift.webp</image:loc>
       <image:title>Logo Otolift</image:title>
@@ -375,6 +380,7 @@
   </url>
   <url>
     <loc>https://solutionssenior.fr/monte-escaliers/comparatif/handicare/</loc>
+    <lastmod>2026-08-11</lastmod>
     <image:image>
       <image:loc>https://solutionssenior.fr/assets/images/marques/handicare.webp</image:loc>
       <image:title>Logo Handicare</image:title>
@@ -386,11 +392,13 @@
   </url>
   <url>
     <loc>https://solutionssenior.fr/monte-escaliers/comparatif/mobilae/</loc>
+    <lastmod>2026-08-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://solutionssenior.fr/monte-escaliers/comparatif/lehner-lifttechnik/</loc>
+    <lastmod>2026-08-11</lastmod>
     <image:image>
       <image:loc>https://solutionssenior.fr/assets/images/marques/lehner-lifttechnik.webp</image:loc>
       <image:title>Logo Lehner Lifttechnik</image:title>
@@ -402,11 +410,13 @@
   </url>
   <url>
     <loc>https://solutionssenior.fr/monte-escaliers/comparatif/platinum-stairlifts/</loc>
+    <lastmod>2026-08-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://solutionssenior.fr/monte-escaliers/comparatif/independance-royale/</loc>
+    <lastmod>2026-08-11</lastmod>
     <image:image>
       <image:loc>https://solutionssenior.fr/assets/images/marques/independance-royale.webp</image:loc>
       <image:title>Logo Indépendance Royale</image:title>
@@ -616,6 +626,31 @@
     <lastmod>2026-06-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+  </url>
+  <!-- ─── PAGES INSTITUTIONNELLES ──────────────────────────── -->
+  <url>
+    <loc>https://solutionssenior.fr/qui-sommes-nous/</loc>
+    <lastmod>2026-08-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://solutionssenior.fr/contact/</loc>
+    <lastmod>2026-08-20</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://solutionssenior.fr/cgu/</loc>
+    <lastmod>2026-08-20</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
+  <url>
+    <loc>https://solutionssenior.fr/politique-confidentialite/</loc>
+    <lastmod>2026-08-20</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
   </url>
 </urlset>
 
